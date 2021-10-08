@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\BusinessLogic\\BusinessLogic.csproj",
+      "projectUniqueName": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj",
       "projectName": "BusinessLogic",
-      "projectPath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\BusinessLogic\\BusinessLogic.csproj",
+      "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\Gediminas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\BusinessLogic\\obj\\",
+      "outputPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gediminas\\AppData\\Roaming\\NuGet\\NuGet.Config",

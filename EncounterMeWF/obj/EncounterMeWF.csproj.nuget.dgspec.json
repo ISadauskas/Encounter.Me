@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj": {}
+    "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj": {
+    "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj",
+        "projectUniqueName": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
         "projectName": "EncounterMeWF",
-        "projectPath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj",
+        "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
         "packagesPath": "C:\\Users\\Gediminas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\obj\\",
+        "outputPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gediminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
