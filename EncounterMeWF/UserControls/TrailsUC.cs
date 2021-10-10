@@ -71,7 +71,7 @@ namespace EncounterMeWF.UserControls
                 }
             };
 
-            string TrailJson = JsonConvert.SerializeObject(trails);
+            TrailJson = JsonConvert.SerializeObject(trail1);
             //string TrailJson = JsonConvert.SerializeObject(trail1);
             File.WriteAllText(@"Try.json", TrailJson);
 
@@ -79,9 +79,9 @@ namespace EncounterMeWF.UserControls
             TrailJson = String.Empty;
             TrailJson = File.ReadAllText(@"Try.json");
 
-            List<Trail> TrailString = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
+            TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
             //DataTable dataTable = (DataTable)JsonConvert.DeserializeObject(TrailJson, (typeof(DataTable)));
-            TrailGridView.DataSource = TrailString;
+            TrailGridView.DataSource = TrailList;
         }
 
         
@@ -100,10 +100,11 @@ namespace EncounterMeWF.UserControls
             JsonWrite(TrailList);
         }
 
-        private void JsonWrite(List<Trail> TrailList)
+        private void JsonWrite(List<Trail> TempTrailList)
         {
-            TrailGridView.DataSource = TrailList;
             TrailJson = JsonConvert.SerializeObject(TrailList);
+            TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
+            TrailGridView.DataSource = TempTrailList;
             File.WriteAllText(@"Try.json", TrailJson);
         }
     }
