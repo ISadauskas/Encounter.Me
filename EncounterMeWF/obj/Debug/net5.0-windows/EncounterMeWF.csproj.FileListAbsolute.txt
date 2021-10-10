@@ -63,3 +63,4 @@ C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\ref\EncounterMeWF.dll
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.pdb
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.genruntimeconfig.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.CreateTrailsEntryUC.resources

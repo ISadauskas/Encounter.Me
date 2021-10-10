@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
 {
-    public partial class CreateTrailsEntryUS : UserControl
+    public partial class CreateTrailsEntryUC : UserControl
     {
-        public CreateTrailsEntryUS()
+        public CreateTrailsEntryUC()
         {
             InitializeComponent();
         }
