@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace EncounterMeWF
 {
     [Serializable]
-    class Trail
+    public class Trail
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public double Length { get; set; }
         public List<string> Coordinates { get; set; }
+
     }
 }

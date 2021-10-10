@@ -1,18 +1,13 @@
 ﻿using EncounterMeWF.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+//using BusinessLogic;
 
 namespace EncounterMeWF
 {
     public partial class mainForm : Form
     {
+        //private Json _math = new Json();
         public mainForm()
         {
             InitializeComponent();
