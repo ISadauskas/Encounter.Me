@@ -41,6 +41,7 @@ namespace EncounterMeWF.UserControls
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.DeleteEntryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@ namespace EncounterMeWF.UserControls
             this.TrailGridView.Location = new System.Drawing.Point(176, 27);
             this.TrailGridView.Name = "TrailGridView";
             this.TrailGridView.RowTemplate.Height = 25;
+            this.TrailGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TrailGridView.Size = new System.Drawing.Size(600, 144);
             this.TrailGridView.TabIndex = 5;
             // 
@@ -138,10 +140,21 @@ namespace EncounterMeWF.UserControls
             this.label8.TabIndex = 15;
             this.label8.Text = "Trail name:";
             // 
+            // DeleteEntryButton
+            // 
+            this.DeleteEntryButton.Location = new System.Drawing.Point(514, 211);
+            this.DeleteEntryButton.Name = "DeleteEntryButton";
+            this.DeleteEntryButton.Size = new System.Drawing.Size(105, 23);
+            this.DeleteEntryButton.TabIndex = 24;
+            this.DeleteEntryButton.Text = "Delete Entry";
+            this.DeleteEntryButton.UseVisualStyleBackColor = true;
+            this.DeleteEntryButton.Click += new System.EventHandler(this.DeleteEntryButton_Click);
+            // 
             // TrailsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DeleteEntryButton);
             this.Controls.Add(this.CreateEntryButton);
             this.Controls.Add(this.TrailCoordinatesTextbox);
             this.Controls.Add(this.TrailLengthTextbox);
@@ -174,5 +187,6 @@ namespace EncounterMeWF.UserControls
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button DeleteEntryButton;
     }
 }

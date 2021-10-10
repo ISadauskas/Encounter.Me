@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,14 +11,14 @@ namespace EncounterMeWF.UserControls
     {
         //List<Trail> trails1 = new List<Trail>();
         string TrailJson;
-        List<Trail> TrailList = new List<Trail>();
+        BindingList<Trail> TrailList = new BindingList<Trail>();
 
         public TrailsUC()
         {
             InitializeComponent();
             //Load json file in table view on startup
             TrailJson = File.ReadAllText(@"Try.json");
-            TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
+            TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailJson);
             TrailGridView.DataSource = TrailList;
         }
 
@@ -77,7 +78,7 @@ namespace EncounterMeWF.UserControls
             TrailJson = String.Empty;
             TrailJson = File.ReadAllText(@"Try.json");
 
-            TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
+            TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailJson);
             //DataTable dataTable = (DataTable)JsonConvert.DeserializeObject(TrailJson, (typeof(DataTable)));
             TrailGridView.DataSource = TrailList;
         }
@@ -101,8 +102,15 @@ namespace EncounterMeWF.UserControls
         private void JsonWrite()
         {
             TrailJson = JsonConvert.SerializeObject(TrailList);
-            TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
+            TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailJson);
             TrailGridView.DataSource = TrailList;
+            File.WriteAllText(@"Try.json", TrailJson);
+        }
+
+        private void DeleteEntryButton_Click(object sender, EventArgs e)
+        {
+            TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
+            TrailJson = JsonConvert.SerializeObject(TrailList);
             File.WriteAllText(@"Try.json", TrailJson);
         }
     }
