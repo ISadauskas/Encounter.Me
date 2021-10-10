@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "d2n7xFf0MQnQc8h1ACkTJjuA51PIEbKYq/OVncdNJ4bIN4h7KLR80W7xCorscZ7RAlY8N78+9AFQd7NhxakByg==",
+  "dgSpecHash": "e3xBlI4BCOzcq2lhcg6mI34p4pxgW2CmAw+S9/B4MNrNCXEwElxxR1W8lC2lIrkG8qaf3RdWPGtAyXXQLkAWeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\BusinessLogic\\BusinessLogic.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

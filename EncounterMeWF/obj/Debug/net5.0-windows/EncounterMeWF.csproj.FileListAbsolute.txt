@@ -19,3 +19,47 @@ C:\Users\Gediminas\source\repos\EncounterMeWF\EncounterMeWF\obj\Debug\net5.0-win
 C:\Users\Gediminas\source\repos\EncounterMeWF\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.Properties.Resources.resources
 C:\Users\Gediminas\source\repos\EncounterMeWF\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.IndexUC.resources
 C:\Users\Gediminas\source\repos\EncounterMeWF\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.TrailsUC.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.exe
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.deps.json
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.runtimeconfig.json
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.runtimeconfig.dev.json
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\ref\EncounterMeWF.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.pdb
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.AssemblyReference.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.mainForm.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.Properties.Resources.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.IndexUC.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.TrailsUC.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.GenerateResource.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.AssemblyInfoInputs.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.AssemblyInfo.cs
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CoreCompileInputs.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\ref\EncounterMeWF.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.pdb
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.genruntimeconfig.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.exe
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.deps.json
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.runtimeconfig.json
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.runtimeconfig.dev.json
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\ref\EncounterMeWF.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.mainForm.resources
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.Properties.Resources.resources
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.IndexUC.resources
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.TrailsUC.resources
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.GenerateResource.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.AssemblyInfoInputs.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.AssemblyInfo.cs
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\ref\EncounterMeWF.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.genruntimeconfig.cache

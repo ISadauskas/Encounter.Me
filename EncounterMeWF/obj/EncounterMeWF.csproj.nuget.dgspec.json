@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj": {}
+    "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
         "projectName": "EncounterMeWF",
-        "projectPath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\EncounterMeWF.csproj",
-        "packagesPath": "C:\\Users\\Gediminas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gediminas\\source\\repos\\EncounterMeWF\\EncounterMeWF\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Gediminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +43,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,6 +59,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.9, 5.0.9]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -57,7 +85,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
         }
       }
     }

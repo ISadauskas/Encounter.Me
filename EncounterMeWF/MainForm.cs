@@ -20,7 +20,7 @@ namespace EncounterMeWF
             addUserControl(uc);
         }
 
-        private void addUserControl(UserControl userControl)
+        public void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
