@@ -15,8 +15,6 @@ namespace EncounterMeWF.UserControls
         public TrailsUC()
         {
             InitializeComponent();
-
-
             //Load json file in table view on startup
             TrailJson = File.ReadAllText(@"Try.json");
             TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
@@ -35,8 +33,8 @@ namespace EncounterMeWF.UserControls
                     //Struct (x,y,name)
                     //Atskiri objectai
                     //map component
-                    Coordinates = new List<string>{"54.756950621066615, 25.2863662915624",
-                        "54.748480401844894, 25.292460270498772"}
+                    /*Coordinates = new List<string>{"54.756950621066615, 25.2863662915624",
+                        "54.748480401844894, 25.292460270498772"}*/
                 },
                 new Trail
                 {
@@ -44,9 +42,9 @@ namespace EncounterMeWF.UserControls
                     Name = "Zirmunai",
                     Length = 10,
                     //Delete = new Button()
-                    Coordinates = new List<string>{"54.73812550515925, 25.278469868151888",
+                    /*Coordinates = new List<string>{"54.73812550515925, 25.278469868151888",
                         "54.719500681990226, 25.287847582779122",
-                        "54.696638924403125, 25.273524397653002"}
+                        "54.696638924403125, 25.273524397653002"}*/
                 },
                 new Trail
                 {
@@ -54,7 +52,7 @@ namespace EncounterMeWF.UserControls
                     Name = "Zujunai",
                     Length = 7.5,
                     //Delete = new Button()
-                    Coordinates = new List<string>{"54.690465443303005, 25.207249320713487"}
+                    //Coordinates = new List<string>{"54.690465443303005, 25.207249320713487"}
                 }
             };
 
@@ -66,8 +64,8 @@ namespace EncounterMeWF.UserControls
                 Name = "Pavilniai",
                 Length = 8.2,
                 //Delete = new Button()
-                Coordinates = new List<string>{"54.74476483437141, 25.247742481402298",
-                    "54.73084081011139, 25.253922291027916"}
+                /*Coordinates = new List<string>{"54.74476483437141, 25.247742481402298",
+                    "54.73084081011139, 25.253922291027916"}*/
                 }
             };
 
@@ -97,14 +95,14 @@ namespace EncounterMeWF.UserControls
             };
             TrailList.Add(TempTrail);
 
-            JsonWrite(TrailList);
+            JsonWrite();
         }
 
-        private void JsonWrite(List<Trail> TempTrailList)
+        private void JsonWrite()
         {
             TrailJson = JsonConvert.SerializeObject(TrailList);
             TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
-            TrailGridView.DataSource = TempTrailList;
+            TrailGridView.DataSource = TrailList;
             File.WriteAllText(@"Try.json", TrailJson);
         }
     }
