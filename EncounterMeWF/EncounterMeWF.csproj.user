@@ -4,9 +4,6 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\CreateTrailsEntryUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="UserControls\IndexUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

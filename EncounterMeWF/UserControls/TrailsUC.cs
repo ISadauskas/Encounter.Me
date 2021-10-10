@@ -8,7 +8,9 @@ namespace EncounterMeWF.UserControls
 {
     public partial class TrailsUC : UserControl
     {
-        List<Trail> trails1 = new List<Trail>();
+        //List<Trail> trails1 = new List<Trail>();
+        string TrailJson;
+        List<Trail> TrailList = new List<Trail>();
 
         public TrailsUC()
         {
@@ -16,11 +18,9 @@ namespace EncounterMeWF.UserControls
 
 
             //Load json file in table view on startup
-            string TrailJson;
             TrailJson = File.ReadAllText(@"Try.json");
-            List<Trail> TrailString = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
-            trails1 = TrailString;
-            TrailGridView.DataSource = TrailString;
+            TrailList = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
+            TrailGridView.DataSource = TrailList;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,29 +87,24 @@ namespace EncounterMeWF.UserControls
         
         private void CreateEntryButton_Click(object sender, EventArgs e)
         {
-            Trail tttrail = new Trail
+            Trail TempTrail = new Trail
             {
                 ID = int.Parse(TrailIdTextbox.Text),
                 Name = TrailNameTextbox.Text,
-                Length = int.Parse(TrailLengthTextbox.Text),
+                Length = double.Parse(TrailLengthTextbox.Text),
                 Coordinates = new List<string>{"54.756950621066615, 25.2863662915624",
                         "54.748480401844894, 25.292460270498772"}
             };
-            trails1.Add(tttrail);
+            TrailList.Add(TempTrail);
 
-            JsonWrite(tttrail);
+            JsonWrite(TrailList);
         }
 
-        private void JsonWrite(Trail trail)
+        private void JsonWrite(List<Trail> TrailList)
         {
-            string TrailJson = JsonConvert.SerializeObject(trails1);
+            TrailGridView.DataSource = TrailList;
+            TrailJson = JsonConvert.SerializeObject(TrailList);
             File.WriteAllText(@"Try.json", TrailJson);
-
-            //Json file read and write
-            TrailJson = String.Empty;
-            TrailJson = File.ReadAllText(@"Try.json");
-            List<Trail> TrailString = JsonConvert.DeserializeObject<List<Trail>>(TrailJson);
-            TrailGridView.DataSource = TrailString;
         }
     }
 }
