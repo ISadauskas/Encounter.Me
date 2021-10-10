@@ -113,5 +113,22 @@ namespace EncounterMeWF.UserControls
             TrailJson = JsonConvert.SerializeObject(TrailList);
             File.WriteAllText(@"Try.json", TrailJson);
         }
+
+        private void ModifyEntryButton_Click(object sender, EventArgs e)
+        {
+            Trail TempTrail = new Trail
+            {
+                ID = int.Parse(TrailIdTextbox.Text),
+                Name = TrailNameTextbox.Text,
+                Length = double.Parse(TrailLengthTextbox.Text),
+                Coordinates = new List<string>{"54.756950621066615, 25.2863662915624",
+                        "54.748480401844894, 25.292460270498772"}
+            };
+            TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
+            TrailList.Insert(TrailGridView.SelectedRows[0].Index, TempTrail);
+            TrailJson = JsonConvert.SerializeObject(TrailList);
+            File.WriteAllText(@"Try.json", TrailJson);
+
+        }
     }
 }
