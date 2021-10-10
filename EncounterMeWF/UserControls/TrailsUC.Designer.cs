@@ -42,6 +42,7 @@ namespace EncounterMeWF.UserControls
             this.label8 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.DeleteEntryButton = new System.Windows.Forms.Button();
+            this.ModifyEntryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@ namespace EncounterMeWF.UserControls
             // 
             // TrailGridView
             // 
+            this.TrailGridView.AllowUserToAddRows = false;
             this.TrailGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TrailGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TrailGridView.Location = new System.Drawing.Point(176, 27);
@@ -142,7 +144,7 @@ namespace EncounterMeWF.UserControls
             // 
             // DeleteEntryButton
             // 
-            this.DeleteEntryButton.Location = new System.Drawing.Point(514, 211);
+            this.DeleteEntryButton.Location = new System.Drawing.Point(597, 211);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
             this.DeleteEntryButton.Size = new System.Drawing.Size(105, 23);
             this.DeleteEntryButton.TabIndex = 24;
@@ -150,10 +152,21 @@ namespace EncounterMeWF.UserControls
             this.DeleteEntryButton.UseVisualStyleBackColor = true;
             this.DeleteEntryButton.Click += new System.EventHandler(this.DeleteEntryButton_Click);
             // 
+            // ModifyEntryButton
+            // 
+            this.ModifyEntryButton.Location = new System.Drawing.Point(486, 210);
+            this.ModifyEntryButton.Name = "ModifyEntryButton";
+            this.ModifyEntryButton.Size = new System.Drawing.Size(105, 23);
+            this.ModifyEntryButton.TabIndex = 25;
+            this.ModifyEntryButton.Text = "Modify Entry";
+            this.ModifyEntryButton.UseVisualStyleBackColor = true;
+            this.ModifyEntryButton.Click += new System.EventHandler(this.ModifyEntryButton_Click);
+            // 
             // TrailsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ModifyEntryButton);
             this.Controls.Add(this.DeleteEntryButton);
             this.Controls.Add(this.CreateEntryButton);
             this.Controls.Add(this.TrailCoordinatesTextbox);
@@ -188,5 +201,6 @@ namespace EncounterMeWF.UserControls
         private System.Windows.Forms.Label label8;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button DeleteEntryButton;
+        private System.Windows.Forms.Button ModifyEntryButton;
     }
 }
