@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "19FcjpA4R/rrrphbPobqZ1s/WmV41pgP1fHRW1PGzplBsBl5Yiwt+v8fV8D8Z8tgiKFqUY3Nr9ZnYji1F7KBAA==",
+  "dgSpecHash": "AEkPaSfd2trtzG8fY7wSe8JDTe8oaQEhZ0BfElME2jOx27XofTArO1c9CEJRs66Py5RozpFVHjz0Nvo6WzfO8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
+  "projectFilePath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PC\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.9\\microsoft.netcore.app.host.win-x64.5.0.9.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\PC\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+    "C:\\Users\\Gediminas\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

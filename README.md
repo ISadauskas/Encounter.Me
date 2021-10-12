@@ -10,3 +10,15 @@ This project helps to find interesting paths around Vilnius and also to create y
 How to set up:
 
 To use this project firstly you need to register and then you can start creating your own paths.
+
+-  Creating and using your own class, struct and enum (with flag(s), preferably). all of them
+-  Property (standard, indexed, auto-implemented) usage in struct and class. (get; set;)
+-  Named and optional argument usage. refer to sum
+-  Extension method usage. refer to extention class
++  Reading from file.
++  Generic type usage. List<>, Deserialize<>
+-  Regex. (input) pvz password validation . regex tutorial
+-  Widening and narrowing type conversions. pasitikslint cast when narrowing
+-  Putting data to collection, iterating through it the right way. linq, foreach pasitikslint
+-  LINQ to Objects usage (methods and queries), including groupJoin.
+-  Implementing some of the standard .NET interfaces (IEnumerable, IComparable, IComparer, IEquatable, IEnumerator, etc.)

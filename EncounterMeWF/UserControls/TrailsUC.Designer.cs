@@ -29,7 +29,6 @@ namespace EncounterMeWF.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.TrailGridView = new System.Windows.Forms.DataGridView();
             this.CreateEntryButton = new System.Windows.Forms.Button();
             this.TrailLengthTextbox = new System.Windows.Forms.TextBox();
@@ -45,16 +44,6 @@ namespace EncounterMeWF.UserControls
             this.ModifyEntryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(39, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Convert to Json";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TrailGridView
             // 
@@ -172,7 +161,6 @@ namespace EncounterMeWF.UserControls
             this.Controls.Add(this.TrailCoordinatesTextbox);
             this.Controls.Add(this.TrailLengthTextbox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.TrailGridView);
             this.Controls.Add(this.TrailNameTextbox);
             this.Controls.Add(this.label6);
@@ -188,7 +176,6 @@ namespace EncounterMeWF.UserControls
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView TrailGridView;
         private System.Windows.Forms.Button CreateEntryButton;
         private System.Windows.Forms.TextBox TrailLengthTextbox;
