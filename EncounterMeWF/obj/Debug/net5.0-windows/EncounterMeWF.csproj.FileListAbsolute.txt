@@ -65,3 +65,28 @@ C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.genruntimeconfig.cache
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.dll
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.pdb
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.exe
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.deps.json
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.runtimeconfig.json
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.runtimeconfig.dev.json
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.dll
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\ref\EncounterMeWF.dll
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\EncounterMeWF.pdb
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.dll
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.pdb
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.AssemblyReference.cache
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.mainForm.resources
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.Properties.Resources.resources
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.IndexUC.resources
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.TrailsUC.resources
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.GenerateResource.cache
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.AssemblyInfoInputs.cache
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.AssemblyInfo.cs
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CoreCompileInputs.cache
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CopyComplete
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.dll
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\ref\EncounterMeWF.dll
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.pdb
+C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.genruntimeconfig.cache

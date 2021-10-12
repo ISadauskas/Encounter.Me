@@ -29,24 +29,29 @@ namespace EncounterMeWF.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(305, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Veikia";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(222, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(952, 142);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome to EncounterMe, \r\nthe app for all your track finding needs.";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // IndexUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "IndexUC";
-            this.Size = new System.Drawing.Size(801, 460);
+            this.Size = new System.Drawing.Size(1488, 981);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -54,6 +59,6 @@ namespace EncounterMeWF.UserControls
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
