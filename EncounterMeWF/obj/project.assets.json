@@ -67,19 +67,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dianapopkovaite\\.nuget\\packages\\": {}
+    "C:\\Users\\Gediminas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dianapopkovaite\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
+      "projectUniqueName": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
       "projectName": "EncounterMeWF",
-      "projectPath": "C:\\Users\\dianapopkovaite\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
-      "packagesPath": "C:\\Users\\dianapopkovaite\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dianapopkovaite\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\obj\\",
+      "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
+      "packagesPath": "C:\\Users\\Gediminas\\.nuget\\packages\\",
+      "outputPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dianapopkovaite\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gediminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -93,8 +93,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\dianapopkovaite\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\dianapopkovaite\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj"
+            "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj"
             }
           }
         }
