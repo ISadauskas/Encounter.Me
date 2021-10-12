@@ -71,23 +71,21 @@ namespace EncounterMeWF.UserControls
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.TrailGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TrailGridView.Location = new System.Drawing.Point(277, 51);
-            this.TrailGridView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TrailGridView.Location = new System.Drawing.Point(149, 24);
             this.TrailGridView.Name = "TrailGridView";
             this.TrailGridView.RowHeadersWidth = 82;
             this.TrailGridView.RowTemplate.Height = 25;
             this.TrailGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TrailGridView.Size = new System.Drawing.Size(942, 692);
+            this.TrailGridView.Size = new System.Drawing.Size(507, 324);
             this.TrailGridView.TabIndex = 5;
             // 
             // CreateEntryButton
             // 
             this.CreateEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CreateEntryButton.ForeColor = System.Drawing.Color.Green;
-            this.CreateEntryButton.Location = new System.Drawing.Point(57, 432);
-            this.CreateEntryButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CreateEntryButton.Location = new System.Drawing.Point(31, 202);
             this.CreateEntryButton.Name = "CreateEntryButton";
-            this.CreateEntryButton.Size = new System.Drawing.Size(155, 49);
+            this.CreateEntryButton.Size = new System.Drawing.Size(83, 23);
             this.CreateEntryButton.TabIndex = 23;
             this.CreateEntryButton.Text = "Create Entry";
             this.CreateEntryButton.UseVisualStyleBackColor = false;
@@ -96,47 +94,42 @@ namespace EncounterMeWF.UserControls
             // TrailLengthTextbox
             // 
             this.TrailLengthTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TrailLengthTextbox.Location = new System.Drawing.Point(26, 267);
-            this.TrailLengthTextbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TrailLengthTextbox.Location = new System.Drawing.Point(14, 125);
             this.TrailLengthTextbox.Name = "TrailLengthTextbox";
-            this.TrailLengthTextbox.Size = new System.Drawing.Size(220, 39);
+            this.TrailLengthTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailLengthTextbox.TabIndex = 22;
             // 
             // TrailCoordinatesTextbox
             // 
             this.TrailCoordinatesTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TrailCoordinatesTextbox.Location = new System.Drawing.Point(26, 350);
-            this.TrailCoordinatesTextbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TrailCoordinatesTextbox.Location = new System.Drawing.Point(14, 164);
             this.TrailCoordinatesTextbox.Name = "TrailCoordinatesTextbox";
-            this.TrailCoordinatesTextbox.Size = new System.Drawing.Size(220, 39);
+            this.TrailCoordinatesTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailCoordinatesTextbox.TabIndex = 21;
             // 
             // TrailNameTextbox
             // 
             this.TrailNameTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TrailNameTextbox.Location = new System.Drawing.Point(26, 184);
-            this.TrailNameTextbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TrailNameTextbox.Location = new System.Drawing.Point(14, 86);
             this.TrailNameTextbox.Name = "TrailNameTextbox";
-            this.TrailNameTextbox.Size = new System.Drawing.Size(220, 39);
+            this.TrailNameTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailNameTextbox.TabIndex = 20;
             // 
             // TrailIdTextbox
             // 
             this.TrailIdTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TrailIdTextbox.Location = new System.Drawing.Point(26, 101);
-            this.TrailIdTextbox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.TrailIdTextbox.Location = new System.Drawing.Point(14, 47);
             this.TrailIdTextbox.Name = "TrailIdTextbox";
-            this.TrailIdTextbox.Size = new System.Drawing.Size(220, 39);
+            this.TrailIdTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailIdTextbox.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(26, 312);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(14, 146);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 32);
+            this.label1.Size = new System.Drawing.Size(96, 15);
             this.label1.TabIndex = 18;
             this.label1.Text = "Trail coordinates:";
             // 
@@ -144,10 +137,9 @@ namespace EncounterMeWF.UserControls
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(26, 229);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Location = new System.Drawing.Point(14, 107);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 32);
+            this.label6.Size = new System.Drawing.Size(68, 15);
             this.label6.TabIndex = 17;
             this.label6.Text = "Trail length:";
             // 
@@ -155,10 +147,9 @@ namespace EncounterMeWF.UserControls
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(26, 51);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(14, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 32);
+            this.label7.Size = new System.Drawing.Size(44, 15);
             this.label7.TabIndex = 16;
             this.label7.Text = "Trail Id:";
             // 
@@ -166,10 +157,9 @@ namespace EncounterMeWF.UserControls
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(26, 146);
-            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Location = new System.Drawing.Point(14, 68);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 32);
+            this.label8.Size = new System.Drawing.Size(64, 15);
             this.label8.TabIndex = 15;
             this.label8.Text = "Trail name:";
             // 
@@ -177,10 +167,9 @@ namespace EncounterMeWF.UserControls
             // 
             this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.DeleteEntryButton.ForeColor = System.Drawing.Color.Green;
-            this.DeleteEntryButton.Location = new System.Drawing.Point(717, 764);
-            this.DeleteEntryButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.DeleteEntryButton.Location = new System.Drawing.Point(386, 358);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
-            this.DeleteEntryButton.Size = new System.Drawing.Size(195, 49);
+            this.DeleteEntryButton.Size = new System.Drawing.Size(105, 23);
             this.DeleteEntryButton.TabIndex = 24;
             this.DeleteEntryButton.Text = "Delete Entry";
             this.DeleteEntryButton.UseVisualStyleBackColor = false;
@@ -190,10 +179,9 @@ namespace EncounterMeWF.UserControls
             // 
             this.ModifyEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ModifyEntryButton.ForeColor = System.Drawing.Color.Green;
-            this.ModifyEntryButton.Location = new System.Drawing.Point(490, 764);
-            this.ModifyEntryButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ModifyEntryButton.Location = new System.Drawing.Point(264, 358);
             this.ModifyEntryButton.Name = "ModifyEntryButton";
-            this.ModifyEntryButton.Size = new System.Drawing.Size(195, 49);
+            this.ModifyEntryButton.Size = new System.Drawing.Size(105, 23);
             this.ModifyEntryButton.TabIndex = 25;
             this.ModifyEntryButton.Text = "Modify Entry";
             this.ModifyEntryButton.UseVisualStyleBackColor = false;
@@ -201,7 +189,7 @@ namespace EncounterMeWF.UserControls
             // 
             // TrailsUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Controls.Add(this.ModifyEntryButton);
@@ -216,9 +204,8 @@ namespace EncounterMeWF.UserControls
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TrailIdTextbox);
             this.Controls.Add(this.label8);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "TrailsUC";
-            this.Size = new System.Drawing.Size(1488, 981);
+            this.Size = new System.Drawing.Size(801, 460);
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

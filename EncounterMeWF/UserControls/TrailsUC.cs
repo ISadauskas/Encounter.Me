@@ -11,7 +11,8 @@ namespace EncounterMeWF.UserControls
     public partial class TrailsUC : UserControl
     {
         private Json _json = new Json();
-        
+        private Trail _trail = new Trail();
+
         string TrailJson;
         BindingList<Trail> TrailList = new BindingList<Trail>();
 
@@ -27,14 +28,14 @@ namespace EncounterMeWF.UserControls
         {
             if (Check())
             {
-                Trail TempTrail = new Trail
-                {
-                    ID = int.Parse(TrailIdTextbox.Text),
-                    Name = TrailNameTextbox.Text,
-                    Length = double.Parse(TrailLengthTextbox.Text),
-                    Coordinates = new List<string>{}
-                };
+                Trail TempTrail = new Trail();
+                if (TrailNameTextbox.Text == "")
+                    TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text);
+                else
+                    TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text);
                 TrailList.Add(TempTrail);
+
+
 
                 _json.JsonWrite(TrailList);
                 TrailGridView.DataSource = TrailList;
@@ -67,11 +68,6 @@ namespace EncounterMeWF.UserControls
             if (TrailIdTextbox.Text == "")
             {
                 MessageBox.Show("Please enter trail Id number", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (TrailNameTextbox.Text == "")
-            {
-                MessageBox.Show("Please enter trail name", "Entry Error", MessageBoxButtons.OK);
                 return false;
             }
             if (TrailLengthTextbox.Text == "")

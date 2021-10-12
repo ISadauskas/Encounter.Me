@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BepIVfySYvVXreDHqdt8t0CP89jGSCXGMI6WmBJuRaQxcuxmqsHqURtBs3PKQMPyF9ENwO2P4oJ90mTtVZ3pAA==",
+  "dgSpecHash": "9XjbO/AI3YFZxoe7Iz2ZukKEvrYxxfCDMHvSD17rbuTAHPgPRehD5W4xQ0nt/GRB8yLxVR0DOpTa7U4NcUwyTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dianapopkovaite\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj",
+  "projectFilePath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dianapopkovaite\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Gediminas\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
