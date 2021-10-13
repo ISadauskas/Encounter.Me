@@ -52,6 +52,7 @@
             this.SignUpButton.TabIndex = 0;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // SignInButton
             // 
