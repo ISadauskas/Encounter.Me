@@ -33,19 +33,21 @@ namespace EncounterMeWF
             this.trailsButton = new System.Windows.Forms.Button();
             this.indexButton = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.SignupSigninButton = new System.Windows.Forms.Button();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.headerPanel.Controls.Add(this.SignupSigninButton);
             this.headerPanel.Controls.Add(this.trailsButton);
             this.headerPanel.Controls.Add(this.indexButton);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Margin = new System.Windows.Forms.Padding(0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(238, 1103);
+            this.headerPanel.Size = new System.Drawing.Size(134, 497);
             this.headerPanel.TabIndex = 0;
             // 
             // trailsButton
@@ -60,10 +62,10 @@ namespace EncounterMeWF
             this.trailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.trailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.trailsButton.ForeColor = System.Drawing.Color.Green;
-            this.trailsButton.Location = new System.Drawing.Point(60, 130);
+            this.trailsButton.Location = new System.Drawing.Point(35, 71);
             this.trailsButton.Margin = new System.Windows.Forms.Padding(0);
             this.trailsButton.Name = "trailsButton";
-            this.trailsButton.Size = new System.Drawing.Size(106, 47);
+            this.trailsButton.Size = new System.Drawing.Size(56, 30);
             this.trailsButton.TabIndex = 1;
             this.trailsButton.Text = "Trails";
             this.trailsButton.UseVisualStyleBackColor = false;
@@ -81,10 +83,10 @@ namespace EncounterMeWF
             this.indexButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.indexButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.indexButton.ForeColor = System.Drawing.Color.Green;
-            this.indexButton.Location = new System.Drawing.Point(9, 48);
+            this.indexButton.Location = new System.Drawing.Point(9, 30);
             this.indexButton.Margin = new System.Windows.Forms.Padding(0);
             this.indexButton.Name = "indexButton";
-            this.indexButton.Size = new System.Drawing.Size(216, 47);
+            this.indexButton.Size = new System.Drawing.Size(115, 30);
             this.indexButton.TabIndex = 0;
             this.indexButton.Text = "EncounterMe";
             this.indexButton.UseVisualStyleBackColor = false;
@@ -93,20 +95,39 @@ namespace EncounterMeWF
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(238, 0);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelContainer.Location = new System.Drawing.Point(134, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1250, 1103);
+            this.panelContainer.Size = new System.Drawing.Size(667, 497);
             this.panelContainer.TabIndex = 1;
+            // 
+            // SignupSigninButton
+            // 
+            this.SignupSigninButton.AutoSize = true;
+            this.SignupSigninButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SignupSigninButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignupSigninButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SignupSigninButton.FlatAppearance.BorderSize = 0;
+            this.SignupSigninButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignupSigninButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignupSigninButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignupSigninButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SignupSigninButton.ForeColor = System.Drawing.Color.Green;
+            this.SignupSigninButton.Location = new System.Drawing.Point(1, 111);
+            this.SignupSigninButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SignupSigninButton.Name = "SignupSigninButton";
+            this.SignupSigninButton.Size = new System.Drawing.Size(125, 30);
+            this.SignupSigninButton.TabIndex = 2;
+            this.SignupSigninButton.Text = "Sign up/Sign in";
+            this.SignupSigninButton.UseVisualStyleBackColor = false;
+            this.SignupSigninButton.Click += new System.EventHandler(this.SignupSigninButton_Click);
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1488, 1103);
+            this.ClientSize = new System.Drawing.Size(801, 497);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.headerPanel);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "mainForm";
             this.Text = "EncounterMe";
             this.headerPanel.ResumeLayout(false);
@@ -121,6 +142,7 @@ namespace EncounterMeWF
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Button indexButton;
         private System.Windows.Forms.Button trailsButton;
+        private System.Windows.Forms.Button SignupSigninButton;
     }
 }
 
