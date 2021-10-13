@@ -33,5 +33,11 @@ namespace EncounterMeWF
             TrailsUC uc = new TrailsUC();
             addUserControl(uc);
         }
+
+        private void SignupSigninButton_Click(object sender, EventArgs e)
+        {
+            SIgnUpSignInUC uc = new SIgnUpSignInUC();
+            addUserControl(uc);
+        }
     }
 }

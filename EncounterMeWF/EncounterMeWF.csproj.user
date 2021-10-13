@@ -7,6 +7,9 @@
     <Compile Update="UserControls\IndexUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\SIgnUpSignInUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\TrailsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>

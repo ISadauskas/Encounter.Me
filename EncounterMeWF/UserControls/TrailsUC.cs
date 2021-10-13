@@ -10,17 +10,16 @@ namespace EncounterMeWF.UserControls
 {
     public partial class TrailsUC : UserControl
     {
-        private Json _json = new Json();
+        private TrailJson _trailJson = new TrailJson();
         private Trail _trail = new Trail();
 
-        string TrailJson;
         BindingList<Trail> TrailList = new BindingList<Trail>();
 
         public TrailsUC()
         {
             InitializeComponent();
             //Load json file in table view on startup
-            TrailList = _json.JsonRead();
+            TrailList = _trailJson.JsonRead();
             TrailGridView.DataSource = TrailList;
         }
 
@@ -37,7 +36,7 @@ namespace EncounterMeWF.UserControls
 
 
 
-                _json.JsonWrite(TrailList);
+                _trailJson.JsonWrite(TrailList);
                 TrailGridView.DataSource = TrailList;
             }
         }
@@ -45,7 +44,7 @@ namespace EncounterMeWF.UserControls
         private void DeleteEntryButton_Click(object sender, EventArgs e)
         {
             TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
-            _json.JsonWrite(TrailList);
+            _trailJson.JsonWrite(TrailList);
         }
 
         private void ModifyEntryButton_Click(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace EncounterMeWF.UserControls
             int n = TrailGridView.SelectedRows[0].Index;
             TrailGridView.Rows.RemoveAt(n);
             TrailList.Insert(n, TempTrail);
-            _json.JsonWrite(TrailList);
+            _trailJson.JsonWrite(TrailList);
 
         }
         private bool Check()
