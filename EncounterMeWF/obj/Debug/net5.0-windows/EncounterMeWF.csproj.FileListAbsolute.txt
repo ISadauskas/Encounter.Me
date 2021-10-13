@@ -90,3 +90,6 @@ C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\n
 C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\ref\EncounterMeWF.dll
 C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.pdb
 C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.genruntimeconfig.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CopyComplete
