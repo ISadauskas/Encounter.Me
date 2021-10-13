@@ -17,12 +17,12 @@ namespace BusinessLogic
         {
             TrailJson = JsonConvert.SerializeObject(TrailList);
             TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailJson);
-            File.WriteAllText(@"Try.json", TrailJson);
+            File.WriteAllText(@"Trails.json", TrailJson);
         }
 
         public BindingList<Trail> JsonRead()
         {
-            TrailJson = File.ReadAllText(@"Try.json");
+            TrailJson = File.ReadAllText(@"Trails.json");
             TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailJson);
             return TrailList;
         }

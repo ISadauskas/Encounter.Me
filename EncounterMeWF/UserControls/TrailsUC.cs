@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using BusinessLogic;
+using System.Text.RegularExpressions;
 
 namespace EncounterMeWF.UserControls
 {
@@ -35,8 +36,6 @@ namespace EncounterMeWF.UserControls
                     TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text);
                 TrailList.Add(TempTrail);
 
-
-
                 _json.JsonWrite(TrailList);
                 TrailGridView.DataSource = TrailList;
             }
@@ -65,9 +64,16 @@ namespace EncounterMeWF.UserControls
         }
         private bool Check()
         {
+            Regex IdRegex = new Regex("^[0-9]$");
+            bool IdRegexCheck = IdRegex.IsMatch(TrailIdTextbox.Text);
             if (TrailIdTextbox.Text == "")
             {
                 MessageBox.Show("Please enter trail Id number", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (!IdRegexCheck)
+            {
+                MessageBox.Show("Trail Id can only consist of numbers from 0 to 9", "Entry Error", MessageBoxButtons.OK);
                 return false;
             }
             if (TrailLengthTextbox.Text == "")
