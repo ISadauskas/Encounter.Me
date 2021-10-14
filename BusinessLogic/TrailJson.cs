@@ -1,10 +1,7 @@
 ﻿using EncounterMeWF;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-
-
 
 namespace BusinessLogic
 {
@@ -17,15 +14,14 @@ namespace BusinessLogic
         {
             TrailListJson = JsonConvert.SerializeObject(TrailList);
             TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailListJson);
-            File.WriteAllText(@"Try.json", TrailListJson);
+            File.WriteAllText(@"Trails.json", TrailListJson);
         }
 
         public BindingList<Trail> JsonRead()
         {
-            TrailListJson = File.ReadAllText(@"Try.json");
+            TrailListJson = File.ReadAllText(@"Trails.json");
             TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailListJson);
             return TrailList;
         }
-
     }
 }
