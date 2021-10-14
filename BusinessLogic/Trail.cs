@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EncounterMeWF
 {
@@ -16,7 +13,7 @@ namespace EncounterMeWF
 
 
 
-        public Trail CreateTrail(string Id, string Length, string Name= "Defaul Trail Name")
+        public Trail CreateTrail(string Id, string Length, string Name = "Defaul Trail Name")
         {
             Trail TempTrail = new Trail
             {

@@ -17,8 +17,8 @@ To use this project firstly you need to register and then you can start creating
 -  Extension method usage. refer to extention class
 +  Reading from file.
 +  Generic type usage. List<>, Deserialize<>
--  Regex. (input) pvz password validation . regex tutorial  Login and Registration
++  Regex. (input) pvz password validation . regex tutorial  Login and Registration
 -  Widening and narrowing type conversions. pasitikslint cast when narrowing
--  Putting data to collection, iterating through it the right way. linq, foreach pasitikslint
++  Putting data to collection, iterating through it the right way. linq, foreach pasitikslint
 -  LINQ to Objects usage (methods and queries), including groupJoin.
 -  Implementing some of the standard .NET interfaces (IEnumerable, IComparable, IComparer, IEquatable, IEnumerator, etc.)

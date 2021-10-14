@@ -1,48 +1,87 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BusinessLogic;
+using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using BusinessLogic;
-
 
 namespace EncounterMeWF.UserControls
 {
     public partial class SIgnUpSignInUC : UserControl
     {
-        private User _user = new User();
         private UserJson _userJson = new UserJson();
+        private User _user = new User();
         BindingList<User> UserList = new BindingList<User>();
 
         public SIgnUpSignInUC()
         {
             InitializeComponent();
+            if (File.Exists("Trails.json"))
+                UserList = _userJson.JsonRead();
+            else
+                _userJson.JsonWrite(UserList);
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-
-            if (SignUpPasswordTextbox.Text != SignUpConfirmPasswordTextbox.Text)
-            {
-                //TODO create an error messae for mismatching passwords
-            }
-            else
-            {
-                User TempUser = new User
-                {
-                    UserName = SignUpUsernameTextbox.Text,
-                    Email = SignUpEmailTextbox.Text,
-                    Password = SignUpPasswordTextbox.Text
-                };
-
+            if (Check())
+            { 
+                User TempUser = _user.CreateUser(Username: SignUpUsernameTextbox.Text, Email: SignUpEmailTextbox.Text, Password: SignUpPasswordTextbox.Text);
                 UserList.Add(TempUser);
 
                 _userJson.JsonWrite(UserList);
             }
+        }
+
+        private bool Check()
+        {
+            Regex EmailRegex = new Regex("^[A-Za-z0-9]{1,64}@[A-Za-z0-9]{3,20}.(com|net|org)$");
+            bool EmailRegexCheck = EmailRegex.IsMatch(SignUpEmailTextbox.Text);
+            Regex PasswordRegex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+            bool PasswordRegexsCheck = PasswordRegex.IsMatch(SignUpPasswordTextbox.Text);
+            if (SignUpUsernameTextbox.Text == "")
+            {
+                MessageBox.Show("Please enter Username", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (_user.CheckIfUsedUsername(UserList, SignUpUsernameTextbox.Text))
+            {
+                MessageBox.Show("This username has been already used", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (SignUpEmailTextbox.Text == "")
+            {
+                MessageBox.Show("Please enter Email", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (!EmailRegexCheck)
+            {
+                MessageBox.Show("Email should consist of letters and numbers, a @ and a .com|.net|.org", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (_user.CheckIfUsedEmail(UserList, SignUpEmailTextbox.Text))
+            {
+                MessageBox.Show("This email has been already used", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (SignUpPasswordTextbox.Text == "")
+            {
+                MessageBox.Show("Please enter a Password", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (!PasswordRegexsCheck)
+            {
+                MessageBox.Show("Password should consist of at least one upper and lower case letter, " +
+                    "one digit, one special character and at least 8 characters in lengths", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (SignUpPasswordTextbox.Text != SignUpConfirmPasswordTextbox.Text)
+            {
+                MessageBox.Show("Please enter the same Password", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

@@ -78,6 +78,7 @@ namespace EncounterMeWF.UserControls
             this.TrailGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TrailGridView.Size = new System.Drawing.Size(507, 324);
             this.TrailGridView.TabIndex = 5;
+            this.TrailGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrailGridView_MouseClick);
             // 
             // CreateEntryButton
             // 
