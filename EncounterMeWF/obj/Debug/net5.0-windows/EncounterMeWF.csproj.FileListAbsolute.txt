@@ -93,5 +93,4 @@ C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\n
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.dll
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\BusinessLogic.pdb
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.SIgnUpSignInUC.resources
-C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CopyComplete
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.SIgnUpSignInUC.resources

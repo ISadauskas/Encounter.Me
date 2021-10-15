@@ -33,9 +33,9 @@ namespace EncounterMeWF.UserControls
             {
                 Trail TempTrail = new Trail();
                 if (TrailNameTextbox.Text == "")
-                    TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text);
+                    TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
                 else
-                    TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text);
+                    TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
                 TrailList.Add(TempTrail);
 
                 _trailJson.JsonWrite(TrailList);
@@ -58,7 +58,8 @@ namespace EncounterMeWF.UserControls
                     ID = int.Parse(TrailIdTextbox.Text),
                     Name = TrailNameTextbox.Text,
                     Length = double.Parse(TrailLengthTextbox.Text),
-                    Coordinates = new List<string> { }
+                    Coordinates = new List<string> { },
+                    Season = TrailSeasonCombobox.Text
                 };
                 int n = TrailGridView.SelectedRows[0].Index;
                 TrailGridView.Rows.RemoveAt(n);
@@ -96,6 +97,7 @@ namespace EncounterMeWF.UserControls
             TrailIdTextbox.Text = TrailList[n].ID.ToString();
             TrailNameTextbox.Text = TrailList[n].Name;
             TrailLengthTextbox.Text = TrailList[n].Length.ToString();
+            TrailSeasonCombobox.Text = TrailList[n].Season;
         }
     }
 }
