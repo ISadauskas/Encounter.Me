@@ -44,6 +44,8 @@ namespace EncounterMeWF.UserControls
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.DeleteEntryButton = new System.Windows.Forms.Button();
             this.ModifyEntryButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TrailSeasonCombobox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +86,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.CreateEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CreateEntryButton.ForeColor = System.Drawing.Color.Green;
-            this.CreateEntryButton.Location = new System.Drawing.Point(31, 202);
+            this.CreateEntryButton.Location = new System.Drawing.Point(27, 236);
             this.CreateEntryButton.Name = "CreateEntryButton";
             this.CreateEntryButton.Size = new System.Drawing.Size(83, 23);
             this.CreateEntryButton.TabIndex = 23;
@@ -188,11 +190,37 @@ namespace EncounterMeWF.UserControls
             this.ModifyEntryButton.UseVisualStyleBackColor = false;
             this.ModifyEntryButton.Click += new System.EventHandler(this.ModifyEntryButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(14, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Trail Season:";
+            // 
+            // TrailSeasonCombobox
+            // 
+            this.TrailSeasonCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TrailSeasonCombobox.FormattingEnabled = true;
+            this.TrailSeasonCombobox.Items.AddRange(new object[] {
+            "Summer",
+            "Autumn",
+            "Winter ",
+            "Spring"});
+            this.TrailSeasonCombobox.Location = new System.Drawing.Point(13, 207);
+            this.TrailSeasonCombobox.Name = "TrailSeasonCombobox";
+            this.TrailSeasonCombobox.Size = new System.Drawing.Size(121, 23);
+            this.TrailSeasonCombobox.TabIndex = 28;
+            // 
             // TrailsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Controls.Add(this.TrailSeasonCombobox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ModifyEntryButton);
             this.Controls.Add(this.DeleteEntryButton);
             this.Controls.Add(this.CreateEntryButton);
@@ -227,5 +255,7 @@ namespace EncounterMeWF.UserControls
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button DeleteEntryButton;
         private System.Windows.Forms.Button ModifyEntryButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox TrailSeasonCombobox;
     }
 }
