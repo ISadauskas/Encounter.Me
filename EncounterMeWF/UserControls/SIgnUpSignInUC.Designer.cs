@@ -34,8 +34,8 @@
             this.SignUpEmailTextbox = new System.Windows.Forms.TextBox();
             this.SignUpPasswordTextbox = new System.Windows.Forms.TextBox();
             this.SignUpConfirmPasswordTextbox = new System.Windows.Forms.TextBox();
-            this.SingInEmailTextbox = new System.Windows.Forms.TextBox();
-            this.SignInPasswordTexbox = new System.Windows.Forms.TextBox();
+            this.SignInEmailTextbox = new System.Windows.Forms.TextBox();
+            this.SignInPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.SignInButton.TabIndex = 1;
             this.SignInButton.Text = "Sign In";
             this.SignInButton.UseVisualStyleBackColor = true;
+            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click_1);
             // 
             // SignUpUsernameTextbox
             // 
@@ -93,19 +94,19 @@
             this.SignUpConfirmPasswordTextbox.Size = new System.Drawing.Size(100, 23);
             this.SignUpConfirmPasswordTextbox.TabIndex = 5;
             // 
-            // SingInEmailTextbox
+            // SignInEmailTextbox
             // 
-            this.SingInEmailTextbox.Location = new System.Drawing.Point(493, 182);
-            this.SingInEmailTextbox.Name = "SingInEmailTextbox";
-            this.SingInEmailTextbox.Size = new System.Drawing.Size(100, 23);
-            this.SingInEmailTextbox.TabIndex = 6;
+            this.SignInEmailTextbox.Location = new System.Drawing.Point(493, 182);
+            this.SignInEmailTextbox.Name = "SignInEmailTextbox";
+            this.SignInEmailTextbox.Size = new System.Drawing.Size(100, 23);
+            this.SignInEmailTextbox.TabIndex = 6;
             // 
-            // SignInPasswordTexbox
+            // SignInPasswordTextbox
             // 
-            this.SignInPasswordTexbox.Location = new System.Drawing.Point(493, 237);
-            this.SignInPasswordTexbox.Name = "SignInPasswordTexbox";
-            this.SignInPasswordTexbox.Size = new System.Drawing.Size(100, 23);
-            this.SignInPasswordTexbox.TabIndex = 7;
+            this.SignInPasswordTextbox.Location = new System.Drawing.Point(493, 237);
+            this.SignInPasswordTextbox.Name = "SignInPasswordTextbox";
+            this.SignInPasswordTextbox.Size = new System.Drawing.Size(100, 23);
+            this.SignInPasswordTextbox.TabIndex = 7;
             // 
             // label1
             // 
@@ -146,11 +147,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(408, 182);
+            this.label5.Location = new System.Drawing.Point(342, 185);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 15);
+            this.label5.Size = new System.Drawing.Size(145, 15);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Email adress:";
+            this.label5.Text = "Email adress or Username:";
             // 
             // label6
             // 
@@ -171,8 +172,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SignInPasswordTexbox);
-            this.Controls.Add(this.SingInEmailTextbox);
+            this.Controls.Add(this.SignInPasswordTextbox);
+            this.Controls.Add(this.SignInEmailTextbox);
             this.Controls.Add(this.SignUpConfirmPasswordTextbox);
             this.Controls.Add(this.SignUpPasswordTextbox);
             this.Controls.Add(this.SignUpEmailTextbox);
@@ -194,8 +195,8 @@
         private System.Windows.Forms.TextBox SignUpEmailTextbox;
         private System.Windows.Forms.TextBox SignUpPasswordTextbox;
         private System.Windows.Forms.TextBox SignUpConfirmPasswordTextbox;
-        private System.Windows.Forms.TextBox SingInEmailTextbox;
-        private System.Windows.Forms.TextBox SignInPasswordTexbox;
+        private System.Windows.Forms.TextBox SignInEmailTextbox;
+        private System.Windows.Forms.TextBox SignInPasswordTextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
