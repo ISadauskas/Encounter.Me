@@ -81,6 +81,7 @@
             // 
             this.SignUpPasswordTextbox.Location = new System.Drawing.Point(159, 182);
             this.SignUpPasswordTextbox.Name = "SignUpPasswordTextbox";
+            this.SignUpPasswordTextbox.PasswordChar = '*';
             this.SignUpPasswordTextbox.Size = new System.Drawing.Size(100, 23);
             this.SignUpPasswordTextbox.TabIndex = 4;
             // 
@@ -88,6 +89,7 @@
             // 
             this.SignUpConfirmPasswordTextbox.Location = new System.Drawing.Point(159, 242);
             this.SignUpConfirmPasswordTextbox.Name = "SignUpConfirmPasswordTextbox";
+            this.SignUpConfirmPasswordTextbox.PasswordChar = '*';
             this.SignUpConfirmPasswordTextbox.Size = new System.Drawing.Size(100, 23);
             this.SignUpConfirmPasswordTextbox.TabIndex = 5;
             // 
