@@ -70,8 +70,10 @@ namespace EncounterMeWF.UserControls
 
         private bool Check()
         {
-            Regex IdRegex = new Regex("^[0-9]$");
+            Regex IdRegex = new Regex("^[0-9]");
             bool IdRegexCheck = IdRegex.IsMatch(TrailIdTextbox.Text);
+            Regex LengthRegex = new Regex("^[0-9](.[0-9])?");
+            bool LengthRegexCheck = LengthRegex.IsMatch(TrailLengthTextbox.Text);
             if (TrailIdTextbox.Text == "")
             {
                 MessageBox.Show("Please enter trail Id number", "Entry Error", MessageBoxButtons.OK);
@@ -85,6 +87,11 @@ namespace EncounterMeWF.UserControls
             if (TrailLengthTextbox.Text == "")
             {
                 MessageBox.Show("Please enter trail length number", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (!LengthRegexCheck)
+            {
+                MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                 return false;
             }
             else
