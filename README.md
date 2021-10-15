@@ -11,7 +11,7 @@ How to set up:
 
 To use this project firstly you need to register and then you can start creating your own paths.
 
--  Creating and using your own class, struct and enum (with flag(s), preferably). all of them  best time for the trail
++  Creating and using your own class, struct and enum (with flag(s), preferably). all of them  best time for the trail
 -  Property (standard, indexed, auto-implemented) usage in struct and class. (get; set;)
 +  Named and optional argument usage. refer to sum   "trail"+ID
 -  Extension method usage. refer to extention class
