@@ -60,4 +60,28 @@
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SearchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAAAAAAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYa
+        HSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgo
+        KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAlACUDASIAAhEBAxEB/8QA
+        HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+        MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+        V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+        x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+        BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+        YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+        hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+        8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1/wAfeMpbC4bTdKbbMoxJKOSuew965S38LeI9ZT7VIkj7vmDX
+        EnJ+maXwXCuteNUkvcNud52B7nrj9a9wUBRgdOmK4IQ+s3lJ6HFCHt7yk9Dw+31LxB4QvkjuTMI/+eUh
+        3Iw749K9g8P6rBrOmxXlsflYfMueVPoax/iNYRXXha6klALwL5kZ7giud+DNw5TUbck+WpV1+pyD/Kqp
+        3o1PZ3uioXpVOS90em0UUV2nWeGarFc+EfGPnRoTGspki9HQ9s/pXpOm+NtEu7YSSXaW745jl4IP9a1t
+        d0Sz1u18m+iD/wB1hwVPqDXCXXwtzKTa6jtjzkK8eSPxBFcXJVot+z1TOTkqUm+TZlb4geMre/szp2ls
+        ZEc/vZcYBA7D1+tanweit0026kSRGuZJPnQcFQOlMj+GNqljIsl3I90VwjAYVT9K4JW1PwprfGYbiLqP
+        4XH9QazbqQqKdRGbdSE+eZ9B5ornPDHiqz1qw87zEgmTCyxucbT7e1FdqqwaudiqRaudJRRRWhYhrnPG
+        Xh+01rTHM42TxKWjlAyVx/MUUVnUScdSKiTjqef+B/CVvrFrczXNxIuxwiqgxjFFFFcNKlDkWhx0qUHB
+        aH//2Q==
+</value>
+  </data>
 </root>

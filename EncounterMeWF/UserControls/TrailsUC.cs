@@ -12,8 +12,10 @@ namespace EncounterMeWF.UserControls
     {
         private TrailJson _trailJson = new TrailJson();
         private Trail _trail = new Trail();
+        private Search _search = new Search();
 
         BindingList<Trail> TrailList = new BindingList<Trail>();
+        BindingList<Trail> SearchList = new BindingList<Trail>();
 
         public TrailsUC()
         {
@@ -25,7 +27,7 @@ namespace EncounterMeWF.UserControls
                 _trailJson.JsonWrite(TrailList);
 
             TrailGridView.DataSource = TrailList;
-            }
+         }
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
         {
@@ -89,6 +91,16 @@ namespace EncounterMeWF.UserControls
             else
                 return true;
         }
+        private bool SearchCheck()
+        {
+                if (LenghtFromTextBox.Text == "" || LenghtToTextBox.Text == "")
+                {
+                    MessageBox.Show("Please enter trail search data", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                }
+                else 
+                    return true;
+        }
 
         private void TrailGridView_MouseClick(object sender, MouseEventArgs e)
         {
@@ -96,6 +108,23 @@ namespace EncounterMeWF.UserControls
             TrailIdTextbox.Text = TrailList[n].ID.ToString();
             TrailNameTextbox.Text = TrailList[n].Name;
             TrailLengthTextbox.Text = TrailList[n].Length.ToString();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (SearchCheck())
+            {
+                Search TempLenght = new Search();
+                TempLenght = _search.SearchLenght(LenghtFromTextBox.Text, LenghtToTextBox.Text);
+                foreach (var TempTrail in TrailList)
+                {
+                   
+                    if ((int)TempTrail.Length >= TempLenght.LenghtFrom)
+                        if ((int)TempTrail.Length <= TempLenght.LenghtTo)
+                            SearchList.Add(TempTrail);
+                }
+                TrailGridView.DataSource = SearchList;
+            }
         }
     }
 }
