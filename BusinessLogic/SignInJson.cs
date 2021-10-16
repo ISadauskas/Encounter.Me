@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class LoginJson
+    public class SignInJson
     {
         public void JsonWrite(User LoginAccount)
         {
             string LoginAccountJson = JsonConvert.SerializeObject(LoginAccount);
-            File.WriteAllText(@"Login.json", LoginAccountJson);
+            File.WriteAllText(@"SignIn.json", LoginAccountJson);
         }
         public bool CheckAccount(BindingList<User> UserList, string EmailOrUsername, string Password)
         {
@@ -31,7 +31,15 @@ namespace BusinessLogic
         }
         public void JsonDelete()
         {
-            File.Delete("Login.json");
+            File.Delete("SignIn.json");
+        }
+
+        public bool CheckIfSignedIn()
+        {
+            if (File.Exists("SignIn.json"))
+                return true;
+            else
+                return false;
         }
     }
 }

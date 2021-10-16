@@ -11,7 +11,7 @@ namespace EncounterMeWF.UserControls
     {
         private UserJson _userJson = new UserJson();
         private User _user = new User();
-        private LoginJson _loginJson = new LoginJson();
+        private SignInJson _signInJson = new SignInJson();
         private mainForm _mainForm = new mainForm();
         BindingList<User> UserList = new BindingList<User>();
 
@@ -87,7 +87,7 @@ namespace EncounterMeWF.UserControls
         }
         private void SignInButton_Click_1(object sender, EventArgs e)
         {
-            if (_loginJson.CheckAccount(UserList, SignInEmailTextbox.Text, SignInPasswordTextbox.Text))
+            if (_signInJson.CheckAccount(UserList, SignInEmailTextbox.Text, SignInPasswordTextbox.Text))
             {
                 IndexUC uc = new IndexUC();
                 _mainForm.ChangeToIndex();
@@ -95,5 +95,7 @@ namespace EncounterMeWF.UserControls
             else
                 MessageBox.Show("The account email or password that you have entered is incorrect.", "Entry Error", MessageBoxButtons.OK);
         }
+
+
     }
 }

@@ -7,7 +7,7 @@ namespace EncounterMeWF
 {
     public partial class mainForm : Form
     {
-        private LoginJson _loginJson = new LoginJson();
+        private SignInJson _loginJson = new SignInJson();
         public mainForm()
         {
             InitializeComponent();
