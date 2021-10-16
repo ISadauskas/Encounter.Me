@@ -30,16 +30,18 @@ namespace EncounterMeWF
         private void InitializeComponent()
         {
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.SignupSigninButton = new System.Windows.Forms.Button();
             this.trailsButton = new System.Windows.Forms.Button();
             this.indexButton = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.SignupSigninButton = new System.Windows.Forms.Button();
+            this.SignOutButton = new System.Windows.Forms.Button();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.headerPanel.Controls.Add(this.SignOutButton);
             this.headerPanel.Controls.Add(this.SignupSigninButton);
             this.headerPanel.Controls.Add(this.trailsButton);
             this.headerPanel.Controls.Add(this.indexButton);
@@ -49,6 +51,27 @@ namespace EncounterMeWF
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(134, 497);
             this.headerPanel.TabIndex = 0;
+            // 
+            // SignupSigninButton
+            // 
+            this.SignupSigninButton.AutoSize = true;
+            this.SignupSigninButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SignupSigninButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignupSigninButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SignupSigninButton.FlatAppearance.BorderSize = 0;
+            this.SignupSigninButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignupSigninButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignupSigninButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignupSigninButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SignupSigninButton.ForeColor = System.Drawing.Color.Green;
+            this.SignupSigninButton.Location = new System.Drawing.Point(1, 111);
+            this.SignupSigninButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SignupSigninButton.Name = "SignupSigninButton";
+            this.SignupSigninButton.Size = new System.Drawing.Size(125, 30);
+            this.SignupSigninButton.TabIndex = 2;
+            this.SignupSigninButton.Text = "Sign up/Sign in";
+            this.SignupSigninButton.UseVisualStyleBackColor = false;
+            this.SignupSigninButton.Click += new System.EventHandler(this.SignupSigninButton_Click);
             // 
             // trailsButton
             // 
@@ -100,26 +123,26 @@ namespace EncounterMeWF
             this.panelContainer.Size = new System.Drawing.Size(667, 497);
             this.panelContainer.TabIndex = 1;
             // 
-            // SignupSigninButton
+            // SignOutButton
             // 
-            this.SignupSigninButton.AutoSize = true;
-            this.SignupSigninButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SignupSigninButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.SignupSigninButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SignupSigninButton.FlatAppearance.BorderSize = 0;
-            this.SignupSigninButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.SignupSigninButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.SignupSigninButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SignupSigninButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SignupSigninButton.ForeColor = System.Drawing.Color.Green;
-            this.SignupSigninButton.Location = new System.Drawing.Point(1, 111);
-            this.SignupSigninButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SignupSigninButton.Name = "SignupSigninButton";
-            this.SignupSigninButton.Size = new System.Drawing.Size(125, 30);
-            this.SignupSigninButton.TabIndex = 2;
-            this.SignupSigninButton.Text = "Sign up/Sign in";
-            this.SignupSigninButton.UseVisualStyleBackColor = false;
-            this.SignupSigninButton.Click += new System.EventHandler(this.SignupSigninButton_Click);
+            this.SignOutButton.AutoSize = true;
+            this.SignOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SignOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SignOutButton.FlatAppearance.BorderSize = 0;
+            this.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SignOutButton.ForeColor = System.Drawing.Color.Green;
+            this.SignOutButton.Location = new System.Drawing.Point(23, 152);
+            this.SignOutButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SignOutButton.Name = "SignOutButton";
+            this.SignOutButton.Size = new System.Drawing.Size(81, 30);
+            this.SignOutButton.TabIndex = 5;
+            this.SignOutButton.Text = "Sign Out";
+            this.SignOutButton.UseVisualStyleBackColor = false;
+            this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click_1);
             // 
             // mainForm
             // 
@@ -143,6 +166,7 @@ namespace EncounterMeWF
         private System.Windows.Forms.Button indexButton;
         private System.Windows.Forms.Button trailsButton;
         private System.Windows.Forms.Button SignupSigninButton;
+        private System.Windows.Forms.Button SignOutButton;
     }
 }
 
