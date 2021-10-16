@@ -46,6 +46,12 @@ namespace EncounterMeWF.UserControls
             this.ModifyEntryButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TrailSeasonCombobox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LengthFromTextBox = new System.Windows.Forms.TextBox();
+            this.LengthToTextBox = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,11 +220,79 @@ namespace EncounterMeWF.UserControls
             this.TrailSeasonCombobox.Size = new System.Drawing.Size(121, 23);
             this.TrailSeasonCombobox.TabIndex = 28;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(13, 287);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 15);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Trail length:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(14, 302);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "From:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(63, 302);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(22, 15);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "To:";
+            // 
+            // LengthFromTextBox
+            // 
+            this.LengthFromTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LengthFromTextBox.Location = new System.Drawing.Point(14, 318);
+            this.LengthFromTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.LengthFromTextBox.Name = "LengthFromTextBox";
+            this.LengthFromTextBox.Size = new System.Drawing.Size(37, 23);
+            this.LengthFromTextBox.TabIndex = 37;
+            // 
+            // LengthToTextBox
+            // 
+            this.LengthToTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LengthToTextBox.Location = new System.Drawing.Point(63, 318);
+            this.LengthToTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.LengthToTextBox.Name = "LengthToTextBox";
+            this.LengthToTextBox.Size = new System.Drawing.Size(37, 23);
+            this.LengthToTextBox.TabIndex = 38;
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SearchButton.ForeColor = System.Drawing.Color.Green;
+            this.SearchButton.Location = new System.Drawing.Point(17, 345);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(83, 23);
+            this.SearchButton.TabIndex = 41;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // TrailsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.LengthToTextBox);
+            this.Controls.Add(this.LengthFromTextBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.TrailSeasonCombobox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ModifyEntryButton);
@@ -257,5 +331,11 @@ namespace EncounterMeWF.UserControls
         private System.Windows.Forms.Button ModifyEntryButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox TrailSeasonCombobox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox LengthFromTextBox;
+        private System.Windows.Forms.TextBox LengthToTextBox;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
