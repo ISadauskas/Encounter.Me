@@ -58,7 +58,6 @@ namespace EncounterMeWF.UserControls
             }
             else
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
-
         }
 
         private void ModifyEntryButton_Click(object sender, EventArgs e)
