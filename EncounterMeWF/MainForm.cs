@@ -1,13 +1,13 @@
 ﻿using EncounterMeWF.UserControls;
 using System;
 using System.Windows.Forms;
-//using BusinessLogic;
+using BusinessLogic;
 
 namespace EncounterMeWF
 {
     public partial class mainForm : Form
     {
-        //private Json _math = new Json();
+        private SignInJson _loginJson = new SignInJson();
         public mainForm()
         {
             InitializeComponent();
@@ -38,6 +38,16 @@ namespace EncounterMeWF
         {
             SIgnUpSignInUC uc = new SIgnUpSignInUC();
             addUserControl(uc);
+        }
+        public void ChangeToIndex()
+        {
+            IndexUC uc = new IndexUC();
+            SignupSigninButton.Hide();
+            addUserControl(uc);
+        }
+        private void SignOutButton_Click_1(object sender, EventArgs e)
+        {
+            _loginJson.JsonDelete();
         }
     }
 }
