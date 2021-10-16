@@ -7,6 +7,15 @@ namespace EncounterMeWF
     [Serializable]
     public class Trail
     {
+        
+        public int[] IndexID = new int[1];
+        public int this[int index]
+        {
+            get => IndexID[index];
+            set => IndexID[index] = value;
+        }
+
+
         public int ID { get; set; }
         public string Name { get; set; }
         public double Length { get; set; }
@@ -42,9 +51,10 @@ namespace EncounterMeWF
                     break;
             }
 
+            IndexID[0] = int.Parse(Id);
             Trail TempTrail = new Trail
             {
-                ID = int.Parse(Id),
+                ID = IndexID[0],
                 Name = Name,
                 Length = double.Parse(Length),
                 Coordinates = new List<string> { },
