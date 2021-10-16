@@ -18,7 +18,23 @@ namespace EncounterMeWF
 
         public int ID { get; set; }
         public string Name { get; set; }
-        public double Length { get; set; }
+
+        private double length;
+        public double Length
+        {
+            get
+            {
+                return this.length;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    value = 0;
+                }
+                this.length = value;
+            }
+        }
         public List<string> Coordinates { get; set; }
         public string Season { get; set; }
 
