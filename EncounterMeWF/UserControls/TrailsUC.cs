@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -13,8 +14,11 @@ namespace EncounterMeWF.UserControls
         private TrailJson _trailJson = new TrailJson();
         private Trail _trail = new Trail();
         private SignInJson _signInJson = new SignInJson();
+        public Trail TempTrail = new Trail();
 
         BindingList<Trail> TrailList = new BindingList<Trail>();
+
+
 
         public TrailsUC()
         {
@@ -34,16 +38,21 @@ namespace EncounterMeWF.UserControls
             {
                 if (Check())
                 {
-                    Trail TempTrail = new Trail();
                     if (TrailNameTextbox.Text == "")
-                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
-                    else
                         TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
-                    TrailList.Add(TempTrail);
+                    else
+                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
 
-                    _trailJson.JsonWrite(TrailList);
-                    TrailGridView.DataSource = TrailList;
+                    if (_trail.CheckTrailID(TrailList, TempTrail))
+                        MessageBox.Show("This trail ID is already in use", "Entry Error", MessageBoxButtons.OK);
+                    else
+                    {
+                        TrailList.Add(TempTrail);
+                        _trailJson.JsonWrite(TrailList);
+                        TrailGridView.DataSource = TrailList;
+                    }
                 }
+
             }
             else
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);

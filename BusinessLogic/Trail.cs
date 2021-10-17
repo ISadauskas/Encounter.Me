@@ -1,11 +1,12 @@
 ﻿using BusinessLogic;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace EncounterMeWF
 {
     [Serializable]
-    public class Trail
+    public class Trail : IEquatable<Trail>
     {
         
         public int[] IndexID = new int[1];
@@ -15,14 +16,35 @@ namespace EncounterMeWF
             set => IndexID[index] = value;
         }
 
+        public bool Equals(Trail other)
+        {
+            if (other == null)
+                return false;
+
+            if (this.ID == other.ID)
+                return true;
+            else
+                return false;
+        }
+
+        public bool CheckTrailID(BindingList<Trail> TrailList, Trail tempTrail)
+        {
+            foreach (var item in TrailList)
+            {
+                if (tempTrail.Equals(item))
+                {    
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
         public int ID { get; set; }
         public string Name { get; set; }
         public double Length { get; set; }
         public List<string> Coordinates { get; set; }
         public string Season { get; set; }
-
-
 
         public Trail CreateTrail(string Id, string Length, int _Season, string Name = "Default Trail Name")
         {

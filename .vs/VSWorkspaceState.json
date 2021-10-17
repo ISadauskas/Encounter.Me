@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\BusinessLogic",
     "\\EncounterMeWF",
     "\\EncounterMeWF\\UserControls"
   ],
-  "SelectedNode": "\\EncounterMeWF\\UserControls\\TrailsUC.cs",
+  "SelectedNode": "\\BusinessLogic\\User.cs",
   "PreviewInSolutionExplorer": false
 }
