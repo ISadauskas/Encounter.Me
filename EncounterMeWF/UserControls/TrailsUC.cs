@@ -15,8 +15,12 @@ namespace EncounterMeWF.UserControls
         private Trail _trail = new Trail();
         private SignInJson _signInJson = new SignInJson();
         public Trail TempTrail = new Trail();
+        private Search _search = new Search();
+
 
         BindingList<Trail> TrailList = new BindingList<Trail>();
+        BindingList<Trail> SearchList = new BindingList<Trail>();
+
 
 
 
@@ -95,9 +99,9 @@ namespace EncounterMeWF.UserControls
 
         private bool Check()
         {
-            Regex IdRegex = new Regex("^[0-9]");
+            Regex IdRegex = new Regex("^[0-9]+$");
             bool IdRegexCheck = IdRegex.IsMatch(TrailIdTextbox.Text);
-            Regex LengthRegex = new Regex("^[0-9](.[0-9])?");
+            Regex LengthRegex = new Regex("^[0-9]+.?[0-9]*$");
             bool LengthRegexCheck = LengthRegex.IsMatch(TrailLengthTextbox.Text);
             if (TrailIdTextbox.Text == "")
             {
@@ -121,6 +125,46 @@ namespace EncounterMeWF.UserControls
             }
             else
                 return true;
+        }
+        public bool SearchCheck(string from, string to)
+        {
+            Regex SearchRegex = new Regex("^[0-9]+$");
+            bool fromCheck = SearchRegex.IsMatch(LengthFromTextBox.Text);
+            bool toCheck = SearchRegex.IsMatch(LengthToTextBox.Text);
+
+            if (LengthFromTextBox.Text == "" || LengthToTextBox.Text == "")
+            {
+                MessageBox.Show("Please enter trail search data", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (!fromCheck || !toCheck)
+            {
+                MessageBox.Show("Search can only consist of whole numbers", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            if (int.Parse(from) > int.Parse(to))
+            {
+                MessageBox.Show("The from number cannot be bigger than to", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
+            else
+                return true;
+        }
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            if (SearchCheck(from: LengthFromTextBox.Text, to: LengthToTextBox.Text))
+            {
+                Search TempLength = new Search();
+                TempLength = _search.SearchLength(LengthFromTextBox.Text, LengthToTextBox.Text);
+                SearchList.Clear();
+                foreach (var TempTrail in TrailList)
+                {
+                    if ((int)Math.Round(TempTrail.Length) >= TempLength.LenghtFrom &&
+                        (int)Math.Round(TempTrail.Length) <= TempLength.LenghtTo)
+                        SearchList.Add(TempTrail);
+                }
+                TrailGridView.DataSource = SearchList;
+            }
         }
 
         private void TrailGridView_MouseClick(object sender, MouseEventArgs e)
