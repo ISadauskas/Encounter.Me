@@ -1,6 +1,5 @@
 ﻿using BusinessLogic;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -43,9 +42,9 @@ namespace EncounterMeWF.UserControls
                 if (Check())
                 {
                     if (TrailNameTextbox.Text == "")
-                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
-                    else
                         TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
+                    else
+                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
 
                     if (_trail.CheckTrailID(TrailList, TempTrail))
                         MessageBox.Show("This trail ID is already in use", "Entry Error", MessageBoxButtons.OK);
@@ -84,7 +83,6 @@ namespace EncounterMeWF.UserControls
                         ID = int.Parse(TrailIdTextbox.Text),
                         Name = TrailNameTextbox.Text,
                         Length = double.Parse(TrailLengthTextbox.Text),
-                        Coordinates = new List<string> { },
                         Season = TrailSeasonCombobox.Text
                     };
                     int n = TrailGridView.SelectedRows[0].Index;

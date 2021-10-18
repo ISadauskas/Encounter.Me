@@ -29,15 +29,13 @@ namespace EncounterMeWF.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TrailGridView = new System.Windows.Forms.DataGridView();
             this.CreateEntryButton = new System.Windows.Forms.Button();
             this.TrailLengthTextbox = new System.Windows.Forms.TextBox();
-            this.TrailCoordinatesTextbox = new System.Windows.Forms.TextBox();
             this.TrailNameTextbox = new System.Windows.Forms.TextBox();
             this.TrailIdTextbox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,23 +59,23 @@ namespace EncounterMeWF.UserControls
             this.TrailGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TrailGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.TrailGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.TrailGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.TrailGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TrailGridView.Location = new System.Drawing.Point(149, 24);
             this.TrailGridView.Name = "TrailGridView";
@@ -92,7 +90,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.CreateEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.CreateEntryButton.ForeColor = System.Drawing.Color.Green;
-            this.CreateEntryButton.Location = new System.Drawing.Point(27, 236);
+            this.CreateEntryButton.Location = new System.Drawing.Point(27, 198);
             this.CreateEntryButton.Name = "CreateEntryButton";
             this.CreateEntryButton.Size = new System.Drawing.Size(83, 23);
             this.CreateEntryButton.TabIndex = 23;
@@ -107,14 +105,6 @@ namespace EncounterMeWF.UserControls
             this.TrailLengthTextbox.Name = "TrailLengthTextbox";
             this.TrailLengthTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailLengthTextbox.TabIndex = 22;
-            // 
-            // TrailCoordinatesTextbox
-            // 
-            this.TrailCoordinatesTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TrailCoordinatesTextbox.Location = new System.Drawing.Point(14, 164);
-            this.TrailCoordinatesTextbox.Name = "TrailCoordinatesTextbox";
-            this.TrailCoordinatesTextbox.Size = new System.Drawing.Size(120, 23);
-            this.TrailCoordinatesTextbox.TabIndex = 21;
             // 
             // TrailNameTextbox
             // 
@@ -131,16 +121,6 @@ namespace EncounterMeWF.UserControls
             this.TrailIdTextbox.Name = "TrailIdTextbox";
             this.TrailIdTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailIdTextbox.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(14, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Trail coordinates:";
             // 
             // label6
             // 
@@ -200,7 +180,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(14, 189);
+            this.label2.Location = new System.Drawing.Point(15, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 27;
@@ -215,7 +195,7 @@ namespace EncounterMeWF.UserControls
             "Autumn",
             "Winter ",
             "Spring"});
-            this.TrailSeasonCombobox.Location = new System.Drawing.Point(13, 207);
+            this.TrailSeasonCombobox.Location = new System.Drawing.Point(13, 169);
             this.TrailSeasonCombobox.Name = "TrailSeasonCombobox";
             this.TrailSeasonCombobox.Size = new System.Drawing.Size(121, 23);
             this.TrailSeasonCombobox.TabIndex = 28;
@@ -224,7 +204,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(13, 282);
+            this.label5.Location = new System.Drawing.Point(13, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 15);
             this.label5.TabIndex = 35;
@@ -234,7 +214,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(14, 297);
+            this.label3.Location = new System.Drawing.Point(13, 260);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 15);
@@ -245,7 +225,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(63, 297);
+            this.label4.Location = new System.Drawing.Point(64, 260);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(22, 15);
@@ -255,7 +235,7 @@ namespace EncounterMeWF.UserControls
             // LengthFromTextBox
             // 
             this.LengthFromTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LengthFromTextBox.Location = new System.Drawing.Point(15, 313);
+            this.LengthFromTextBox.Location = new System.Drawing.Point(15, 276);
             this.LengthFromTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.LengthFromTextBox.Name = "LengthFromTextBox";
             this.LengthFromTextBox.Size = new System.Drawing.Size(37, 23);
@@ -264,7 +244,7 @@ namespace EncounterMeWF.UserControls
             // LengthToTextBox
             // 
             this.LengthToTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LengthToTextBox.Location = new System.Drawing.Point(63, 313);
+            this.LengthToTextBox.Location = new System.Drawing.Point(64, 276);
             this.LengthToTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.LengthToTextBox.Name = "LengthToTextBox";
             this.LengthToTextBox.Size = new System.Drawing.Size(37, 23);
@@ -274,9 +254,9 @@ namespace EncounterMeWF.UserControls
             // 
             this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.SearchButton.ForeColor = System.Drawing.Color.Green;
-            this.SearchButton.Location = new System.Drawing.Point(14, 340);
+            this.SearchButton.Location = new System.Drawing.Point(14, 303);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(83, 23);
+            this.SearchButton.Size = new System.Drawing.Size(87, 23);
             this.SearchButton.TabIndex = 40;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = false;
@@ -298,9 +278,7 @@ namespace EncounterMeWF.UserControls
             this.Controls.Add(this.ModifyEntryButton);
             this.Controls.Add(this.DeleteEntryButton);
             this.Controls.Add(this.CreateEntryButton);
-            this.Controls.Add(this.TrailCoordinatesTextbox);
             this.Controls.Add(this.TrailLengthTextbox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.TrailGridView);
             this.Controls.Add(this.TrailNameTextbox);
             this.Controls.Add(this.label6);
@@ -319,10 +297,8 @@ namespace EncounterMeWF.UserControls
         private System.Windows.Forms.DataGridView TrailGridView;
         private System.Windows.Forms.Button CreateEntryButton;
         private System.Windows.Forms.TextBox TrailLengthTextbox;
-        private System.Windows.Forms.TextBox TrailCoordinatesTextbox;
         private System.Windows.Forms.TextBox TrailNameTextbox;
         private System.Windows.Forms.TextBox TrailIdTextbox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

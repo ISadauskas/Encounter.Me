@@ -1,7 +1,7 @@
-﻿using EncounterMeWF.UserControls;
+﻿using BusinessLogic;
+using EncounterMeWF.UserControls;
 using System;
 using System.Windows.Forms;
-using BusinessLogic;
 
 namespace EncounterMeWF
 {

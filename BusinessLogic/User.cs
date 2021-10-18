@@ -34,7 +34,7 @@ namespace BusinessLogic
         {
             foreach (var item in UserList)
             {
-                if(Email.ToLower() == item.Email)
+                if (Email.ToLower() == item.Email)
                     return true;
             }
             return false;
