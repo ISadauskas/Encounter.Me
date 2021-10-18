@@ -28,7 +28,7 @@ namespace EncounterMeWF.UserControls
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             if (Check())
-            { 
+            {
                 User TempUser = _user.CreateUser(Username: SignUpUsernameTextbox.Text, Email: SignUpEmailTextbox.Text, Password: SignUpPasswordTextbox.Text);
                 UserList.Add(TempUser);
 

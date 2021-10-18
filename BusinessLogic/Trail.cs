@@ -43,7 +43,6 @@ namespace EncounterMeWF
         public int ID { get; set; }
         public string Name { get; set; }
         public double Length { get; set; }
-        public List<string> Coordinates { get; set; }
         public string Season { get; set; }
 
         public Trail CreateTrail(string Id, string Length, int _Season, string Name = "Default Trail Name")
@@ -79,7 +78,6 @@ namespace EncounterMeWF
                 ID = IndexID[0],
                 Name = Name,
                 Length = double.Parse(Length),
-                Coordinates = new List<string> { },
                 Season = temp.ToString(),
             };
             return TempTrail;
