@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using EncounterMeWF.UserControls;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace EncounterMeWF
@@ -13,6 +14,10 @@ namespace EncounterMeWF
             InitializeComponent();
             IndexUC uc = new IndexUC();
             addUserControl(uc);
+            if (File.Exists("SignIn.json"))
+                PersonalRunButton.Visible = true;
+            else
+                PersonalRunButton.Visible = false;
         }
 
         public void addUserControl(UserControl userControl)
@@ -21,6 +26,10 @@ namespace EncounterMeWF
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
+            if (File.Exists("SignIn.json"))
+                PersonalRunButton.Visible = true;
+            else
+                PersonalRunButton.Visible = false;
         }
         private void indexButton_Click(object sender, EventArgs e)
         {
@@ -45,14 +54,29 @@ namespace EncounterMeWF
             SignupSigninButton.Hide();
             addUserControl(uc);
         }
-        private void SignOutButton_Click_1(object sender, EventArgs e)
+        private void SignOutButton_Click(object sender, EventArgs e)
         {
             _loginJson.JsonDelete();
+            if (File.Exists("SignIn.json"))
+                PersonalRunButton.Visible = true;
+            else
+                PersonalRunButton.Visible = false;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CalorieCalculatorUC uc = new CalorieCalculatorUC();
+            addUserControl(uc);
         }
 
         private void CalorieCalculatorButton_Click(object sender, EventArgs e)
         {
             CalorieCalculatorUC uc = new CalorieCalculatorUC();
+            addUserControl(uc);
+        }
+
+        private void PersonalRunButton_Click(object sender, EventArgs e)
+        {
+            PersonalRecordsUC uc = new PersonalRecordsUC();
             addUserControl(uc);
         }
     }
