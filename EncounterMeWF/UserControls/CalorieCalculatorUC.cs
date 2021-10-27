@@ -20,19 +20,16 @@ namespace EncounterMeWF.UserControls
         public CalorieCalculatorUC()
         {
             InitializeComponent();
-            /*
             if (File.Exists("SignIn.json"))
             {
                 CurrentUser = _signInJson.JsonRead();
                 WeightTextBox.Text = CurrentUser.Weight.ToString();
             }
-            */
         }
         private void CalculationButton_Click(object sender, EventArgs e)
         {
             if (Check())
             {
-                /*
                 if (File.Exists("SignIn.json"))
                 {
                     UserList = _userJson.JsonRead();
@@ -55,7 +52,6 @@ namespace EncounterMeWF.UserControls
                         AddToRecordButton.Visible = true;
                     }
                 }
-                */
                 if (RunWalkCombobox.Text == "Run")
                 {
                     double Weight = double.Parse(WeightTextBox.Text);
@@ -107,7 +103,6 @@ namespace EncounterMeWF.UserControls
             else
                 return true;
         }
-        /*
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
             Runs tempRun = new Runs
@@ -130,6 +125,5 @@ namespace EncounterMeWF.UserControls
             _userJson.JsonWrite(UserList);
             _signInJson.JsonWrite(TempUser);
         }
-        */
     }
 }
