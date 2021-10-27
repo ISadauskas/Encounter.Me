@@ -6,11 +6,19 @@ namespace BusinessLogic
 {
     public class SignInJson
     {
+        private UserJson _userJson = new UserJson();
         public void JsonWrite(User LoginAccount)
         {
             string LoginAccountJson = JsonConvert.SerializeObject(LoginAccount);
             File.WriteAllText(@"SignIn.json", LoginAccountJson);
         }
+        public User JsonRead()
+        {
+            string SignInJson = File.ReadAllText(@"SignIn.json");
+            User SignIn = JsonConvert.DeserializeObject<User>(SignInJson);
+            return SignIn;
+        }
+
         public bool CheckAccount(BindingList<User> UserList, string EmailOrUsername, string Password)
         {
             foreach (var item in UserList)
@@ -35,6 +43,18 @@ namespace BusinessLogic
                 return true;
             else
                 return false;
+        }
+
+        public int GetUserListIndex(BindingList<User> UserList, User User)
+        {
+            int i = 0;
+            foreach (var item in UserList)
+            {
+                if (item.Email == User.Email)
+                    return i;
+                i++;
+            }
+            return -1;
         }
     }
 }

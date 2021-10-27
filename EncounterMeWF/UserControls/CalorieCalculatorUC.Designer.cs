@@ -143,6 +143,7 @@
             this.AddToRecordButton.Text = "Add to your record";
             this.AddToRecordButton.UseVisualStyleBackColor = false;
             this.AddToRecordButton.Visible = false;
+            this.AddToRecordButton.Click += new System.EventHandler(this.AddToRecordButton_Click);
             // 
             // CalorieCalculatorUC
             // 

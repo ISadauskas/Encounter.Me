@@ -25,79 +25,78 @@ namespace EncounterMeWF.UserControls
         public PersonalRecordsUC()
         {
             InitializeComponent();
-            /* if (File.Exists("SignIn.json"))
-                 CurrentUser = _signInJson.JsonRead();
-             TrailGridView.DataSource = CurrentUser.RunRecord;
-             if (File.Exists("Users.json"))
-                 UserList = _userJson.JsonRead();
+            if (File.Exists("SignIn.json"))
+                CurrentUser = _signInJson.JsonRead();
+            TrailGridView.DataSource = CurrentUser.RunRecord;
+            if (File.Exists("Users.json"))
+                UserList = _userJson.JsonRead();
 
-             MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-             AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-             LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
-             LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
-         }
-         public int FindMostBurnedCalories(BindingList<Runs> UserRuns)
-         {
-             int Max = 0;
-             foreach (var item in UserRuns)
-             {
-                 if (item.CalloriesLost > Max)
-                     Max = item.CalloriesLost;
-             }
-             return Max;
-         }
-         public int FindAllBurnedCalories(BindingList<Runs> UserRuns)
-         {
-             int Sum = 0;
-             foreach (var item in UserRuns)
-             {
-                 Sum += item.CalloriesLost;
-             }
-             return Sum;
-         }*/
-            /* public double FindLongestDistanceRun(BindingList<Runs> UserRuns)
-             {
-                 double Max = 0;
-                 foreach (var item in UserRuns)
-                 {
-                     if (item.Distance > Max && item.RunOrWalk == "Run")
-                         Max = item.Distance;
-                 }
-                 return Max;
-             }*/
-            /* public double FindLongestDistanceWalk(BindingList<Runs> UserRuns)
-             {
-                 double Max = 0;
-                 foreach (var item in UserRuns)
-                 {
-                     if (item.Distance > Max && item.RunOrWalk == "Walk")
-                         Max = item.Distance;
-                 }
-                 return Max;
-             }*/
+            MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
+            AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
+            LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
+            LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
+        }
+        public int FindMostBurnedCalories(BindingList<Runs> UserRuns)
+        {
+            int Max = 0;
+            foreach (var item in UserRuns)
+            {
+                if (item.CalloriesLost > Max)
+                    Max = item.CalloriesLost;
+            }
+            return Max;
+        }
+        public int FindAllBurnedCalories(BindingList<Runs> UserRuns)
+        {
+            int Sum = 0;
+            foreach (var item in UserRuns)
+            {
+                Sum += item.CalloriesLost;
+            }
+            return Sum;
+        }
+        public double FindLongestDistanceRun(BindingList<Runs> UserRuns)
+        {
+            double Max = 0;
+            foreach (var item in UserRuns)
+            {
+                if (item.Distance > Max && item.RunOrWalk == "Run")
+                    Max = item.Distance;
+            }
+            return Max;
+        }
+        public double FindLongestDistanceWalk(BindingList<Runs> UserRuns)
+        {
+            double Max = 0;
+            foreach (var item in UserRuns)
+            {
+                if (item.Distance > Max && item.RunOrWalk == "Walk")
+                    Max = item.Distance;
+            }
+            return Max;
+        }
 
-            /* private void DeleteEntryButton_Click(object sender, EventArgs e)
-             {
-                 int n = TrailGridView.SelectedRows[0].Index;
-                 Index = _signInJson.GetUserListIndex(UserList, CurrentUser);
-                 TrailGridView.Rows.RemoveAt(n);
-                 User TempUser = new User
-                 {
-                     Username = CurrentUser.Username,
-                     Email = CurrentUser.Email.ToLower(),
-                     Password = CurrentUser.Password,
-                     Weight = CurrentUser.Weight,
-                     RunRecord = CurrentUser.RunRecord
-                 };
-                 UserList.RemoveAt(Index);
-                 UserList.Insert(Index, TempUser);
-                 _userJson.JsonWrite(UserList);
-                 _signInJson.JsonWrite(TempUser);
-                 MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-                 AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-                 LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
-                 LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
-             }*/
+        private void DeleteEntryButton_Click(object sender, EventArgs e)
+        {
+            int n = TrailGridView.SelectedRows[0].Index;
+            Index = _signInJson.GetUserListIndex(UserList, CurrentUser);
+            TrailGridView.Rows.RemoveAt(n);
+            User TempUser = new User
+            {
+                Username = CurrentUser.Username,
+                Email = CurrentUser.Email.ToLower(),
+                Password = CurrentUser.Password,
+                Weight = CurrentUser.Weight,
+                RunRecord = CurrentUser.RunRecord
+            };
+            UserList.RemoveAt(Index);
+            UserList.Insert(Index, TempUser);
+            _userJson.JsonWrite(UserList);
+            _signInJson.JsonWrite(TempUser);
+            MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
+            AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
+            LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
+            LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
         }
     }
 }

@@ -7,6 +7,9 @@ namespace BusinessLogic
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public double Weight { get; set; }
+        public BindingList<Runs> RunRecord { get; set; }
+
 
 
         public User CreateUser(string Username, string Email, string Password)
@@ -15,7 +18,9 @@ namespace BusinessLogic
             {
                 Username = Username,
                 Email = Email.ToLower(),
-                Password = Password
+                Password = Password,
+                Weight = 0,
+                RunRecord = new BindingList<Runs>()
             };
             return TempUser;
         }
