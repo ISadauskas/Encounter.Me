@@ -30,17 +30,19 @@ namespace EncounterMeWF
         private void InitializeComponent()
         {
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.SignOutButton = new System.Windows.Forms.Button();
             this.SignupSigninButton = new System.Windows.Forms.Button();
             this.trailsButton = new System.Windows.Forms.Button();
             this.indexButton = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.SignOutButton = new System.Windows.Forms.Button();
+            this.CalorieCalculatorButton = new System.Windows.Forms.Button();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.headerPanel.Controls.Add(this.CalorieCalculatorButton);
             this.headerPanel.Controls.Add(this.SignOutButton);
             this.headerPanel.Controls.Add(this.SignupSigninButton);
             this.headerPanel.Controls.Add(this.trailsButton);
@@ -49,8 +51,29 @@ namespace EncounterMeWF
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Margin = new System.Windows.Forms.Padding(0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(134, 497);
+            this.headerPanel.Size = new System.Drawing.Size(134, 460);
             this.headerPanel.TabIndex = 0;
+            // 
+            // SignOutButton
+            // 
+            this.SignOutButton.AutoSize = true;
+            this.SignOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SignOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SignOutButton.FlatAppearance.BorderSize = 0;
+            this.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SignOutButton.ForeColor = System.Drawing.Color.Green;
+            this.SignOutButton.Location = new System.Drawing.Point(23, 152);
+            this.SignOutButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SignOutButton.Name = "SignOutButton";
+            this.SignOutButton.Size = new System.Drawing.Size(81, 30);
+            this.SignOutButton.TabIndex = 5;
+            this.SignOutButton.Text = "Sign Out";
+            this.SignOutButton.UseVisualStyleBackColor = false;
+            this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click_1);
             // 
             // SignupSigninButton
             // 
@@ -120,35 +143,34 @@ namespace EncounterMeWF
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(134, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(667, 497);
+            this.panelContainer.Size = new System.Drawing.Size(801, 460);
             this.panelContainer.TabIndex = 1;
             // 
-            // SignOutButton
+            // CalorieCalculatorButton
             // 
-            this.SignOutButton.AutoSize = true;
-            this.SignOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SignOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SignOutButton.FlatAppearance.BorderSize = 0;
-            this.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.SignOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SignOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SignOutButton.ForeColor = System.Drawing.Color.Green;
-            this.SignOutButton.Location = new System.Drawing.Point(23, 152);
-            this.SignOutButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SignOutButton.Name = "SignOutButton";
-            this.SignOutButton.Size = new System.Drawing.Size(81, 30);
-            this.SignOutButton.TabIndex = 5;
-            this.SignOutButton.Text = "Sign Out";
-            this.SignOutButton.UseVisualStyleBackColor = false;
-            this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click_1);
+            this.CalorieCalculatorButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CalorieCalculatorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CalorieCalculatorButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.CalorieCalculatorButton.FlatAppearance.BorderSize = 0;
+            this.CalorieCalculatorButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CalorieCalculatorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CalorieCalculatorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CalorieCalculatorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CalorieCalculatorButton.ForeColor = System.Drawing.Color.Green;
+            this.CalorieCalculatorButton.Location = new System.Drawing.Point(2, 195);
+            this.CalorieCalculatorButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CalorieCalculatorButton.Name = "CalorieCalculatorButton";
+            this.CalorieCalculatorButton.Size = new System.Drawing.Size(132, 56);
+            this.CalorieCalculatorButton.TabIndex = 7;
+            this.CalorieCalculatorButton.Text = "Calorie calculator";
+            this.CalorieCalculatorButton.UseVisualStyleBackColor = false;
+            this.CalorieCalculatorButton.Click += new System.EventHandler(this.CalorieCalculatorButton_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 497);
+            this.ClientSize = new System.Drawing.Size(935, 460);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.headerPanel);
             this.Name = "mainForm";
@@ -167,6 +189,7 @@ namespace EncounterMeWF
         private System.Windows.Forms.Button trailsButton;
         private System.Windows.Forms.Button SignupSigninButton;
         private System.Windows.Forms.Button SignOutButton;
+        private System.Windows.Forms.Button CalorieCalculatorButton;
     }
 }
 

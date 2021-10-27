@@ -49,5 +49,11 @@ namespace EncounterMeWF
         {
             _loginJson.JsonDelete();
         }
+
+        private void CalorieCalculatorButton_Click(object sender, EventArgs e)
+        {
+            CalorieCalculatorUC uc = new CalorieCalculatorUC();
+            addUserControl(uc);
+        }
     }
 }
