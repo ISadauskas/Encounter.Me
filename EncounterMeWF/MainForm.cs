@@ -8,7 +8,14 @@ namespace EncounterMeWF
 {
     public partial class mainForm : Form
     {
-        private SignInJson _loginJson = new SignInJson();
+        private Lazy<SignInJson> _loginJson = new Lazy<SignInJson>
+            (() => new SignInJson(), true);
+        public SignInJson LoginJson
+        {
+            get { return _loginJson.Value; }
+        }
+
+
         public mainForm()
         {
             InitializeComponent();
@@ -56,7 +63,7 @@ namespace EncounterMeWF
         }
         private void SignOutButton_Click(object sender, EventArgs e)
         {
-            _loginJson.JsonDelete();
+            LoginJson.JsonDelete();
             if (File.Exists("SignIn.json"))
                 PersonalRunButton.Visible = true;
             else

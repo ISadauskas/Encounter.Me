@@ -95,3 +95,5 @@ C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.SIgnUpSignInUC.resources
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.SIgnUpSignInUC.resources
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CopyComplete
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.CalorieCalculatorUC.resources
+C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.PersonalRecordsUC.resources
