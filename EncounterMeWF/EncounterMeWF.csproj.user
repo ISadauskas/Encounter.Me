@@ -4,7 +4,13 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UserControls\CalorieCalculatorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\IndexUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\PersonalRecordsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\SIgnUpSignInUC.cs">

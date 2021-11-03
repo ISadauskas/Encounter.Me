@@ -21,8 +21,6 @@ namespace EncounterMeWF.UserControls
         BindingList<Trail> SearchList = new BindingList<Trail>();
 
 
-
-
         public TrailsUC()
         {
             InitializeComponent();
