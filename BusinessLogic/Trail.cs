@@ -44,24 +44,7 @@ namespace EncounterMeWF
         public string Name { get; set; }
         public double Length { get; set; }
         public string Season { get; set; }
-        /*{ 
-            get => this.Season; 
-            set
-            {
-                /*string SeasonName=value;
-                this.OnSeasonChanged?.Invoke(SeasonName);*/
-        /*this.Season = value;
-    }
-}
 
-public delegate TResult SeasonChangeDelegate<T, TResult>(T t);
-public event SeasonChangeDelegate<string, bool> OnSeasonChanged;
-
-public bool RaiseMyEvent()
-{
-    OnSeasonChanged?.Invoke(Season);
-    return true;
-}*/
         public Trail CreateTrail(string Id, string Length, int _Season, string Name = "Default Trail Name")
         {
             SeasonEnum temp = SeasonEnum.Summer;

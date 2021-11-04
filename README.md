@@ -13,8 +13,8 @@ To use this project firstly you need to register and then you can start creating
 
 +  Lazy initialization.
 +-  Generics (in delegates(PersonalRecords 24), events and methods(UserJson 12))
-+ Delegates(MainForm, PersonalRecords).
--  Events and their usage: standard and custom.
++  Delegates(MainForm, PersonalRecordsUC).
++  Events and their usage: standard and custom.
 -  Exceptions and dealing with them in a meaningfull way.
 -  Anonymous methods.
 -  Lambda expressions.

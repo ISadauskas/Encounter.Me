@@ -33,19 +33,13 @@ namespace EncounterMeWF.UserControls
 
             TrailGridView.DataSource = TrailList;
         }
-        /*public bool OnMyEventRaised(string t)
-        {
-            return true;
-        }*/
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
         {
             if (_signInJson.CheckIfSignedIn())
             {
                 if (Check())
-                {
-                    //Trail TTrail = new Trail();
-                    //TTrail.OnSeasonChanged += OnMyEventRaised(TrailIdTextbox.Text);
+                {   
                     if (TrailNameTextbox.Text == "")
                         TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
                     else
