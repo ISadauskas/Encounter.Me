@@ -96,10 +96,14 @@ namespace EncounterMeWF.UserControls
             UserList.Insert(Index, TempUser);
             _userJson.JsonWrite(UserList);
             _signInJson.JsonWrite(TempUser);
-            MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-            AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-            LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
-            LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
+            CalculateInt = FindMostBurnedCalories;
+            MostBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
+            CalculateInt = FindAllBurnedCalories;
+            AllBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
+            CalculateDouble = FindLongestDistanceRun;
+            LongestRunDistanceAnswer.Text = CalculateDouble(CurrentUser.RunRecord).ToString() + " km";
+            CalculateDouble = FindLongestDistanceWalk;
+            LongestWalkDistanceAnswer.Text = CalculateDouble(CurrentUser.RunRecord).ToString() + " km";
         }
     }
 }
