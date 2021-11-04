@@ -17,6 +17,7 @@ namespace EncounterMeWF.UserControls
         private Search _search = new Search();
 
 
+
         BindingList<Trail> TrailList = new BindingList<Trail>();
         BindingList<Trail> SearchList = new BindingList<Trail>();
 
@@ -32,6 +33,10 @@ namespace EncounterMeWF.UserControls
 
             TrailGridView.DataSource = TrailList;
         }
+        /*public bool OnMyEventRaised(string t)
+        {
+            return true;
+        }*/
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
         {
@@ -39,6 +44,8 @@ namespace EncounterMeWF.UserControls
             {
                 if (Check())
                 {
+                    //Trail TTrail = new Trail();
+                    //TTrail.OnSeasonChanged += OnMyEventRaised(TrailIdTextbox.Text);
                     if (TrailNameTextbox.Text == "")
                         TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
                     else

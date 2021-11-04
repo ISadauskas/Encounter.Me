@@ -16,15 +16,17 @@ namespace EncounterMeWF
         }
 
 
+        public delegate void HideDelegate();
+        private HideDelegate HideDelegateFunction;
+
+        //public event EventHandler OnButtonClick;
         public mainForm()
         {
             InitializeComponent();
             IndexUC uc = new IndexUC();
             addUserControl(uc);
-            if (File.Exists("SignIn.json"))
-                PersonalRunButton.Visible = true;
-            else
-                PersonalRunButton.Visible = false;
+            HideDelegateFunction = HideButtons;
+            HideDelegateFunction();
         }
 
         public void addUserControl(UserControl userControl)
@@ -33,10 +35,8 @@ namespace EncounterMeWF
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
-            if (File.Exists("SignIn.json"))
-                PersonalRunButton.Visible = true;
-            else
-                PersonalRunButton.Visible = false;
+            HideDelegateFunction = HideButtons;
+            HideDelegateFunction();
         }
         private void indexButton_Click(object sender, EventArgs e)
         {
@@ -85,6 +85,21 @@ namespace EncounterMeWF
         {
             PersonalRecordsUC uc = new PersonalRecordsUC();
             addUserControl(uc);
+        }
+        private void HideButtons()
+        {
+            if (File.Exists("SignIn.json"))
+            {
+                PersonalRunButton.Visible = true;
+                SignupSigninButton.Visible = false;
+                SignOutButton.Visible = true;
+            }
+            else
+            {
+                PersonalRunButton.Visible = false;
+                SignupSigninButton.Visible = true;
+                SignOutButton.Visible = false;
+            }
         }
     }
 }

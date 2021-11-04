@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.ComponentModel;
 using System.IO;
 
@@ -7,8 +6,6 @@ namespace BusinessLogic
 {
     public class SignInJson
     {
-        private UserJson _userJson = new UserJson();
-
         public void JsonWrite(User LoginAccount)
         {
             string LoginAccountJson = JsonConvert.SerializeObject(LoginAccount);
