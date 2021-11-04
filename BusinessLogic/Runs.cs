@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class Runs
+    public class Runs<TRunOrWalk, TDistance, TCalloriesLost>
     {
-        public string RunOrWalk { get; set; }
-        public double Distance { get; set; }
-        public int CalloriesLost { get; set; }
+        public TRunOrWalk RunOrWalk { get; set; }
+        public TDistance Distance { get; set; }
+        public TCalloriesLost CalloriesLost { get; set; }
     }
 }

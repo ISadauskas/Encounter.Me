@@ -8,7 +8,7 @@ namespace BusinessLogic
         public string Email { get; set; }
         public string Password { get; set; }
         public double Weight { get; set; }
-        public BindingList<Runs> RunRecord { get; set; }
+        public BindingList<Runs<string, double, int>> RunRecord { get; set; }
 
 
 
@@ -20,7 +20,7 @@ namespace BusinessLogic
                 Email = Email.ToLower(),
                 Password = Password,
                 Weight = 0,
-                RunRecord = new BindingList<Runs>()
+                RunRecord = new BindingList<Runs<string, double, int>>()
             };
             return TempUser;
         }

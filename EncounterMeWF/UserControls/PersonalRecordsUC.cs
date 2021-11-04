@@ -36,7 +36,7 @@ namespace EncounterMeWF.UserControls
             LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
             LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
         }
-        public int FindMostBurnedCalories(BindingList<Runs> UserRuns)
+        public int FindMostBurnedCalories(BindingList<Runs<string, double, int>> UserRuns)
         {
             int Max = 0;
             foreach (var item in UserRuns)
@@ -46,7 +46,7 @@ namespace EncounterMeWF.UserControls
             }
             return Max;
         }
-        public int FindAllBurnedCalories(BindingList<Runs> UserRuns)
+        public int FindAllBurnedCalories(BindingList<Runs<string, double, int>> UserRuns)
         {
             int Sum = 0;
             foreach (var item in UserRuns)
@@ -55,7 +55,7 @@ namespace EncounterMeWF.UserControls
             }
             return Sum;
         }
-        public double FindLongestDistanceRun(BindingList<Runs> UserRuns)
+        public double FindLongestDistanceRun(BindingList<Runs<string, double, int>> UserRuns)
         {
             double Max = 0;
             foreach (var item in UserRuns)
@@ -65,7 +65,7 @@ namespace EncounterMeWF.UserControls
             }
             return Max;
         }
-        public double FindLongestDistanceWalk(BindingList<Runs> UserRuns)
+        public double FindLongestDistanceWalk(BindingList<Runs<string, double, int>> UserRuns)
         {
             double Max = 0;
             foreach (var item in UserRuns)

@@ -105,7 +105,7 @@ namespace EncounterMeWF.UserControls
         }
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
-            Runs tempRun = new Runs
+            Runs<string, double, int> tempRun = new Runs<string, double, int>
             {
                 RunOrWalk = RunWalkCombobox.Text,
                 Distance = double.Parse(DistanceTextBox.Text),
