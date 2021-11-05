@@ -9,8 +9,9 @@ namespace EncounterMeWF.UserControls
 {
     public partial class CalorieCalculatorUC : UserControl
     {
-        private UserJson _userJson = new UserJson();
         private SignInJson _signInJson = new SignInJson();
+        private Calculations _calculations = new Calculations();
+        private Runs _runs = new Runs();
 
 
         public BindingList<User> UserList = new BindingList<User>();
@@ -30,42 +31,18 @@ namespace EncounterMeWF.UserControls
         {
             if (Check())
             {
+                double Weight = double.Parse(WeightTextBox.Text);
+                double Distance = double.Parse(DistanceTextBox.Text);
+
                 if (File.Exists("SignIn.json"))
-                {
-                    UserList = _userJson.JsonRead();
-                    CurrentUser = _signInJson.JsonRead();
-                    Index = _signInJson.GetUserListIndex(UserList, CurrentUser);
-                    if (Index != -1)
-                    {
-                        User TempUser = new User
-                        {
-                            Username = CurrentUser.Username,
-                            Email = CurrentUser.Email.ToLower(),
-                            Password = CurrentUser.Password,
-                            Weight = double.Parse(WeightTextBox.Text),
-                            RunRecord = CurrentUser.RunRecord
-                        };
-                        UserList.RemoveAt(Index);
-                        UserList.Insert(Index, TempUser);
-                        _userJson.JsonWrite(UserList);
-                        _signInJson.JsonWrite(TempUser);
-                        AddToRecordButton.Visible = true;
-                    }
-                }
+                    AddToRecordButton.Visible = _calculations.EditUser(WeightTextBox.Text);
+
                 if (RunWalkCombobox.Text == "Run")
-                {
-                    double Weight = double.Parse(WeightTextBox.Text);
-                    double Distance = double.Parse(DistanceTextBox.Text);
                     CaloriesBurned = (int)Math.Round(Weight * Distance * 1.9);
-                    CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
-                }
                 else
-                {
-                    double Weight = double.Parse(WeightTextBox.Text);
-                    double Distance = double.Parse(DistanceTextBox.Text);
                     CaloriesBurned = (int)Math.Round(Weight * Distance * 1.137);
-                    CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
-                }
+
+                CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
             }
         }
 
@@ -81,7 +58,7 @@ namespace EncounterMeWF.UserControls
                 return false;
             }
             if (WeightTextBox.Text == "")
-            {
+            { 
                 MessageBox.Show("Please enter your current weight", "Entry Error", MessageBoxButtons.OK);
                 return false;
             }
@@ -105,25 +82,8 @@ namespace EncounterMeWF.UserControls
         }
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
-            Runs tempRun = new Runs
-            {
-                RunOrWalk = RunWalkCombobox.Text,
-                Distance = double.Parse(DistanceTextBox.Text),
-                CalloriesLost = CaloriesBurned
-            };
-            CurrentUser.RunRecord.Add(tempRun);
-            User TempUser = new User
-            {
-                Username = CurrentUser.Username,
-                Email = CurrentUser.Email.ToLower(),
-                Password = CurrentUser.Password,
-                Weight = double.Parse(WeightTextBox.Text),
-                RunRecord = CurrentUser.RunRecord
-            };
-            UserList.RemoveAt(Index);
-            UserList.Insert(Index, TempUser);
-            _userJson.JsonWrite(UserList);
-            _signInJson.JsonWrite(TempUser);
+            Runs tempRun = _runs.CreateRun(RunWalkCombobox.Text, DistanceTextBox.Text, CaloriesBurned);
+            _calculations.AddRunToCurrentUser(tempRun, WeightTextBox.Text);
         }
     }
 }

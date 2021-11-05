@@ -11,14 +11,13 @@ How to set up:
 
 To use this project firstly you need to register and then you can start creating your own paths.
 
--  Creating and using your own class, struct and enum (with flag(s), preferably). all of them  best time for the trail
--  Property (standard, indexed, auto-implemented) usage in struct and class. (get; set;)
-+  Named and optional argument usage. refer to sum   "trail"+ID
--  Extension method usage. refer to extention class
-+  Reading from file.
-+  Generic type usage. List<>, Deserialize<>
-+  Regex. (input) pvz password validation . regex tutorial  Login and Registration
--  Widening and narrowing type conversions. pasitikslint cast when narrowing  search by length (between)
-+  Putting data to collection, iterating through it the right way. linq, foreach pasitikslint
--  LINQ to Objects usage (methods and queries), including groupJoin.
--  Implementing some of the standard .NET interfaces (IEnumerable, IComparable, IComparer, IEquatable, IEnumerator, etc.)
++  Lazy initialization.
++-  Generics (in delegates(PersonalRecords 24), events and methods(UserJson 12))
++  Delegates(MainForm, PersonalRecordsUC).
++  Events and their usage: standard and custom.
+-  Exceptions and dealing with them in a meaningfull way.
+-  Anonymous methods.
+-  Lambda expressions.
+-  Concurrent programming (threading or async/await (for your own written classes); common resource usage between threads).
+-  Web service implemented and used
+-  Dependency Injection.

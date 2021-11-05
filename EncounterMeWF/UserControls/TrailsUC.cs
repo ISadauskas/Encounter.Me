@@ -17,6 +17,7 @@ namespace EncounterMeWF.UserControls
         private Search _search = new Search();
 
 
+
         BindingList<Trail> TrailList = new BindingList<Trail>();
         BindingList<Trail> SearchList = new BindingList<Trail>();
 
@@ -38,7 +39,7 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 if (Check())
-                {
+                {   
                     if (TrailNameTextbox.Text == "")
                         TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
                     else

@@ -1,13 +1,7 @@
 ﻿using BusinessLogic;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -21,6 +15,10 @@ namespace EncounterMeWF.UserControls
         public User CurrentUser = new User();
         public int Index;
 
+        public delegate TResult Calculate<T, TResult>(T UserRuns);
+        private Calculate<BindingList<Runs>, int> CalculateInt;
+        private Calculate<BindingList<Runs>, Double> CalculateDouble;
+
 
         public PersonalRecordsUC()
         {
@@ -30,11 +28,15 @@ namespace EncounterMeWF.UserControls
             TrailGridView.DataSource = CurrentUser.RunRecord;
             if (File.Exists("Users.json"))
                 UserList = _userJson.JsonRead();
-
-            MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-            AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-            LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
-            LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
+            
+            CalculateInt = FindMostBurnedCalories;
+            MostBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
+            CalculateInt = FindAllBurnedCalories;
+            AllBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
+            CalculateDouble = FindLongestDistanceRun;
+            LongestRunDistanceAnswer.Text = CalculateDouble(CurrentUser.RunRecord).ToString() + " km";
+            CalculateDouble = FindLongestDistanceWalk;
+            LongestWalkDistanceAnswer.Text = CalculateDouble(CurrentUser.RunRecord).ToString() + " km";
         }
         public int FindMostBurnedCalories(BindingList<Runs> UserRuns)
         {
@@ -46,6 +48,7 @@ namespace EncounterMeWF.UserControls
             }
             return Max;
         }
+
         public int FindAllBurnedCalories(BindingList<Runs> UserRuns)
         {
             int Sum = 0;
@@ -93,10 +96,14 @@ namespace EncounterMeWF.UserControls
             UserList.Insert(Index, TempUser);
             _userJson.JsonWrite(UserList);
             _signInJson.JsonWrite(TempUser);
-            MostBurnedCaloriesAnswer.Text = FindMostBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-            AllBurnedCaloriesAnswer.Text = FindAllBurnedCalories(CurrentUser.RunRecord).ToString() + " cal";
-            LongestRunDistanceAnswer.Text = FindLongestDistanceRun(CurrentUser.RunRecord).ToString() + " km";
-            LongestWalkDistanceAnswer.Text = FindLongestDistanceWalk(CurrentUser.RunRecord).ToString() + " km";
+            CalculateInt = FindMostBurnedCalories;
+            MostBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
+            CalculateInt = FindAllBurnedCalories;
+            AllBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
+            CalculateDouble = FindLongestDistanceRun;
+            LongestRunDistanceAnswer.Text = CalculateDouble(CurrentUser.RunRecord).ToString() + " km";
+            CalculateDouble = FindLongestDistanceWalk;
+            LongestWalkDistanceAnswer.Text = CalculateDouble(CurrentUser.RunRecord).ToString() + " km";
         }
     }
 }

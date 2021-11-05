@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace BusinessLogic
 {
     public class Runs
@@ -11,5 +6,16 @@ namespace BusinessLogic
         public string RunOrWalk { get; set; }
         public double Distance { get; set; }
         public int CalloriesLost { get; set; }
+
+        public Runs CreateRun(string RunOrWalk, string Weight, int CaloriesBurned)
+        {
+            Runs tempRun = new Runs
+            {
+                RunOrWalk = RunOrWalk,
+                Distance = double.Parse(Weight),
+                CalloriesLost = CaloriesBurned
+            };
+            return tempRun;
+        }
     }
 }
