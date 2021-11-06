@@ -18,19 +18,6 @@ namespace EncounterMeWF.UserControls
         public User CurrentUser = new User();
         public int CaloriesBurned;
         public int Index;
-
-        public delegate int CalorieCalculation(double Weight, double Distance);
-
-        CalorieCalculation CalorieCalculationRun = delegate (double Weight, double Distance)
-        {
-            return (int)Math.Round(Weight * Distance * 1.9);
-        };
-
-        CalorieCalculation CalorieCalculationWalk = delegate (double Weight, double Distance)
-        {
-            return (int)Math.Round(Weight * Distance * 1.137);
-        };
-
         public CalorieCalculatorUC()
         {
             InitializeComponent();
@@ -51,9 +38,9 @@ namespace EncounterMeWF.UserControls
                     AddToRecordButton.Visible = _calculations.EditUser(WeightTextBox.Text);
 
                 if (RunWalkCombobox.Text == "Run")
-                    CaloriesBurned = CalorieCalculationRun(Weight, Distance);
+                    CaloriesBurned = (int)Math.Round(Weight * Distance * 1.9);
                 else
-                    CaloriesBurned = CalorieCalculationWalk(Weight, Distance);
+                    CaloriesBurned = (int)Math.Round(Weight * Distance * 1.137);
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
             }
@@ -100,4 +87,3 @@ namespace EncounterMeWF.UserControls
         }
     }
 }
-
