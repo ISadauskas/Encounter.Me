@@ -26,10 +26,14 @@ namespace EncounterMeWF.UserControls
         {
             InitializeComponent();
             //Load json file in table view on startup
-            if (File.Exists("Trails.json"))
+            try
+            {
                 TrailList = _trailJson.JsonRead();
-            else
+            }
+            catch (FileNotFoundException e)
+            {
                 _trailJson.JsonWrite(TrailList);
+            }
 
             TrailGridView.DataSource = TrailList;
         }
