@@ -19,10 +19,14 @@ namespace EncounterMeWF.UserControls
         public SIgnUpSignInUC()
         {
             InitializeComponent();
-            if (File.Exists("Trails.json"))
+            try
+            {
                 UserList = _userJson.JsonRead();
-            else
+            }
+            catch (FileNotFoundException e)
+            {
                 _userJson.JsonWrite(UserList);
+            }
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
