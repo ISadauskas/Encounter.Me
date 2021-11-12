@@ -45,9 +45,11 @@ namespace EncounterMeWF.UserControls
                 if (Check())
                 {   
                     if (TrailNameTextbox.Text == "")
-                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
+                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex,
+                            StartDate: TrailStartDatePicker.Value, StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
                     else
-                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex);
+                        TempTrail = _trail.CreateTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex,
+                            StartDate: TrailStartDatePicker.Value, StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
                     if (_trail.CheckTrailID(TrailList, TempTrail))
                         MessageBox.Show("This trail ID is already in use", "Entry Error", MessageBoxButtons.OK);
@@ -58,7 +60,6 @@ namespace EncounterMeWF.UserControls
                         TrailGridView.DataSource = TrailList;
                     }
                 }
-
             }
             else
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
@@ -81,14 +82,12 @@ namespace EncounterMeWF.UserControls
             {
                 if (Check())
                 {
-                    Trail TempTrail = new Trail
-                    {
-                        ID = int.Parse(TrailIdTextbox.Text),
-                        Name = TrailNameTextbox.Text,
-                        Length = double.Parse(TrailLengthTextbox.Text),
-                        Season = TrailSeasonCombobox.Text
-                    };
                     int n = TrailGridView.SelectedRows[0].Index;
+
+                    TempTrail = _trail.ModifyTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex,
+                            StartDate: TrailStartDatePicker.Value, StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, CurrentTrail: TrailList[n]);
+
+                   
                     TrailGridView.Rows.RemoveAt(n);
                     TrailList.Insert(n, TempTrail);
                     _trailJson.JsonWrite(TrailList);
@@ -124,9 +123,15 @@ namespace EncounterMeWF.UserControls
                 MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                 return false;
             }
+            if (TrailStartLocationTextbox.Text == "")
+            {
+                MessageBox.Show("Please enter a start location", "Entry Error", MessageBoxButtons.OK);
+                return false;
+            }
             else
                 return true;
         }
+
         public bool SearchCheck(string from, string to)
         {
             Regex SearchRegex = new Regex("^[0-9]+$");
@@ -151,6 +156,7 @@ namespace EncounterMeWF.UserControls
             else
                 return true;
         }
+
         private void SearchButton_Click(object sender, EventArgs e)
         {
             if (SearchCheck(from: LengthFromTextBox.Text, to: LengthToTextBox.Text))
@@ -175,6 +181,9 @@ namespace EncounterMeWF.UserControls
             TrailNameTextbox.Text = TrailList[n].Name;
             TrailLengthTextbox.Text = TrailList[n].Length.ToString();
             TrailSeasonCombobox.Text = TrailList[n].Season;
+            TrailStartDatePicker.Value = TrailList[n].Timestamp.Date;
+            TrailStartTimePicker.Value = new DateTime(2020, 01, 01) + TrailList[n].Timestamp.TimeOfDay;
+            TrailStartLocationTextbox.Text = TrailList[n].Location;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace BusinessLogic
         public double Weight { get; set; }
         public BindingList<Runs> RunRecord { get; set; }
 
-        public event EventHandler<bool> OnCheckIfUsed;
+        //public event EventHandler<bool> OnCheckIfUsed;
 
         public User CreateUser(string Username, string Email, string Password)
         {
