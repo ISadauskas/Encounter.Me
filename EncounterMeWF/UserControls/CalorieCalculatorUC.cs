@@ -12,7 +12,7 @@ namespace EncounterMeWF.UserControls
         private SignInJson _signInJson = new SignInJson();
         private Calculations _calculations = new Calculations();
         private Runs _runs = new Runs();
-
+        private CalorieCalculatorUCRegex _calorieCalculatorUCRegex = new CalorieCalculatorUCRegex();
 
         public BindingList<User> UserList = new BindingList<User>();
         public User CurrentUser = new User();
@@ -46,39 +46,29 @@ namespace EncounterMeWF.UserControls
             }
         }
 
-        private bool Check()
+        public bool Check()
         {
-            Regex WeightRegex = new Regex("^[0-9]+.?[0-9]*$");
-            bool WeightRegexCheck = WeightRegex.IsMatch(WeightTextBox.Text);
-            Regex DistanceRegex = new Regex("^[0-9]+.?[0-9]*$");
-            bool DistanceRegexCheck = DistanceRegex.IsMatch(DistanceTextBox.Text);
-            if (RunWalkCombobox.Text == "")
+            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DistanceTextBox.Text))
             {
-                MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);
-                return false;
+                case 1:
+                    MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 2:
+                    MessageBox.Show("Please enter your current weight", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 3:
+                    MessageBox.Show("Weight can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 4:
+                    MessageBox.Show("Please enter the distance you have walked/ran", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 5:
+                    MessageBox.Show("Distance can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 0:
+                    return true;
             }
-            if (WeightTextBox.Text == "")
-            { 
-                MessageBox.Show("Please enter your current weight", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (!WeightRegexCheck)
-            {
-                MessageBox.Show("Weight can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (DistanceTextBox.Text == "")
-            {
-                MessageBox.Show("Please enter the distance you have walked/ran", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (!DistanceRegexCheck)
-            {
-                MessageBox.Show("Distance can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            else
-                return true;
+            return true;
         }
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
