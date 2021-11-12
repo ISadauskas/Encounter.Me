@@ -33,9 +33,7 @@ namespace EncounterMeWF
             foreach (var item in TrailList)
             {
                 if (tempTrail.Equals(item))
-                {
                     return true;
-                }
             }
             return false;
         }
@@ -99,19 +97,15 @@ namespace EncounterMeWF
                 case 0:
                     temp = SeasonEnum.Summer;
                     break;
-
                 case 1:
                     temp = SeasonEnum.Autumn;
                     break;
-
                 case 2:
                     temp = SeasonEnum.Winter;
                     break;
-
                 case 3:
                     temp = SeasonEnum.Spring;
                     break;
-
                 default:
                     temp = SeasonEnum.Summer;
                     break;

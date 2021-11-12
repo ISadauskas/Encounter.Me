@@ -15,6 +15,7 @@ namespace EncounterMeWF.UserControls
         private SignInJson _signInJson = new SignInJson();
         public Trail TempTrail = new Trail();
         private Search _search = new Search();
+        private TrailsUCRegex _trailsUCRegex = new TrailsUCRegex();
 
 
 
@@ -87,7 +88,6 @@ namespace EncounterMeWF.UserControls
                     TempTrail = _trail.ModifyTrail(Id: TrailIdTextbox.Text, Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, _Season: TrailSeasonCombobox.SelectedIndex,
                             StartDate: TrailStartDatePicker.Value, StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, CurrentTrail: TrailList[n]);
 
-                   
                     TrailGridView.Rows.RemoveAt(n);
                     TrailList.Insert(n, TempTrail);
                     _trailJson.JsonWrite(TrailList);
@@ -97,69 +97,53 @@ namespace EncounterMeWF.UserControls
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
         }
 
-        private bool Check()
+        public bool Check()
         {
-            Regex IdRegex = new Regex("^[0-9]+$");
-            bool IdRegexCheck = IdRegex.IsMatch(TrailIdTextbox.Text);
-            Regex LengthRegex = new Regex("^[0-9]+.?[0-9]*$");
-            bool LengthRegexCheck = LengthRegex.IsMatch(TrailLengthTextbox.Text);
-            if (TrailIdTextbox.Text == "")
+            switch (_trailsUCRegex.CheckTrail(TrailIdTextbox.Text, TrailLengthTextbox.Text, TrailStartLocationTextbox.Text))
             {
-                MessageBox.Show("Please enter trail Id number", "Entry Error", MessageBoxButtons.OK);
-                return false;
+                case 1:
+                    MessageBox.Show("Please enter trail Id number", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 2:
+                    MessageBox.Show("Trail Id can only consist of numbers from 0 to 9", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 3:
+                    MessageBox.Show("Please enter trail length number", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 4:
+                    MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 5:
+                    MessageBox.Show("Please enter a start location", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 0:
+                    return true;
             }
-            if (!IdRegexCheck)
-            {
-                MessageBox.Show("Trail Id can only consist of numbers from 0 to 9", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (TrailLengthTextbox.Text == "")
-            {
-                MessageBox.Show("Please enter trail length number", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (!LengthRegexCheck)
-            {
-                MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (TrailStartLocationTextbox.Text == "")
-            {
-                MessageBox.Show("Please enter a start location", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            else
-                return true;
+            return true;
         }
 
-        public bool SearchCheck(string from, string to)
+        public bool SearchCheck()
         {
-            Regex SearchRegex = new Regex("^[0-9]+$");
-            bool fromCheck = SearchRegex.IsMatch(LengthFromTextBox.Text);
-            bool toCheck = SearchRegex.IsMatch(LengthToTextBox.Text);
-
-            if (LengthFromTextBox.Text == "" || LengthToTextBox.Text == "")
+            switch (_trailsUCRegex.CheckSearch(LengthFromTextBox.Text, LengthToTextBox.Text))
             {
-                MessageBox.Show("Please enter trail search data", "Entry Error", MessageBoxButtons.OK);
-                return false;
+                case 1:
+                    MessageBox.Show("Please enter trail search data", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 2:
+                    MessageBox.Show("Search can only consist of whole numbers", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 3:
+                    MessageBox.Show("The from number cannot be bigger than to", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 0:
+                    return true;
             }
-            if (!fromCheck || !toCheck)
-            {
-                MessageBox.Show("Search can only consist of whole numbers", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            if (int.Parse(from) > int.Parse(to))
-            {
-                MessageBox.Show("The from number cannot be bigger than to", "Entry Error", MessageBoxButtons.OK);
-                return false;
-            }
-            else
-                return true;
+            return true;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (SearchCheck(from: LengthFromTextBox.Text, to: LengthToTextBox.Text))
+            if (SearchCheck())
             {
                 Search TempLength = new Search();
                 TempLength = _search.SearchLength(LengthFromTextBox.Text, LengthToTextBox.Text);
