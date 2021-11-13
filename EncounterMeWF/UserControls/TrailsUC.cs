@@ -67,7 +67,7 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 User CurrentUser = _signInJson.JsonRead();
-                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Name)
+                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Organizer)
                 {
                     TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
                     _trailJson.JsonWrite(TrailList);
