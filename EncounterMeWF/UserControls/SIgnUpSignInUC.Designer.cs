@@ -42,11 +42,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.AdminCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // SignUpButton
             // 
-            this.SignUpButton.Location = new System.Drawing.Point(171, 320);
+            this.SignUpButton.Location = new System.Drawing.Point(158, 320);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(75, 23);
             this.SignUpButton.TabIndex = 0;
@@ -73,7 +74,7 @@
             // 
             // SignUpEmailTextbox
             // 
-            this.SignUpEmailTextbox.Location = new System.Drawing.Point(159, 120);
+            this.SignUpEmailTextbox.Location = new System.Drawing.Point(159, 128);
             this.SignUpEmailTextbox.Name = "SignUpEmailTextbox";
             this.SignUpEmailTextbox.Size = new System.Drawing.Size(100, 23);
             this.SignUpEmailTextbox.TabIndex = 3;
@@ -121,7 +122,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 123);
+            this.label2.Location = new System.Drawing.Point(78, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 9;
@@ -163,10 +164,21 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Password:";
             // 
+            // AdminCheckBox
+            // 
+            this.AdminCheckBox.AutoSize = true;
+            this.AdminCheckBox.Location = new System.Drawing.Point(171, 271);
+            this.AdminCheckBox.Name = "AdminCheckBox";
+            this.AdminCheckBox.Size = new System.Drawing.Size(62, 19);
+            this.AdminCheckBox.TabIndex = 14;
+            this.AdminCheckBox.Text = "Admin";
+            this.AdminCheckBox.UseVisualStyleBackColor = true;
+            // 
             // SIgnUpSignInUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.AdminCheckBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox AdminCheckBox;
     }
 }
