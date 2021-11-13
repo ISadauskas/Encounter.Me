@@ -66,10 +66,16 @@ namespace EncounterMeWF.UserControls
         {
             if (_signInJson.CheckIfSignedIn())
             {
-                TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
-                _trailJson.JsonWrite(TrailList);
-                TrailIndex = TrailList.Count - 1;
-                TrailGridView.Rows[TrailIndex].Selected = true;
+                User CurrentUser = _signInJson.JsonRead();
+                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Organizer)
+                {
+                    TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
+                    _trailJson.JsonWrite(TrailList);
+                    TrailIndex = TrailList.Count - 1;
+                    TrailGridView.Rows[TrailIndex].Selected = true;
+                }
+                else
+                    MessageBox.Show("You do not have access to delete other people trails.", "Entry Error", MessageBoxButtons.OK);
             }
             else
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
@@ -79,15 +85,21 @@ namespace EncounterMeWF.UserControls
         {
             if (_signInJson.CheckIfSignedIn())
             {
-                if (Check())
+                User CurrentUser = _signInJson.JsonRead();
+                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Organizer)
                 {
-                    TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value, 
-                        StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, CurrentTrail: TrailList[TrailIndex]);
+                    if (Check())
+                    {
+                        TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value, 
+                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, CurrentTrail: TrailList[TrailIndex]);
 
-                    TrailGridView.Rows.RemoveAt(TrailIndex);
-                    TrailList.Insert(TrailIndex, TempTrail);
-                    _trailJson.JsonWrite(TrailList);
+                        TrailGridView.Rows.RemoveAt(TrailIndex);
+                        TrailList.Insert(TrailIndex, TempTrail);
+                        _trailJson.JsonWrite(TrailList);
+                    }
                 }
+                else
+                    MessageBox.Show("You do not have access to modify other people trails.", "Entry Error", MessageBoxButtons.OK);
             }
             else
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);

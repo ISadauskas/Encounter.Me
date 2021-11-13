@@ -34,7 +34,7 @@ namespace EncounterMeWF.UserControls
         {
             if (Check())
             {
-                User TempUser = _user.CreateUser(Username: SignUpUsernameTextbox.Text, Email: SignUpEmailTextbox.Text, Password: SignUpPasswordTextbox.Text);
+                User TempUser = _user.CreateUser(Username: SignUpUsernameTextbox.Text, Email: SignUpEmailTextbox.Text, Password: SignUpPasswordTextbox.Text, IsAdmin: AdminCheckBox.Checked);
                 UserList.Add(TempUser);
 
                 _userJson.JsonWrite(UserList);

@@ -10,19 +10,20 @@ namespace BusinessLogic
         public string Password { get; set; }
         public double Weight { get; set; }
         public BindingList<Runs> RunRecord { get; set; }
+        public bool IsAdmin { get; set; }
 
         //public event EventHandler<bool> OnCheckIfUsed;
 
-        public User CreateUser(string Username, string Email, string Password)
+        public User CreateUser(string Username, string Email, string Password, bool IsAdmin)
         {
-
             User TempUser = new User
             {
                 Username = Username,
                 Email = Email.ToLower(),
                 Password = Password,
                 Weight = 0,
-                RunRecord = new BindingList<Runs>()
+                RunRecord = new BindingList<Runs>(),
+                IsAdmin = IsAdmin
             };
             return TempUser;
         }
