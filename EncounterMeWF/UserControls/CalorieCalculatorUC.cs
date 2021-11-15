@@ -18,6 +18,8 @@ namespace EncounterMeWF.UserControls
         public User CurrentUser = new User();
         public int CaloriesBurned;
         public int Index;
+        public double RunningConstant = 1.9;
+        public double WalkingConstant = 1.137;
         public CalorieCalculatorUC()
         {
             InitializeComponent();
@@ -33,14 +35,17 @@ namespace EncounterMeWF.UserControls
             {
                 double Weight = double.Parse(WeightTextBox.Text);
                 double Distance = double.Parse(DistanceTextBox.Text);
+                
+
+                Func<double, double, double, double> calculation = (Weight, Distance, constant) => (Weight * Distance * constant);
 
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = _calculations.EditUser(WeightTextBox.Text);
 
                 if (RunWalkCombobox.Text == "Run")
-                    CaloriesBurned = (int)Math.Round(Weight * Distance * 1.9);
+                    CaloriesBurned = (int)Math.Round(calculation(Weight, Distance, RunningConstant));
                 else
-                    CaloriesBurned = (int)Math.Round(Weight * Distance * 1.137);
+                    CaloriesBurned = (int)Math.Round(calculation(Weight, Distance, WalkingConstant));
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
             }
