@@ -16,8 +16,8 @@ To use this project firstly you need to register and then you can start creating
 +  Delegates(MainForm, PersonalRecordsUC).
 +  Events and their usage: standard and custom.
 +  Exceptions and dealing with them in a meaningfull way. (TrailsUC 29, SignUpSignInUC 22)
--  Anonymous methods.
--  Lambda expressions.
--  Concurrent programming (threading or async/await (for your own written classes); common resource usage between threads).
++  Anonymous methods.
++  Lambda expressions.
++  Concurrent programming (threading or async/await (for your own written classes); common resource usage between threads).
 -  Web service implemented and used
 -  Dependency Injection.
