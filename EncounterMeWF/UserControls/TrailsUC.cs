@@ -1,9 +1,7 @@
 ﻿using BusinessLogic;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -45,17 +43,17 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 if (Check())
-                {   
+                {
                     if (TrailNameTextbox.Text == "")
                         TempTrail = _trail.CreateTrail(Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
                     else
-                        TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value, 
+                        TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
-                        TrailList.Add(TempTrail);
-                        _trailJson.JsonWrite(TrailList);
-                        TrailGridView.DataSource = TrailList;
+                    TrailList.Add(TempTrail);
+                    _trailJson.JsonWrite(TrailList);
+                    TrailGridView.DataSource = TrailList;
                 }
             }
             else
@@ -90,7 +88,7 @@ namespace EncounterMeWF.UserControls
                 {
                     if (Check())
                     {
-                        TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value, 
+                        TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, CurrentTrail: TrailList[TrailIndex]);
 
                         TrailGridView.Rows.RemoveAt(TrailIndex);
@@ -162,7 +160,7 @@ namespace EncounterMeWF.UserControls
 
         private void TrailGridView_MouseClick(object sender, MouseEventArgs e)
         {
-            try 
+            try
             {
                 TrailIndex = TrailGridView.SelectedRows[0].Index;
             }

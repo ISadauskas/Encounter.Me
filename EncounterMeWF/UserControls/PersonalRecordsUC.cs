@@ -28,7 +28,7 @@ namespace EncounterMeWF.UserControls
             TrailGridView.DataSource = CurrentUser.RunRecord;
             if (File.Exists("Users.json"))
                 UserList = _userJson.JsonRead();
-            
+
             CalculateInt = FindMostBurnedCalories;
             MostBurnedCaloriesAnswer.Text = CalculateInt(CurrentUser.RunRecord).ToString() + " cal";
             CalculateInt = FindAllBurnedCalories;

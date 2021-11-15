@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
     public class CalorieCalculatorUCRegex
     {
-
         public int Check(string RunWalkText, string WeightText, string DistanceText)
         {
             Regex WeightRegex = new Regex("^[0-9]+.?[0-9]*$");

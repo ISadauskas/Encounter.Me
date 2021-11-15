@@ -20,4 +20,4 @@ To use this project firstly you need to register and then you can start creating
 +  Lambda expressions.
 +  Concurrent programming (threading or async/await (for your own written classes); common resource usage between threads).
 -  Web service implemented and used
--  Dependency Injection.
++  Dependency Injection.

@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace BusinessLogic
 {
@@ -12,7 +11,6 @@ namespace BusinessLogic
         public BindingList<Runs> RunRecord { get; set; }
         public bool IsAdmin { get; set; }
 
-        //public event EventHandler<bool> OnCheckIfUsed;
 
         public User CreateUser(string Username, string Email, string Password, bool IsAdmin)
         {
@@ -30,7 +28,6 @@ namespace BusinessLogic
 
         public bool CheckIfUsedUsername(BindingList<User> UserList, string Username)
         {
-            //OnClick?.Invoke(this, EventArgs.Empty);
             foreach (var item in UserList)
             {
                 if (Username == item.Username)
