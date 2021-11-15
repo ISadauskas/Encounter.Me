@@ -6,7 +6,7 @@ namespace BusinessLogic
 {
     public class SignInJson
     {
-        public void JsonWrite(User LoginAccount)
+        public async void JsonWrite(User LoginAccount)
         {
             string LoginAccountJson = JsonConvert.SerializeObject(LoginAccount);
             File.WriteAllText(@"SignIn.json", LoginAccountJson);
@@ -31,7 +31,7 @@ namespace BusinessLogic
             }
             return false;
         }
-        public void JsonDelete()
+        public async void JsonDelete()
         {
             File.Delete("SignIn.json");
         }

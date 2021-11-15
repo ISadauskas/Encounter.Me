@@ -10,7 +10,7 @@ namespace BusinessLogic
         string TrailListJson;
         BindingList<Trail> TrailList = new BindingList<Trail>();
 
-        public void JsonWrite(BindingList<Trail> TrailList)
+        public async void JsonWrite(BindingList<Trail> TrailList)
         {
             TrailListJson = JsonConvert.SerializeObject(TrailList);
             TrailList = JsonConvert.DeserializeObject<BindingList<Trail>>(TrailListJson);

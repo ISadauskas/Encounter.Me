@@ -44,7 +44,7 @@ namespace BusinessLogic
             }
             return false;
         }
-        public void AddRunToCurrentUser(Runs tempRun, string Weight)
+        public async void AddRunToCurrentUser(Runs tempRun, string Weight)
         {
             BindingList<User> UserList = _userJson.JsonRead();
             User CurrentUser = _signInJson.JsonRead();

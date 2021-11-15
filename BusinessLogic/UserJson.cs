@@ -9,7 +9,7 @@ namespace BusinessLogic
         string UserListJson;
         BindingList<User> UserList = new BindingList<User>();
 
-        public void JsonWrite<T>(T UserList)
+        public async void JsonWrite<T>(T UserList)
         {
             UserListJson = JsonConvert.SerializeObject(UserList);
             UserList = JsonConvert.DeserializeObject<T>(UserListJson);
