@@ -33,7 +33,7 @@ namespace BusinessLogic
 
             int Index = GetIndex(UserList, CurrentUser);
             if (Index != -1)
-            { 
+            {
                 CurrentUser = AdjustUserWeight(CurrentUser, Weight);
 
                 UserList.RemoveAt(Index);

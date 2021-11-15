@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -35,7 +34,7 @@ namespace EncounterMeWF.UserControls
             {
                 double Weight = double.Parse(WeightTextBox.Text);
                 double Distance = double.Parse(DistanceTextBox.Text);
-                
+
 
                 Func<double, double, double, double> calculation = (Weight, Distance, constant) => (Weight * Distance * constant);
 
