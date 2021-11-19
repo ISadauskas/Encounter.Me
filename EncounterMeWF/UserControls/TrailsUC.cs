@@ -36,6 +36,7 @@ namespace EncounterMeWF.UserControls
             }
 
             TrailList = _trail.UpdateTrailList(TrailList);
+            _trailJson.JsonWrite(TrailList);
             TrailGridView.DataSource = TrailList;
         }
 
