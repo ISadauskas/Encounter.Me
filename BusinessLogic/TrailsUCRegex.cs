@@ -1,10 +1,11 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
     public class TrailsUCRegex
     {
-        public int CheckTrail(string TrailLengthText, string TrailStartLocationText)
+        public int CheckTrail(string TrailLengthText, string TrailStartLocationText, DateTime TrailStartDatePicker)
         {
             Regex LengthRegex = new Regex("^[0-9]+.?[0-9]*$");
             bool LengthRegexCheck = LengthRegex.IsMatch(TrailLengthText);
@@ -12,8 +13,10 @@ namespace BusinessLogic
                 return 1;
             if (!LengthRegexCheck)
                 return 2;
-            if (TrailStartLocationText == "")
+            if (TrailStartDatePicker.Date < DateTime.Now.Date)
                 return 3;
+            if (TrailStartLocationText == "")
+                return 4;
             else
                 return 0;
         }
