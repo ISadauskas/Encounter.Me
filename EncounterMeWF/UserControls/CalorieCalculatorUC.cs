@@ -12,13 +12,14 @@ namespace EncounterMeWF.UserControls
         private Calculations _calculations = new Calculations();
         private Runs _runs = new Runs();
         private CalorieCalculatorUCRegex _calorieCalculatorUCRegex = new CalorieCalculatorUCRegex();
+        private Mets _mets = new Mets();
 
         public BindingList<User> UserList = new BindingList<User>();
         public User CurrentUser = new User();
         public int CaloriesBurned;
         public int Index;
-        public double RunningConstant = 1.9;
-        public double WalkingConstant = 1.137;
+        public double Speed;
+        public double MetOne = 3.5;
         public CalorieCalculatorUC()
         {
             InitializeComponent();
@@ -34,17 +35,14 @@ namespace EncounterMeWF.UserControls
             {
                 double Weight = double.Parse(WeightTextBox.Text);
                 double Distance = double.Parse(DistanceTextBox.Text);
+                int Duration = int.Parse(DurationTextBox.Text);
 
-
-                Func<double, double, double, double> calculation = (Weight, Distance, constant) => (Weight * Distance * constant);
-
+                Speed = Distance / (Duration / 60);
+            
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = _calculations.EditUser(WeightTextBox.Text);
-
-                if (RunWalkCombobox.Text == "Run")
-                    CaloriesBurned = (int)Math.Round(calculation(Weight, Distance, RunningConstant));
-                else
-                    CaloriesBurned = (int)Math.Round(calculation(Weight, Distance, WalkingConstant));
+         
+                CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetValue(Speed) / 200);
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
             }
@@ -52,7 +50,7 @@ namespace EncounterMeWF.UserControls
 
         public bool Check()
         {
-            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DistanceTextBox.Text))
+            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text))
             {
                 case 1:
                     MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);
@@ -64,9 +62,15 @@ namespace EncounterMeWF.UserControls
                     MessageBox.Show("Weight can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 4:
-                    MessageBox.Show("Please enter the distance you have walked/ran", "Entry Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Please enter the duration of your walking/running", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 5:
+                    MessageBox.Show("Duration can only be natural number", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 6:
+                    MessageBox.Show("Please enter the distance you have walked/ran", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 7:
                     MessageBox.Show("Distance can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 0:
