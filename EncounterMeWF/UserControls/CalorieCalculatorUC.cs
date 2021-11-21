@@ -31,18 +31,25 @@ namespace EncounterMeWF.UserControls
         }
         private void CalculationButton_Click(object sender, EventArgs e)
         {
+            double Weight = double.Parse(WeightTextBox.Text);
+            double Distance = double.Parse(DistanceTextBox.Text);
+            int Duration = int.Parse(DurationTextBox.Text);
+
+            Speed = Distance / (Duration / 60);
+            
             if (Check())
             {
-                double Weight = double.Parse(WeightTextBox.Text);
-                double Distance = double.Parse(DistanceTextBox.Text);
-                int Duration = int.Parse(DurationTextBox.Text);
-
-                Speed = Distance / (Duration / 60);
-            
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = _calculations.EditUser(WeightTextBox.Text);
-         
-                CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetValue(Speed) / 200);
+
+                if (RunWalkCombobox.Text == "Walk")
+                {
+                    CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetWalkedValue(Speed) / 200);
+                }
+                
+                else 
+                    CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetRanValue(Speed) / 200);
+
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
             }
@@ -50,7 +57,7 @@ namespace EncounterMeWF.UserControls
 
         public bool Check()
         {
-            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text))
+            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text, Speed))
             {
                 case 1:
                     MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);
@@ -72,6 +79,9 @@ namespace EncounterMeWF.UserControls
                     return false;
                 case 7:
                     MessageBox.Show("Distance can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 8:
+                    MessageBox.Show("Please check your distance and duration data", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 0:
                     return true;
