@@ -59,5 +59,15 @@ namespace EncounterMeWF.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LeafLogo {
+            get {
+                object obj = ResourceManager.GetObject("LeafLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
