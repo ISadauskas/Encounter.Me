@@ -19,6 +19,7 @@ namespace EncounterMeWF
         public delegate void HideDelegate();
         private HideDelegate HideDelegateFunction;
 
+        //public event EventHandler OnButtonClick;
         public mainForm()
         {
             InitializeComponent();

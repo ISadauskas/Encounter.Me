@@ -55,7 +55,7 @@ namespace EncounterMeWF
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Margin = new System.Windows.Forms.Padding(0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(134, 460);
+            this.headerPanel.Size = new System.Drawing.Size(249, 981);
             this.headerPanel.TabIndex = 0;
             // 
             // LogoButton
@@ -64,13 +64,11 @@ namespace EncounterMeWF
             this.LogoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.LogoButton.BackColor = System.Drawing.Color.Transparent;
             this.LogoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.LogoButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoButton.FlatAppearance.BorderSize = 0;
-            this.LogoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.LogoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.LogoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogoButton.Image = global::EncounterMeWF.Properties.Resources.LeafLogo;
-            this.LogoButton.Location = new System.Drawing.Point(35, 12);
+            this.LogoButton.Location = new System.Drawing.Point(65, 26);
+            this.LogoButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.LogoButton.Name = "LogoButton";
             this.LogoButton.Size = new System.Drawing.Size(51, 36);
             this.LogoButton.TabIndex = 9;
@@ -81,7 +79,6 @@ namespace EncounterMeWF
             // 
             this.PersonalRunButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PersonalRunButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.PersonalRunButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PersonalRunButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.PersonalRunButton.FlatAppearance.BorderSize = 0;
             this.PersonalRunButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -89,10 +86,10 @@ namespace EncounterMeWF
             this.PersonalRunButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PersonalRunButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PersonalRunButton.ForeColor = System.Drawing.Color.Green;
-            this.PersonalRunButton.Location = new System.Drawing.Point(6, 227);
+            this.PersonalRunButton.Location = new System.Drawing.Point(11, 484);
             this.PersonalRunButton.Margin = new System.Windows.Forms.Padding(0);
             this.PersonalRunButton.Name = "PersonalRunButton";
-            this.PersonalRunButton.Size = new System.Drawing.Size(118, 43);
+            this.PersonalRunButton.Size = new System.Drawing.Size(219, 92);
             this.PersonalRunButton.TabIndex = 8;
             this.PersonalRunButton.Text = "Personal runs";
             this.PersonalRunButton.UseVisualStyleBackColor = false;
@@ -102,7 +99,6 @@ namespace EncounterMeWF
             // 
             this.CalorieCalculatorButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CalorieCalculatorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CalorieCalculatorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CalorieCalculatorButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.CalorieCalculatorButton.FlatAppearance.BorderSize = 0;
             this.CalorieCalculatorButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -110,10 +106,10 @@ namespace EncounterMeWF
             this.CalorieCalculatorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CalorieCalculatorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalorieCalculatorButton.ForeColor = System.Drawing.Color.Green;
-            this.CalorieCalculatorButton.Location = new System.Drawing.Point(6, 171);
+            this.CalorieCalculatorButton.Location = new System.Drawing.Point(11, 365);
             this.CalorieCalculatorButton.Margin = new System.Windows.Forms.Padding(0);
             this.CalorieCalculatorButton.Name = "CalorieCalculatorButton";
-            this.CalorieCalculatorButton.Size = new System.Drawing.Size(118, 56);
+            this.CalorieCalculatorButton.Size = new System.Drawing.Size(219, 119);
             this.CalorieCalculatorButton.TabIndex = 7;
             this.CalorieCalculatorButton.Text = "Calorie calculator";
             this.CalorieCalculatorButton.UseVisualStyleBackColor = false;
@@ -124,7 +120,6 @@ namespace EncounterMeWF
             this.SignOutButton.AutoSize = true;
             this.SignOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.SignOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.SignOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.SignOutButton.FlatAppearance.BorderSize = 0;
             this.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -132,10 +127,10 @@ namespace EncounterMeWF
             this.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SignOutButton.ForeColor = System.Drawing.Color.Green;
-            this.SignOutButton.Location = new System.Drawing.Point(21, 141);
+            this.SignOutButton.Location = new System.Drawing.Point(37, 301);
             this.SignOutButton.Margin = new System.Windows.Forms.Padding(0);
             this.SignOutButton.Name = "SignOutButton";
-            this.SignOutButton.Size = new System.Drawing.Size(81, 30);
+            this.SignOutButton.Size = new System.Drawing.Size(152, 47);
             this.SignOutButton.TabIndex = 5;
             this.SignOutButton.Text = "Sign Out";
             this.SignOutButton.UseVisualStyleBackColor = false;
@@ -146,7 +141,6 @@ namespace EncounterMeWF
             this.SignupSigninButton.AutoSize = true;
             this.SignupSigninButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.SignupSigninButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.SignupSigninButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignupSigninButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.SignupSigninButton.FlatAppearance.BorderSize = 0;
             this.SignupSigninButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -154,10 +148,10 @@ namespace EncounterMeWF
             this.SignupSigninButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignupSigninButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SignupSigninButton.ForeColor = System.Drawing.Color.Green;
-            this.SignupSigninButton.Location = new System.Drawing.Point(6, 111);
+            this.SignupSigninButton.Location = new System.Drawing.Point(11, 237);
             this.SignupSigninButton.Margin = new System.Windows.Forms.Padding(0);
             this.SignupSigninButton.Name = "SignupSigninButton";
-            this.SignupSigninButton.Size = new System.Drawing.Size(125, 30);
+            this.SignupSigninButton.Size = new System.Drawing.Size(243, 47);
             this.SignupSigninButton.TabIndex = 2;
             this.SignupSigninButton.Text = "Sign up/Sign in";
             this.SignupSigninButton.UseVisualStyleBackColor = false;
@@ -168,7 +162,6 @@ namespace EncounterMeWF
             this.trailsButton.AutoSize = true;
             this.trailsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.trailsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.trailsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trailsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.trailsButton.FlatAppearance.BorderSize = 0;
             this.trailsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -176,10 +169,10 @@ namespace EncounterMeWF
             this.trailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.trailsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.trailsButton.ForeColor = System.Drawing.Color.Green;
-            this.trailsButton.Location = new System.Drawing.Point(35, 81);
+            this.trailsButton.Location = new System.Drawing.Point(56, 173);
             this.trailsButton.Margin = new System.Windows.Forms.Padding(0);
             this.trailsButton.Name = "trailsButton";
-            this.trailsButton.Size = new System.Drawing.Size(56, 30);
+            this.trailsButton.Size = new System.Drawing.Size(106, 47);
             this.trailsButton.TabIndex = 1;
             this.trailsButton.Text = "Trails";
             this.trailsButton.UseVisualStyleBackColor = false;
@@ -190,7 +183,6 @@ namespace EncounterMeWF
             this.indexButton.AutoSize = true;
             this.indexButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.indexButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.indexButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.indexButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.indexButton.FlatAppearance.BorderSize = 0;
             this.indexButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -198,10 +190,10 @@ namespace EncounterMeWF
             this.indexButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.indexButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.indexButton.ForeColor = System.Drawing.Color.Green;
-            this.indexButton.Location = new System.Drawing.Point(9, 51);
+            this.indexButton.Location = new System.Drawing.Point(17, 109);
             this.indexButton.Margin = new System.Windows.Forms.Padding(0);
             this.indexButton.Name = "indexButton";
-            this.indexButton.Size = new System.Drawing.Size(115, 30);
+            this.indexButton.Size = new System.Drawing.Size(216, 47);
             this.indexButton.TabIndex = 0;
             this.indexButton.Text = "EncounterMe";
             this.indexButton.UseVisualStyleBackColor = false;
@@ -210,18 +202,20 @@ namespace EncounterMeWF
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(134, 0);
+            this.panelContainer.Location = new System.Drawing.Point(249, 0);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(801, 460);
+            this.panelContainer.Size = new System.Drawing.Size(1487, 981);
             this.panelContainer.TabIndex = 1;
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 460);
+            this.ClientSize = new System.Drawing.Size(1736, 981);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.headerPanel);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "mainForm";
             this.Text = "EncounterMe";
             this.headerPanel.ResumeLayout(false);

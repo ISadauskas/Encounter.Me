@@ -49,71 +49,74 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(251, 133);
+            this.label1.Location = new System.Drawing.Point(466, 283);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 15);
+            this.label1.Size = new System.Drawing.Size(97, 32);
             this.label1.TabIndex = 19;
             this.label1.Text = "Activity:";
             // 
             // RunWalkCombobox
             // 
-            this.RunWalkCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RunWalkCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RunWalkCombobox.FormattingEnabled = true;
             this.RunWalkCombobox.Items.AddRange(new object[] {
             "Run",
             "Walk"});
-            this.RunWalkCombobox.Location = new System.Drawing.Point(310, 129);
+            this.RunWalkCombobox.Location = new System.Drawing.Point(575, 275);
+            this.RunWalkCombobox.Margin = new System.Windows.Forms.Padding(6);
             this.RunWalkCombobox.Name = "RunWalkCombobox";
-            this.RunWalkCombobox.Size = new System.Drawing.Size(171, 23);
+            this.RunWalkCombobox.Size = new System.Drawing.Size(314, 40);
             this.RunWalkCombobox.TabIndex = 30;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(252, 180);
+            this.label7.Location = new System.Drawing.Point(468, 383);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 15);
+            this.label7.Size = new System.Drawing.Size(95, 32);
             this.label7.TabIndex = 31;
             this.label7.Text = "Weight:";
             // 
             // WeightTextBox
             // 
             this.WeightTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.WeightTextBox.Location = new System.Drawing.Point(310, 178);
+            this.WeightTextBox.Location = new System.Drawing.Point(575, 380);
+            this.WeightTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.WeightTextBox.Name = "WeightTextBox";
-            this.WeightTextBox.Size = new System.Drawing.Size(38, 23);
+            this.WeightTextBox.Size = new System.Drawing.Size(68, 39);
             this.WeightTextBox.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(244, 203);
+            this.label2.Location = new System.Drawing.Point(453, 434);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.Size = new System.Drawing.Size(110, 32);
             this.label2.TabIndex = 33;
             this.label2.Text = "Distance:";
             // 
             // DistanceTextBox
             // 
             this.DistanceTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DistanceTextBox.Location = new System.Drawing.Point(310, 203);
+            this.DistanceTextBox.Location = new System.Drawing.Point(575, 434);
+            this.DistanceTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DistanceTextBox.Name = "DistanceTextBox";
-            this.DistanceTextBox.Size = new System.Drawing.Size(38, 23);
+            this.DistanceTextBox.Size = new System.Drawing.Size(68, 39);
             this.DistanceTextBox.TabIndex = 34;
             // 
             // CalculationButton
             // 
-            this.CalculationButton.BackColor = System.Drawing.Color.Green;
-            this.CalculationButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculationButton.FlatAppearance.BorderSize = 0;
-            this.CalculationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CalculationButton.ForeColor = System.Drawing.Color.White;
-            this.CalculationButton.Location = new System.Drawing.Point(278, 237);
+            this.CalculationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CalculationButton.ForeColor = System.Drawing.Color.Green;
+            this.CalculationButton.Location = new System.Drawing.Point(517, 505);
+            this.CalculationButton.Margin = new System.Windows.Forms.Padding(6);
             this.CalculationButton.Name = "CalculationButton";
-            this.CalculationButton.Size = new System.Drawing.Size(174, 23);
+            this.CalculationButton.Size = new System.Drawing.Size(323, 49);
             this.CalculationButton.TabIndex = 35;
             this.CalculationButton.Text = "Calculate burned calories";
             this.CalculationButton.UseVisualStyleBackColor = false;
@@ -124,9 +127,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(278, 272);
+            this.label3.Location = new System.Drawing.Point(517, 580);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 21);
+            this.label3.Size = new System.Drawing.Size(323, 45);
             this.label3.TabIndex = 36;
             this.label3.Text = "Total calories burned:";
             // 
@@ -135,21 +139,21 @@
             this.CalorieBurn.AutoSize = true;
             this.CalorieBurn.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CalorieBurn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.CalorieBurn.Location = new System.Drawing.Point(351, 309);
+            this.CalorieBurn.Location = new System.Drawing.Point(651, 659);
+            this.CalorieBurn.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.CalorieBurn.Name = "CalorieBurn";
-            this.CalorieBurn.Size = new System.Drawing.Size(25, 30);
+            this.CalorieBurn.Size = new System.Drawing.Size(48, 59);
             this.CalorieBurn.TabIndex = 37;
             this.CalorieBurn.Text = "0";
             // 
             // AddToRecordButton
             // 
-            this.AddToRecordButton.BackColor = System.Drawing.Color.Green;
-            this.AddToRecordButton.FlatAppearance.BorderSize = 0;
-            this.AddToRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddToRecordButton.ForeColor = System.Drawing.Color.White;
-            this.AddToRecordButton.Location = new System.Drawing.Point(278, 358);
+            this.AddToRecordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.AddToRecordButton.ForeColor = System.Drawing.Color.Green;
+            this.AddToRecordButton.Location = new System.Drawing.Point(517, 764);
+            this.AddToRecordButton.Margin = new System.Windows.Forms.Padding(6);
             this.AddToRecordButton.Name = "AddToRecordButton";
-            this.AddToRecordButton.Size = new System.Drawing.Size(174, 23);
+            this.AddToRecordButton.Size = new System.Drawing.Size(323, 49);
             this.AddToRecordButton.TabIndex = 38;
             this.AddToRecordButton.Text = "Add to your record";
             this.AddToRecordButton.UseVisualStyleBackColor = false;
@@ -160,9 +164,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(243, 157);
+            this.label4.Location = new System.Drawing.Point(451, 334);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.Size = new System.Drawing.Size(112, 32);
             this.label4.TabIndex = 39;
             this.label4.Text = "Duration:";
             // 
@@ -170,27 +175,30 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(353, 157);
+            this.label5.Location = new System.Drawing.Point(655, 334);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 15);
+            this.label5.Size = new System.Drawing.Size(100, 32);
             this.label5.TabIndex = 40;
             this.label5.Text = "minutes";
             // 
             // DurationTextBox
             // 
             this.DurationTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DurationTextBox.Location = new System.Drawing.Point(310, 153);
+            this.DurationTextBox.Location = new System.Drawing.Point(575, 327);
+            this.DurationTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.DurationTextBox.Name = "DurationTextBox";
-            this.DurationTextBox.Size = new System.Drawing.Size(38, 23);
+            this.DurationTextBox.Size = new System.Drawing.Size(68, 39);
             this.DurationTextBox.TabIndex = 41;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(353, 181);
+            this.label6.Location = new System.Drawing.Point(655, 387);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 15);
+            this.label6.Size = new System.Drawing.Size(40, 32);
             this.label6.TabIndex = 42;
             this.label6.Text = "kg";
             // 
@@ -198,15 +206,16 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(353, 207);
+            this.label10.Location = new System.Drawing.Point(655, 441);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 15);
+            this.label10.Size = new System.Drawing.Size(47, 32);
             this.label10.TabIndex = 45;
             this.label10.Text = "km";
             // 
             // CalorieCalculatorUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.Controls.Add(this.label10);
@@ -224,8 +233,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.RunWalkCombobox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CalorieCalculatorUC";
-            this.Size = new System.Drawing.Size(801, 460);
+            this.Size = new System.Drawing.Size(1488, 981);
             this.ResumeLayout(false);
             this.PerformLayout();
 
