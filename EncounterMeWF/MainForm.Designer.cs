@@ -75,7 +75,7 @@ namespace EncounterMeWF
             // PersonalRunButton
             // 
             this.PersonalRunButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PersonalRunButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.PersonalRunButton.BackColor = System.Drawing.Color.Transparent;
             this.PersonalRunButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PersonalRunButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.PersonalRunButton.FlatAppearance.BorderSize = 0;
@@ -96,7 +96,7 @@ namespace EncounterMeWF
             // CalorieCalculatorButton
             // 
             this.CalorieCalculatorButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CalorieCalculatorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CalorieCalculatorButton.BackColor = System.Drawing.Color.Transparent;
             this.CalorieCalculatorButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CalorieCalculatorButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.CalorieCalculatorButton.FlatAppearance.BorderSize = 0;
@@ -118,7 +118,7 @@ namespace EncounterMeWF
             // 
             this.SignOutButton.AutoSize = true;
             this.SignOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SignOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignOutButton.BackColor = System.Drawing.Color.Transparent;
             this.SignOutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.SignOutButton.FlatAppearance.BorderSize = 0;
@@ -140,7 +140,7 @@ namespace EncounterMeWF
             // 
             this.SignupSigninButton.AutoSize = true;
             this.SignupSigninButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SignupSigninButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignupSigninButton.BackColor = System.Drawing.Color.Transparent;
             this.SignupSigninButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SignupSigninButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.SignupSigninButton.FlatAppearance.BorderSize = 0;
@@ -162,7 +162,7 @@ namespace EncounterMeWF
             // 
             this.trailsButton.AutoSize = true;
             this.trailsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.trailsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.trailsButton.BackColor = System.Drawing.Color.Transparent;
             this.trailsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trailsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.trailsButton.FlatAppearance.BorderSize = 0;
@@ -184,7 +184,7 @@ namespace EncounterMeWF
             // 
             this.indexButton.AutoSize = true;
             this.indexButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.indexButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.indexButton.BackColor = System.Drawing.Color.Transparent;
             this.indexButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.indexButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.indexButton.FlatAppearance.BorderSize = 0;

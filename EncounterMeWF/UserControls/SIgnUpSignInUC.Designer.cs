@@ -47,9 +47,11 @@
             // 
             // SignUpButton
             // 
-            this.SignUpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignUpButton.BackColor = System.Drawing.Color.Green;
             this.SignUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SignUpButton.ForeColor = System.Drawing.Color.Green;
+            this.SignUpButton.FlatAppearance.BorderSize = 0;
+            this.SignUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignUpButton.ForeColor = System.Drawing.Color.White;
             this.SignUpButton.Location = new System.Drawing.Point(158, 320);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(75, 23);
@@ -60,9 +62,11 @@
             // 
             // SignInButton
             // 
-            this.SignInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignInButton.BackColor = System.Drawing.Color.Green;
             this.SignInButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SignInButton.ForeColor = System.Drawing.Color.Green;
+            this.SignInButton.FlatAppearance.BorderSize = 0;
+            this.SignInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SignInButton.ForeColor = System.Drawing.Color.White;
             this.SignInButton.Location = new System.Drawing.Point(504, 320);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(75, 23);
@@ -179,6 +183,7 @@
             // AdminCheckBox
             // 
             this.AdminCheckBox.AutoSize = true;
+            this.AdminCheckBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AdminCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.AdminCheckBox.Location = new System.Drawing.Point(171, 271);
             this.AdminCheckBox.Name = "AdminCheckBox";

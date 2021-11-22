@@ -92,9 +92,11 @@ namespace EncounterMeWF.UserControls
             // 
             // DeleteEntryButton
             // 
-            this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DeleteEntryButton.BackColor = System.Drawing.Color.Green;
             this.DeleteEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.DeleteEntryButton.FlatAppearance.BorderSize = 0;
+            this.DeleteEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteEntryButton.ForeColor = System.Drawing.Color.White;
             this.DeleteEntryButton.Location = new System.Drawing.Point(449, 403);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
             this.DeleteEntryButton.Size = new System.Drawing.Size(105, 23);

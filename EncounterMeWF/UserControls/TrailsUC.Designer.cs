@@ -92,9 +92,13 @@ namespace EncounterMeWF.UserControls
             // 
             // CreateEntryButton
             // 
-            this.CreateEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CreateEntryButton.BackColor = System.Drawing.Color.Green;
             this.CreateEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.CreateEntryButton.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.CreateEntryButton.FlatAppearance.BorderSize = 0;
+            this.CreateEntryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.CreateEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateEntryButton.ForeColor = System.Drawing.Color.White;
             this.CreateEntryButton.Location = new System.Drawing.Point(14, 247);
             this.CreateEntryButton.Name = "CreateEntryButton";
             this.CreateEntryButton.Size = new System.Drawing.Size(83, 23);
@@ -141,9 +145,11 @@ namespace EncounterMeWF.UserControls
             // 
             // DeleteEntryButton
             // 
-            this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DeleteEntryButton.BackColor = System.Drawing.Color.Green;
             this.DeleteEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.DeleteEntryButton.FlatAppearance.BorderSize = 0;
+            this.DeleteEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteEntryButton.ForeColor = System.Drawing.Color.White;
             this.DeleteEntryButton.Location = new System.Drawing.Point(440, 358);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
             this.DeleteEntryButton.Size = new System.Drawing.Size(105, 23);
@@ -154,9 +160,11 @@ namespace EncounterMeWF.UserControls
             // 
             // ModifyEntryButton
             // 
-            this.ModifyEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ModifyEntryButton.BackColor = System.Drawing.Color.Green;
             this.ModifyEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ModifyEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.ModifyEntryButton.FlatAppearance.BorderSize = 0;
+            this.ModifyEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ModifyEntryButton.ForeColor = System.Drawing.Color.White;
             this.ModifyEntryButton.Location = new System.Drawing.Point(306, 358);
             this.ModifyEntryButton.Name = "ModifyEntryButton";
             this.ModifyEntryButton.Size = new System.Drawing.Size(105, 23);
@@ -217,9 +225,11 @@ namespace EncounterMeWF.UserControls
             // 
             // SearchButton
             // 
-            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SearchButton.BackColor = System.Drawing.Color.Green;
             this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButton.ForeColor = System.Drawing.Color.Green;
+            this.SearchButton.FlatAppearance.BorderSize = 0;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
             this.SearchButton.Location = new System.Drawing.Point(14, 360);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(87, 23);
@@ -240,6 +250,7 @@ namespace EncounterMeWF.UserControls
             // 
             // TrailStartDatePicker
             // 
+            this.TrailStartDatePicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TrailStartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TrailStartDatePicker.Location = new System.Drawing.Point(14, 130);
             this.TrailStartDatePicker.Name = "TrailStartDatePicker";
@@ -258,6 +269,7 @@ namespace EncounterMeWF.UserControls
             // 
             // TrailStartTimePicker
             // 
+            this.TrailStartTimePicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TrailStartTimePicker.CustomFormat = "HH:mm";
             this.TrailStartTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TrailStartTimePicker.Location = new System.Drawing.Point(14, 174);

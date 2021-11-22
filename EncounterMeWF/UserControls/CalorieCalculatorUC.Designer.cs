@@ -57,6 +57,7 @@
             // 
             // RunWalkCombobox
             // 
+            this.RunWalkCombobox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RunWalkCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RunWalkCombobox.FormattingEnabled = true;
             this.RunWalkCombobox.Items.AddRange(new object[] {
@@ -105,9 +106,11 @@
             // 
             // CalculationButton
             // 
-            this.CalculationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CalculationButton.BackColor = System.Drawing.Color.Green;
             this.CalculationButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CalculationButton.ForeColor = System.Drawing.Color.Green;
+            this.CalculationButton.FlatAppearance.BorderSize = 0;
+            this.CalculationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CalculationButton.ForeColor = System.Drawing.Color.White;
             this.CalculationButton.Location = new System.Drawing.Point(278, 237);
             this.CalculationButton.Name = "CalculationButton";
             this.CalculationButton.Size = new System.Drawing.Size(174, 23);
@@ -140,9 +143,11 @@
             // 
             // AddToRecordButton
             // 
-            this.AddToRecordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.AddToRecordButton.BackColor = System.Drawing.Color.Green;
             this.AddToRecordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddToRecordButton.ForeColor = System.Drawing.Color.Green;
+            this.AddToRecordButton.FlatAppearance.BorderSize = 0;
+            this.AddToRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddToRecordButton.ForeColor = System.Drawing.Color.White;
             this.AddToRecordButton.Location = new System.Drawing.Point(278, 358);
             this.AddToRecordButton.Name = "AddToRecordButton";
             this.AddToRecordButton.Size = new System.Drawing.Size(174, 23);
