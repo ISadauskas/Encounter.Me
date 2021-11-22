@@ -29,9 +29,7 @@ namespace EncounterMeWF
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.headerPanel = new System.Windows.Forms.Panel();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.PersonalRunButton = new System.Windows.Forms.Button();
             this.CalorieCalculatorButton = new System.Windows.Forms.Button();
             this.SignOutButton = new System.Windows.Forms.Button();
@@ -39,14 +37,14 @@ namespace EncounterMeWF
             this.trailsButton = new System.Windows.Forms.Button();
             this.indexButton = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.LogoButton = new System.Windows.Forms.Button();
             this.headerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.headerPanel.Controls.Add(this.LogoPictureBox);
+            this.headerPanel.Controls.Add(this.LogoButton);
             this.headerPanel.Controls.Add(this.PersonalRunButton);
             this.headerPanel.Controls.Add(this.CalorieCalculatorButton);
             this.headerPanel.Controls.Add(this.SignOutButton);
@@ -59,18 +57,6 @@ namespace EncounterMeWF
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(134, 460);
             this.headerPanel.TabIndex = 0;
-            // 
-            // LogoPictureBox
-            // 
-            this.LogoPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(35, 3);
-            this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(55, 39);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoPictureBox.TabIndex = 16;
-            this.LogoPictureBox.TabStop = false;
-            this.LogoPictureBox.Click += new System.EventHandler(this.LogoPictureBox_Click);
             // 
             // PersonalRunButton
             // 
@@ -210,6 +196,19 @@ namespace EncounterMeWF
             this.panelContainer.Size = new System.Drawing.Size(801, 460);
             this.panelContainer.TabIndex = 1;
             // 
+            // LogoButton
+            // 
+            this.LogoButton.BackColor = System.Drawing.Color.Transparent;
+            this.LogoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LogoButton.FlatAppearance.BorderSize = 0;
+            this.LogoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoButton.Image = global::EncounterMeWF.Properties.Resources.LeafLogo3;
+            this.LogoButton.Location = new System.Drawing.Point(27, 3);
+            this.LogoButton.Name = "LogoButton";
+            this.LogoButton.Size = new System.Drawing.Size(75, 40);
+            this.LogoButton.TabIndex = 9;
+            this.LogoButton.UseVisualStyleBackColor = false;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -221,7 +220,6 @@ namespace EncounterMeWF
             this.Text = "EncounterMe";
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,7 +234,7 @@ namespace EncounterMeWF
         private System.Windows.Forms.Button SignOutButton;
         private System.Windows.Forms.Button CalorieCalculatorButton;
         private System.Windows.Forms.Button PersonalRunButton;
-        private System.Windows.Forms.PictureBox LogoPictureBox;
+        private System.Windows.Forms.Button LogoButton;
     }
 }
 
