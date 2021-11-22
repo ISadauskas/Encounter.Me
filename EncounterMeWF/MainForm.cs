@@ -101,7 +101,7 @@ namespace EncounterMeWF
             }
         }
 
-        private void LogoPictureBox_Click(object sender, EventArgs e)
+        private void LogoButton_Click(object sender, EventArgs e)
         {
             IndexUC uc = new IndexUC();
             addUserControl(uc);
