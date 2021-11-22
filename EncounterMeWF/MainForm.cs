@@ -19,7 +19,6 @@ namespace EncounterMeWF
         public delegate void HideDelegate();
         private HideDelegate HideDelegateFunction;
 
-        //public event EventHandler OnButtonClick;
         public mainForm()
         {
             InitializeComponent();
@@ -69,12 +68,6 @@ namespace EncounterMeWF
             else
                 PersonalRunButton.Visible = false;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CalorieCalculatorUC uc = new CalorieCalculatorUC();
-            addUserControl(uc);
-        }
-
         private void CalorieCalculatorButton_Click(object sender, EventArgs e)
         {
             CalorieCalculatorUC uc = new CalorieCalculatorUC();

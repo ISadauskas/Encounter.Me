@@ -29,8 +29,8 @@ namespace EncounterMeWF.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TrailGridView = new System.Windows.Forms.DataGridView();
             this.CreateEntryButton = new System.Windows.Forms.Button();
             this.TrailLengthTextbox = new System.Windows.Forms.TextBox();
@@ -61,23 +61,24 @@ namespace EncounterMeWF.UserControls
             this.TrailGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TrailGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.TrailGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.TrailGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TrailGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.TrailGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TrailGridView.Location = new System.Drawing.Point(149, 24);
             this.TrailGridView.Name = "TrailGridView";
@@ -91,8 +92,11 @@ namespace EncounterMeWF.UserControls
             // 
             // CreateEntryButton
             // 
-            this.CreateEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CreateEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.CreateEntryButton.BackColor = System.Drawing.Color.Green;
+            this.CreateEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateEntryButton.FlatAppearance.BorderSize = 0;
+            this.CreateEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CreateEntryButton.ForeColor = System.Drawing.Color.White;
             this.CreateEntryButton.Location = new System.Drawing.Point(14, 247);
             this.CreateEntryButton.Name = "CreateEntryButton";
             this.CreateEntryButton.Size = new System.Drawing.Size(83, 23);
@@ -139,8 +143,11 @@ namespace EncounterMeWF.UserControls
             // 
             // DeleteEntryButton
             // 
-            this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.DeleteEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.DeleteEntryButton.BackColor = System.Drawing.Color.Green;
+            this.DeleteEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteEntryButton.FlatAppearance.BorderSize = 0;
+            this.DeleteEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteEntryButton.ForeColor = System.Drawing.Color.White;
             this.DeleteEntryButton.Location = new System.Drawing.Point(440, 358);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
             this.DeleteEntryButton.Size = new System.Drawing.Size(105, 23);
@@ -151,8 +158,11 @@ namespace EncounterMeWF.UserControls
             // 
             // ModifyEntryButton
             // 
-            this.ModifyEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ModifyEntryButton.ForeColor = System.Drawing.Color.Green;
+            this.ModifyEntryButton.BackColor = System.Drawing.Color.Green;
+            this.ModifyEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ModifyEntryButton.FlatAppearance.BorderSize = 0;
+            this.ModifyEntryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ModifyEntryButton.ForeColor = System.Drawing.Color.White;
             this.ModifyEntryButton.Location = new System.Drawing.Point(306, 358);
             this.ModifyEntryButton.Name = "ModifyEntryButton";
             this.ModifyEntryButton.Size = new System.Drawing.Size(105, 23);
@@ -213,8 +223,11 @@ namespace EncounterMeWF.UserControls
             // 
             // SearchButton
             // 
-            this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.SearchButton.ForeColor = System.Drawing.Color.Green;
+            this.SearchButton.BackColor = System.Drawing.Color.Green;
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatAppearance.BorderSize = 0;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
             this.SearchButton.Location = new System.Drawing.Point(14, 360);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(87, 23);
@@ -235,6 +248,7 @@ namespace EncounterMeWF.UserControls
             // 
             // TrailStartDatePicker
             // 
+            this.TrailStartDatePicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TrailStartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TrailStartDatePicker.Location = new System.Drawing.Point(14, 130);
             this.TrailStartDatePicker.Name = "TrailStartDatePicker";
@@ -253,6 +267,7 @@ namespace EncounterMeWF.UserControls
             // 
             // TrailStartTimePicker
             // 
+            this.TrailStartTimePicker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.TrailStartTimePicker.CustomFormat = "HH:mm";
             this.TrailStartTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TrailStartTimePicker.Location = new System.Drawing.Point(14, 174);
