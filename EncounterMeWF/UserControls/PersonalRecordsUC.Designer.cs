@@ -29,8 +29,8 @@ namespace EncounterMeWF.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.TrailGridView = new System.Windows.Forms.DataGridView();
             this.DeleteEntryButton = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Green;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(337, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 30);
@@ -63,23 +63,23 @@ namespace EncounterMeWF.UserControls
             this.TrailGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.TrailGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.TrailGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.TrailGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.TrailGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TrailGridView.Location = new System.Drawing.Point(47, 60);
             this.TrailGridView.Name = "TrailGridView";
@@ -93,6 +93,7 @@ namespace EncounterMeWF.UserControls
             // DeleteEntryButton
             // 
             this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DeleteEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteEntryButton.ForeColor = System.Drawing.Color.Green;
             this.DeleteEntryButton.Location = new System.Drawing.Point(449, 403);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
@@ -106,7 +107,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Green;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(569, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(222, 30);
@@ -117,7 +118,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.MostBurnedCaloriesAnswer.AutoSize = true;
             this.MostBurnedCaloriesAnswer.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MostBurnedCaloriesAnswer.ForeColor = System.Drawing.Color.Green;
+            this.MostBurnedCaloriesAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.MostBurnedCaloriesAnswer.Location = new System.Drawing.Point(624, 98);
             this.MostBurnedCaloriesAnswer.Name = "MostBurnedCaloriesAnswer";
             this.MostBurnedCaloriesAnswer.Size = new System.Drawing.Size(25, 30);
@@ -128,7 +129,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(577, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 30);
@@ -139,7 +140,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.AllBurnedCaloriesAnswer.AutoSize = true;
             this.AllBurnedCaloriesAnswer.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AllBurnedCaloriesAnswer.ForeColor = System.Drawing.Color.Green;
+            this.AllBurnedCaloriesAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.AllBurnedCaloriesAnswer.Location = new System.Drawing.Point(624, 173);
             this.AllBurnedCaloriesAnswer.Name = "AllBurnedCaloriesAnswer";
             this.AllBurnedCaloriesAnswer.Size = new System.Drawing.Size(25, 30);
@@ -150,7 +151,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Green;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(569, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(217, 30);
@@ -161,7 +162,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.LongestRunDistanceAnswer.AutoSize = true;
             this.LongestRunDistanceAnswer.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LongestRunDistanceAnswer.ForeColor = System.Drawing.Color.Green;
+            this.LongestRunDistanceAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.LongestRunDistanceAnswer.Location = new System.Drawing.Point(624, 241);
             this.LongestRunDistanceAnswer.Name = "LongestRunDistanceAnswer";
             this.LongestRunDistanceAnswer.Size = new System.Drawing.Size(25, 30);
@@ -172,7 +173,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Green;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(561, 274);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(228, 30);
@@ -183,7 +184,7 @@ namespace EncounterMeWF.UserControls
             // 
             this.LongestWalkDistanceAnswer.AutoSize = true;
             this.LongestWalkDistanceAnswer.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LongestWalkDistanceAnswer.ForeColor = System.Drawing.Color.Green;
+            this.LongestWalkDistanceAnswer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.LongestWalkDistanceAnswer.Location = new System.Drawing.Point(624, 316);
             this.LongestWalkDistanceAnswer.Name = "LongestWalkDistanceAnswer";
             this.LongestWalkDistanceAnswer.Size = new System.Drawing.Size(25, 30);

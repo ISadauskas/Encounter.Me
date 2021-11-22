@@ -47,22 +47,28 @@
             // 
             // SignUpButton
             // 
+            this.SignUpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SignUpButton.ForeColor = System.Drawing.Color.Green;
             this.SignUpButton.Location = new System.Drawing.Point(158, 320);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(75, 23);
             this.SignUpButton.TabIndex = 0;
             this.SignUpButton.Text = "Sign Up";
-            this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.UseVisualStyleBackColor = false;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // SignInButton
             // 
+            this.SignInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SignInButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SignInButton.ForeColor = System.Drawing.Color.Green;
             this.SignInButton.Location = new System.Drawing.Point(504, 320);
             this.SignInButton.Name = "SignInButton";
             this.SignInButton.Size = new System.Drawing.Size(75, 23);
             this.SignInButton.TabIndex = 1;
             this.SignInButton.Text = "Sign In";
-            this.SignInButton.UseVisualStyleBackColor = true;
+            this.SignInButton.UseVisualStyleBackColor = false;
             this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
             // SignUpUsernameTextbox
@@ -113,6 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(90, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 15);
@@ -122,6 +129,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(78, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
@@ -131,6 +139,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(93, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 15);
@@ -140,6 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(46, 245);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 15);
@@ -149,6 +159,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(342, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 15);
@@ -158,6 +169,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(423, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 15);
@@ -167,6 +179,7 @@
             // AdminCheckBox
             // 
             this.AdminCheckBox.AutoSize = true;
+            this.AdminCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.AdminCheckBox.Location = new System.Drawing.Point(171, 271);
             this.AdminCheckBox.Name = "AdminCheckBox";
             this.AdminCheckBox.Size = new System.Drawing.Size(62, 19);

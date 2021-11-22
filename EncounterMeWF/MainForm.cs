@@ -101,5 +101,11 @@ namespace EncounterMeWF
                 SignOutButton.Visible = false;
             }
         }
+
+        private void LogoPictureBox_Click(object sender, EventArgs e)
+        {
+            IndexUC uc = new IndexUC();
+            addUserControl(uc);
+        }
     }
 }

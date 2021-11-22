@@ -70,6 +70,7 @@ namespace EncounterMeWF.UserControls
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.TrailGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TrailGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -92,6 +93,7 @@ namespace EncounterMeWF.UserControls
             // CreateEntryButton
             // 
             this.CreateEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CreateEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CreateEntryButton.ForeColor = System.Drawing.Color.Green;
             this.CreateEntryButton.Location = new System.Drawing.Point(14, 247);
             this.CreateEntryButton.Name = "CreateEntryButton";
@@ -140,6 +142,7 @@ namespace EncounterMeWF.UserControls
             // DeleteEntryButton
             // 
             this.DeleteEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.DeleteEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteEntryButton.ForeColor = System.Drawing.Color.Green;
             this.DeleteEntryButton.Location = new System.Drawing.Point(440, 358);
             this.DeleteEntryButton.Name = "DeleteEntryButton";
@@ -152,6 +155,7 @@ namespace EncounterMeWF.UserControls
             // ModifyEntryButton
             // 
             this.ModifyEntryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ModifyEntryButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ModifyEntryButton.ForeColor = System.Drawing.Color.Green;
             this.ModifyEntryButton.Location = new System.Drawing.Point(306, 358);
             this.ModifyEntryButton.Name = "ModifyEntryButton";
@@ -214,6 +218,7 @@ namespace EncounterMeWF.UserControls
             // SearchButton
             // 
             this.SearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SearchButton.ForeColor = System.Drawing.Color.Green;
             this.SearchButton.Location = new System.Drawing.Point(14, 360);
             this.SearchButton.Name = "SearchButton";
