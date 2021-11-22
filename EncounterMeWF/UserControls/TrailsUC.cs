@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.IO;
+using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -16,7 +17,7 @@ namespace EncounterMeWF.UserControls
         private TrailsUCRegex _trailsUCRegex = new TrailsUCRegex();
 
 
-
+        public string ConnectionString = "Data Source=encountermedbserver.database.windows.net;Initial Catalog=EncounterMeDb;Integrated Security=True";
         BindingList<Trail> TrailList = new BindingList<Trail>();
         BindingList<Trail> SearchList = new BindingList<Trail>();
         public int TrailIndex = 0;
@@ -25,7 +26,6 @@ namespace EncounterMeWF.UserControls
         public TrailsUC()
         {
             InitializeComponent();
-            //Load json file in table view on startup
             try
             {
                 TrailList = _trailJson.JsonRead();
@@ -34,7 +34,10 @@ namespace EncounterMeWF.UserControls
             {
                 _trailJson.JsonWrite(TrailList);
             }
-
+            
+            SqlConnection Con = new SqlConnection(ConnectionString);
+            Con.Open();
+            Con.Close();
             TrailList = _trail.UpdateTrailList(TrailList);
             _trailJson.JsonWrite(TrailList);
             TrailGridView.DataSource = TrailList;
