@@ -30,6 +30,7 @@ namespace EncounterMeWF
         private void InitializeComponent()
         {
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.LogoButton = new System.Windows.Forms.Button();
             this.PersonalRunButton = new System.Windows.Forms.Button();
             this.CalorieCalculatorButton = new System.Windows.Forms.Button();
             this.SignOutButton = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace EncounterMeWF
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.headerPanel.Controls.Add(this.LogoButton);
             this.headerPanel.Controls.Add(this.PersonalRunButton);
             this.headerPanel.Controls.Add(this.CalorieCalculatorButton);
             this.headerPanel.Controls.Add(this.SignOutButton);
@@ -55,6 +57,23 @@ namespace EncounterMeWF
             this.headerPanel.Name = "headerPanel";
             this.headerPanel.Size = new System.Drawing.Size(134, 460);
             this.headerPanel.TabIndex = 0;
+            // 
+            // LogoButton
+            // 
+            this.LogoButton.AutoSize = true;
+            this.LogoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LogoButton.BackColor = System.Drawing.Color.Transparent;
+            this.LogoButton.FlatAppearance.BorderSize = 0;
+            this.LogoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.LogoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.LogoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoButton.Image = global::EncounterMeWF.Properties.Resources.LeafLogo;
+            this.LogoButton.Location = new System.Drawing.Point(39, 13);
+            this.LogoButton.Name = "LogoButton";
+            this.LogoButton.Size = new System.Drawing.Size(51, 36);
+            this.LogoButton.TabIndex = 9;
+            this.LogoButton.UseVisualStyleBackColor = false;
+            this.LogoButton.Click += new System.EventHandler(this.indexButton_Click);
             // 
             // PersonalRunButton
             // 
@@ -71,7 +90,7 @@ namespace EncounterMeWF
             this.PersonalRunButton.Location = new System.Drawing.Point(9, 228);
             this.PersonalRunButton.Margin = new System.Windows.Forms.Padding(0);
             this.PersonalRunButton.Name = "PersonalRunButton";
-            this.PersonalRunButton.Size = new System.Drawing.Size(115, 40);
+            this.PersonalRunButton.Size = new System.Drawing.Size(115, 30);
             this.PersonalRunButton.TabIndex = 8;
             this.PersonalRunButton.Text = "Personal runs";
             this.PersonalRunButton.UseVisualStyleBackColor = false;
@@ -216,6 +235,7 @@ namespace EncounterMeWF
         private System.Windows.Forms.Button SignOutButton;
         private System.Windows.Forms.Button CalorieCalculatorButton;
         private System.Windows.Forms.Button PersonalRunButton;
+        private System.Windows.Forms.Button LogoButton;
     }
 }
 
