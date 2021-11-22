@@ -35,6 +35,8 @@ namespace EncounterMeWF.UserControls
                 _trailJson.JsonWrite(TrailList);
             }
 
+            TrailList = _trail.UpdateTrailList(TrailList);
+            _trailJson.JsonWrite(TrailList);
             TrailGridView.DataSource = TrailList;
         }
 
@@ -105,7 +107,7 @@ namespace EncounterMeWF.UserControls
 
         public bool Check()
         {
-            switch (_trailsUCRegex.CheckTrail(TrailLengthTextbox.Text, TrailStartLocationTextbox.Text))
+            switch (_trailsUCRegex.CheckTrail(TrailLengthTextbox.Text, TrailStartLocationTextbox.Text, TrailStartDatePicker.Value))
             {
                 case 1:
                     MessageBox.Show("Please enter trail length number", "Entry Error", MessageBoxButtons.OK);
@@ -114,6 +116,9 @@ namespace EncounterMeWF.UserControls
                     MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 3:
+                    MessageBox.Show("The date cannot be earlier than today", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 4:
                     MessageBox.Show("Please enter a start location", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 0:
