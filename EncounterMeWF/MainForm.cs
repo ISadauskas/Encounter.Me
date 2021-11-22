@@ -68,11 +68,6 @@ namespace EncounterMeWF
             else
                 PersonalRunButton.Visible = false;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CalorieCalculatorUC uc = new CalorieCalculatorUC();
-            addUserControl(uc);
-        }
 
         private void CalorieCalculatorButton_Click(object sender, EventArgs e)
         {
@@ -99,12 +94,6 @@ namespace EncounterMeWF
                 SignupSigninButton.Visible = true;
                 SignOutButton.Visible = false;
             }
-        }
-
-        private void LogoButton_Click(object sender, EventArgs e)
-        {
-            IndexUC uc = new IndexUC();
-            addUserControl(uc);
         }
     }
 }

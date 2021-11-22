@@ -75,7 +75,7 @@ namespace EncounterMeWF
             this.LogoButton.Size = new System.Drawing.Size(51, 36);
             this.LogoButton.TabIndex = 9;
             this.LogoButton.UseVisualStyleBackColor = false;
-            this.LogoButton.Click += new System.EventHandler(this.LogoButton_Click);
+            this.LogoButton.Click += new System.EventHandler(this.indexButton_Click);
             // 
             // PersonalRunButton
             // 
