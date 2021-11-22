@@ -37,12 +37,14 @@ namespace EncounterMeWF
             this.trailsButton = new System.Windows.Forms.Button();
             this.indexButton = new System.Windows.Forms.Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.headerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerPanel
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.headerPanel.Controls.Add(this.button1);
             this.headerPanel.Controls.Add(this.PersonalRunButton);
             this.headerPanel.Controls.Add(this.CalorieCalculatorButton);
             this.headerPanel.Controls.Add(this.SignOutButton);
@@ -71,7 +73,7 @@ namespace EncounterMeWF
             this.PersonalRunButton.Location = new System.Drawing.Point(9, 228);
             this.PersonalRunButton.Margin = new System.Windows.Forms.Padding(0);
             this.PersonalRunButton.Name = "PersonalRunButton";
-            this.PersonalRunButton.Size = new System.Drawing.Size(115, 40);
+            this.PersonalRunButton.Size = new System.Drawing.Size(115, 30);
             this.PersonalRunButton.TabIndex = 8;
             this.PersonalRunButton.Text = "Personal runs";
             this.PersonalRunButton.UseVisualStyleBackColor = false;
@@ -191,6 +193,17 @@ namespace EncounterMeWF
             this.panelContainer.Size = new System.Drawing.Size(801, 460);
             this.panelContainer.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.Location = new System.Drawing.Point(25, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 25);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -216,6 +229,7 @@ namespace EncounterMeWF
         private System.Windows.Forms.Button SignOutButton;
         private System.Windows.Forms.Button CalorieCalculatorButton;
         private System.Windows.Forms.Button PersonalRunButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

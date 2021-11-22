@@ -11,13 +11,10 @@ How to set up:
 
 To use this project firstly you need to register and then you can start creating your own paths.
 
-+  Lazy initialization.
-+-  Generics (in delegates(PersonalRecords 24), events and methods(UserJson 12))
-+  Delegates(MainForm, PersonalRecordsUC).
-+  Events and their usage: standard and custom.
-+  Exceptions and dealing with them in a meaningfull way. (TrailsUC 29, SignUpSignInUC 22)
-+  Anonymous methods.
-+  Lambda expressions.
-+  Concurrent programming (threading or async/await (for your own written classes); common resource usage between threads).
--  Web service implemented and used
-+  Dependency Injection.
+-  Prepare ER diagram and create the database (MS SQL, but not mandatory - only important to be able to integrate to your solution).
+-  Select/insert/update/delete usage.
+-  LINQ usage: Join, Group, Skip and Take, Agregate function.
+-  Entity Framework usage.
+-  Usage of middleware and at least one interceptor
+-  Unit and integration tests coverage at least 50%
+-  Logging to the file or server of most important logic
