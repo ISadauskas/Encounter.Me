@@ -23,7 +23,7 @@ namespace EncounterMeWF
             {
                 Name = Name,
                 Length = double.Parse(Length),
-                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 0),
+                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 00),
                 Location = StartLocation,
                 Organizer = OrganizerUser.Username
             };
@@ -37,7 +37,7 @@ namespace EncounterMeWF
             {
                 Name = Name,
                 Length = double.Parse(Length),
-                Timestamp = StartDate.Date + StartTime.TimeOfDay,
+                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 00),
                 Location = StartLocation,
                 Organizer = OrganizerUser.Username
             };

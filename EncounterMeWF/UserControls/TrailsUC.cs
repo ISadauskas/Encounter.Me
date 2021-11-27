@@ -16,52 +16,23 @@ namespace EncounterMeWF.UserControls
         public Trail TempTrail = new Trail();
         private Search _search = new Search();
         private TrailsUCRegex _trailsUCRegex = new TrailsUCRegex();
-
+        private TrailSQL _trailSQL = new TrailSQL();
 
 
         BindingList<Trail> TrailList = new BindingList<Trail>();
-        BindingList<Trail> SearchList = new BindingList<Trail>();
         public int TrailIndex = 0;
-
-        public string ConnectionString = "Data Source=encountermedbserver.database.windows.net;Initial Catalog=EncounterMeDb;User ID=Adminas1;Password=Password1";
-        public int index = 0;
 
         public TrailsUC()
         {
             InitializeComponent();
-            //Load json file in table view on startup
-            /*try
-            {
-                TrailList = _trailJson.JsonRead();
-            }
-            catch (FileNotFoundException e)
-            {
-                _trailJson.JsonWrite(TrailList);
-            }*/
-            UpdateTable();
-            //TrailList = _trail.UpdateTrailList(TrailList);
-            //_trailJson.JsonWrite(TrailList);
-            //TrailGridView.DataSource = TrailList;
+
+            DataGridViewUpdate();
         }
-        private void UpdateTable()
+        
+        private void DataGridViewUpdate()
         {
-            using (SqlConnection Con = new SqlConnection(ConnectionString))
-            {
-                string SqlQuery = "SELECT COUNT(*) FROM \"Trails\"";
-                Con.Open();
-                SqlCommand sc = new SqlCommand(SqlQuery, Con);
-                index = (int)sc.ExecuteScalar();
-                string SqlQuery1 = "SELECT Name, Length, Timestamp, Location, Organizer FROM \"Trails\"";
-                SqlCommand sc1 = new SqlCommand(SqlQuery1, Con);
-                SqlDataAdapter da = new SqlDataAdapter(sc1);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                //SQLList = (BindingList<Trail>)sc1.ExecuteScalar();
-                //sc.Parameters.AddWithValue("@x", textBox1.Text);
-                Con.Close();
-                CountTextbox.Text = index.ToString();
-                TrailGridView.DataSource = dt;
-            }
+            DataTable dt = _trailSQL.UpdateTable();
+            TrailGridView.DataSource = dt;
         }
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
@@ -77,20 +48,8 @@ namespace EncounterMeWF.UserControls
                         TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
-
-
-                    using (SqlConnection Con = new SqlConnection(ConnectionString))
-                    {
-                        string Try = TempTrail.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
-                        string SqlQuery = "INSERT INTO \"Trails\" (Id, Name, Length, Timestamp, Location, Organizer)" +
-                        "VALUES(" + index + ", '" + TempTrail.Name + "', " + TempTrail.Length + ", convert(datetime,'" + Try + "'), '" + TempTrail.Location + "', '" + TempTrail.Organizer + "')";
-                        Con.Open();
-                        SqlCommand sc = new SqlCommand(SqlQuery, Con);
-                        sc.ExecuteNonQuery();
-                        Con.Close();
-                        index++;
-                    }
-                    UpdateTable();
+                    _trailSQL.InsertTrail(TempTrail);
+                    DataGridViewUpdate();
                 }
             }
             else
@@ -102,25 +61,13 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 User CurrentUser = _signInJson.JsonRead();
-                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Organizer)
+                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailGridView.SelectedRows[0].Cells[4].Value.ToString())
                 {
                     TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
-                    using (SqlConnection Con = new SqlConnection(ConnectionString))
-                    {
-                        string SqlQuery = "DELETE FROM \"Trails\" WHERE id ="+TrailGridView.SelectedRows[0].Index.ToString();
-                        Con.Open();
-                        SqlCommand sc = new SqlCommand(SqlQuery, Con);
-                        sc.ExecuteNonQuery();
-                        SqlQuery = "UPDATE Trails SET id=(id-1) WHERE id>" + TrailGridView.SelectedRows[0].Index.ToString();
-                        sc = new SqlCommand(SqlQuery, Con);
-                        sc.ExecuteNonQuery();
-                        Con.Close();
-                    }
-                    //_trailJson.JsonWrite(TrailList);
+                    _trailSQL.DeleteTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()));
                     TrailIndex = TrailGridView.SelectedRows[0].Index - 1;
                     TrailGridView.Rows[TrailIndex].Selected = true;
-                    UpdateTable();
-
+                    DataGridViewUpdate();
                 }
                 else
                     MessageBox.Show("You do not have access to delete other people trails.", "Entry Error", MessageBoxButtons.OK);
@@ -134,28 +81,15 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 User CurrentUser = _signInJson.JsonRead();
-                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Organizer)
+                if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailGridView.SelectedRows[0].Cells[4].Value.ToString())
                 {
                     if (Check())
                     {
                         TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
-                        using (SqlConnection Con = new SqlConnection(ConnectionString))
-                        {
-                            string Try = TempTrail.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
-
-                            string SqlQuery = "UPDATE Trails SET Name='" + TempTrail.Name + "', Length='" + TempTrail.Length + "', Timestamp= convert(datetime,'" + Try + "'), Location='" + TempTrail.Location +
-                                "', Organizer='" + TempTrail.Organizer + "' WHERE id=" + TrailGridView.SelectedRows[0].Index.ToString();
-                            Con.Open();
-                            SqlCommand sc = new SqlCommand(SqlQuery, Con);
-                            sc.ExecuteNonQuery();
-                            Con.Close();
-                        }
-                        UpdateTable();
-                        /*TrailGridView.Rows.RemoveAt(TrailIndex);
-                        TrailList.Insert(TrailIndex, TempTrail);
-                        _trailJson.JsonWrite(TrailList);*/
+                        _trailSQL.ModifyTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()), TempTrail);
+                        DataGridViewUpdate();
                     }
                 }
                 else
@@ -210,16 +144,8 @@ namespace EncounterMeWF.UserControls
         {
             if (SearchCheck())
             {
-                Search TempLength = new Search();
-                TempLength = _search.SearchLength(LengthFromTextBox.Text, LengthToTextBox.Text);
-                SearchList.Clear();
-                foreach (var TempTrail in TrailList)
-                {
-                    if ((int)Math.Round(TempTrail.Length) >= TempLength.LenghtFrom &&
-                        (int)Math.Round(TempTrail.Length) <= TempLength.LenghtTo)
-                        SearchList.Add(TempTrail);
-                }
-                TrailGridView.DataSource = SearchList;
+                DataTable dt = _trailSQL.SearchTable(LengthFromTextBox.Text, LengthToTextBox.Text);
+                TrailGridView.DataSource = dt;
             }
         }
 
@@ -233,12 +159,54 @@ namespace EncounterMeWF.UserControls
             {
                 TrailIndex = TrailList.Count - 1;
             }
+            TrailNameTextbox.Text = TrailGridView.SelectedRows[0].Cells[1].Value.ToString();
+            TrailLengthTextbox.Text = TrailGridView.SelectedRows[0].Cells[2].Value.ToString();
+            TrailStartDatePicker.Value = DateTime.Parse(TrailGridView.SelectedRows[0].Cells[3].Value.ToString());
+            TrailStartTimePicker.Value = DateTime.Parse(TrailGridView.SelectedRows[0].Cells[3].Value.ToString());
+            TrailStartLocationTextbox.Text = TrailGridView.SelectedRows[0].Cells[4].Value.ToString();
+        }
 
-            TrailNameTextbox.Text = TrailGridView.SelectedRows[0].Cells[0].Value.ToString();
-            TrailLengthTextbox.Text = TrailGridView.SelectedRows[0].Cells[1].Value.ToString();
-            TrailStartDatePicker.Value = DateTime.Parse(TrailGridView.SelectedRows[0].Cells[2].Value.ToString());
-            TrailStartTimePicker.Value = DateTime.Parse(TrailGridView.SelectedRows[0].Cells[2].Value.ToString());
-            TrailStartLocationTextbox.Text = TrailGridView.SelectedRows[0].Cells[3].Value.ToString();
+        private void TrailGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewColumn newColumn = TrailGridView.Columns[e.ColumnIndex];
+            DataGridViewColumn oldColumn = TrailGridView.SortedColumn;
+            ListSortDirection direction;
+
+            // If oldColumn is null, then the DataGridView is not sorted.
+            if (oldColumn != null)
+            {
+                // Sort the same column again, reversing the SortOrder.
+                if (oldColumn == newColumn && 
+                    TrailGridView.SortOrder == System.Windows.Forms.SortOrder.Ascending)
+                {
+                    direction = ListSortDirection.Descending;
+                }
+                else
+                {
+                    // Sort a new column and remove the old SortGlyph.
+                    direction = ListSortDirection.Ascending;
+                    oldColumn.HeaderCell.SortGlyphDirection = System.Windows.Forms.SortOrder.None;
+                }
+            }
+            else
+            {
+                direction = ListSortDirection.Ascending;
+            }
+
+            // Sort the selected column.
+            TrailGridView.Sort(newColumn, direction);
+            newColumn.HeaderCell.SortGlyphDirection =
+                direction == ListSortDirection.Ascending ?
+                System.Windows.Forms.SortOrder.Ascending : System.Windows.Forms.SortOrder.Descending;
+        }
+        private void TrailGridView_DataBindingComplete(object sender,
+        DataGridViewBindingCompleteEventArgs e)
+        {
+            // Put each of the columns into programmatic sort mode.
+            foreach (DataGridViewColumn column in TrailGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Programmatic;
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ namespace EncounterMeWF.UserControls
             this.TrailStartTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.TrailStartLocationTextbox = new System.Windows.Forms.TextBox();
-            this.CountTextbox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +89,8 @@ namespace EncounterMeWF.UserControls
             this.TrailGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TrailGridView.Size = new System.Drawing.Size(580, 324);
             this.TrailGridView.TabIndex = 5;
+            this.TrailGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.TrailGridView_ColumnHeaderMouseClick);
+            this.TrailGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.TrailGridView_DataBindingComplete);
             this.TrailGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TrailGridView_MouseClick);
             // 
             // CreateEntryButton
@@ -294,19 +296,19 @@ namespace EncounterMeWF.UserControls
             this.TrailStartLocationTextbox.Size = new System.Drawing.Size(120, 23);
             this.TrailStartLocationTextbox.TabIndex = 46;
             // 
-            // CountTextbox
+            // textBox1
             // 
-            this.CountTextbox.Location = new System.Drawing.Point(149, 359);
-            this.CountTextbox.Name = "CountTextbox";
-            this.CountTextbox.Size = new System.Drawing.Size(100, 23);
-            this.CountTextbox.TabIndex = 47;
+            this.textBox1.Location = new System.Drawing.Point(254, 409);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 47;
             // 
             // TrailsUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.Controls.Add(this.CountTextbox);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TrailStartLocationTextbox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TrailStartTimePicker);
@@ -357,6 +359,6 @@ namespace EncounterMeWF.UserControls
         private System.Windows.Forms.DateTimePicker TrailStartTimePicker;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TrailStartLocationTextbox;
-        private System.Windows.Forms.TextBox CountTextbox;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
