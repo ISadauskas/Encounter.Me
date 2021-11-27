@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace EncounterMeWF.UserControls
 {
@@ -38,10 +39,27 @@ namespace EncounterMeWF.UserControls
             {
                 _trailJson.JsonWrite(TrailList);
             }
-
+            using (SqlConnection Con = new SqlConnection(ConnectionString))
+            {
+                string SqlQuery = "SELECT COUNT(*) FROM \"Trails\"";
+                Con.Open();
+                SqlCommand sc = new SqlCommand(SqlQuery, Con);
+                index = (int)sc.ExecuteScalar();
+                string SqlQuery1 = "SELECT Name, Length, Timestamp, Location, Organizer FROM \"Trails\"";
+                SqlCommand sc1 = new SqlCommand(SqlQuery1, Con);
+                SqlDataAdapter da = new SqlDataAdapter(sc1);
+                //da.Fill(SQLList);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                //SQLList = (BindingList<Trail>)sc1.ExecuteScalar();
+                //sc.Parameters.AddWithValue("@x", textBox1.Text);
+                Con.Close();
+                CountTextbox.Text = index.ToString();
+                TrailGridView.DataSource = dt;
+            }
             TrailList = _trail.UpdateTrailList(TrailList);
             _trailJson.JsonWrite(TrailList);
-            TrailGridView.DataSource = TrailList;
+            //TrailGridView.DataSource = TrailList;
         }
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
@@ -57,9 +75,22 @@ namespace EncounterMeWF.UserControls
                         TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
+
+                    string Try = TempTrail.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
+                    //DateTime Ok = DateTime.Parse(Try);
+                    using (SqlConnection Con = new SqlConnection(ConnectionString))
+                    {
+                        string SqlQuery = "INSERT INTO \"Trails\" (Id, Name, Length, Timestamp, Location, Organizer)" +
+                        "VALUES(" + index + ", '" + TempTrail.Name + "', " + TempTrail.Length + ", convert(datetime,'" + Try + "'), '" + TempTrail.Location + "', '" + TempTrail.Organizer + "')";
+                        Con.Open();
+                        SqlCommand sc = new SqlCommand(SqlQuery, Con);
+                        sc.ExecuteNonQuery();
+                        Con.Close();
+                        index++;
+                    }
                     TrailList.Add(TempTrail);
                     _trailJson.JsonWrite(TrailList);
-                    TrailGridView.DataSource = TrailList;
+                    //TrailGridView.DataSource = TrailList;
                 }
             }
             else
@@ -74,9 +105,19 @@ namespace EncounterMeWF.UserControls
                 if (CurrentUser.IsAdmin == true || CurrentUser.Username == TrailList[TrailIndex].Organizer)
                 {
                     TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
+                    using (SqlConnection Con = new SqlConnection(ConnectionString))
+                    {
+                        string SqlQuery1 = "DELETE FROM \"Trails\" WHERE id ="+TrailGridView.SelectedRows[0].Index.ToString();
+                        Con.Open();
+                        SqlCommand sc = new SqlCommand(SqlQuery1, Con);
+                        sc.ExecuteNonQuery();
+                        Con.Close();
+
+                    }
                     _trailJson.JsonWrite(TrailList);
-                    TrailIndex = TrailList.Count - 1;
+                    TrailIndex = TrailGridView.SelectedRows[0].Index - 1;
                     TrailGridView.Rows[TrailIndex].Selected = true;
+
                 }
                 else
                     MessageBox.Show("You do not have access to delete other people trails.", "Entry Error", MessageBoxButtons.OK);
@@ -177,11 +218,12 @@ namespace EncounterMeWF.UserControls
             {
                 TrailIndex = TrailList.Count - 1;
             }
-            TrailNameTextbox.Text = TrailList[TrailIndex].Name;
-            TrailLengthTextbox.Text = TrailList[TrailIndex].Length.ToString();
-            TrailStartDatePicker.Value = TrailList[TrailIndex].Timestamp.Date;
-            TrailStartTimePicker.Value = new DateTime(2020, 01, 01) + TrailList[TrailIndex].Timestamp.TimeOfDay;
-            TrailStartLocationTextbox.Text = TrailList[TrailIndex].Location;
+
+            TrailNameTextbox.Text = TrailGridView.SelectedRows[0].Cells[0].Value.ToString();
+            TrailLengthTextbox.Text = TrailGridView.SelectedRows[0].Cells[1].Value.ToString();
+            TrailStartDatePicker.Value = DateTime.Parse(TrailGridView.SelectedRows[0].Cells[2].Value.ToString());
+            TrailStartTimePicker.Value = DateTime.Parse(TrailGridView.SelectedRows[0].Cells[2].Value.ToString());
+            TrailStartLocationTextbox.Text = TrailGridView.SelectedRows[0].Cells[3].Value.ToString();
         }
     }
 }
