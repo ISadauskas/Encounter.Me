@@ -97,3 +97,26 @@ D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeW
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CopyComplete
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.CalorieCalculatorUC.resources
 C:\Users\PC\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.PersonalRecordsUC.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Azure.Core.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Azure.Identity.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.Data.SqlClient.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.Identity.Client.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\System.Runtime.Caching.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.CalorieCalculatorUC.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.UserControls.PersonalRecordsUC.resources
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\EncounterMeWF\obj\Debug\net5.0-windows\EncounterMeWF.csproj.CopyComplete
