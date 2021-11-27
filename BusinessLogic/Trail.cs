@@ -18,11 +18,12 @@ namespace EncounterMeWF
         public Trail CreateTrail(string Length, DateTime StartDate, DateTime StartTime, string StartLocation, string Name = "Default Trail Name")
         {
             User OrganizerUser = _signInJson.JsonRead();
+            
             Trail TempTrail = new Trail
             {
                 Name = Name,
                 Length = double.Parse(Length),
-                Timestamp = StartDate.Date + StartTime.TimeOfDay,
+                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 0),
                 Location = StartLocation,
                 Organizer = OrganizerUser.Username
             };

@@ -24,21 +24,27 @@ namespace EncounterMeWF.UserControls
         public int TrailIndex = 0;
 
         public string ConnectionString = "Data Source=encountermedbserver.database.windows.net;Initial Catalog=EncounterMeDb;User ID=Adminas1;Password=Password1";
-        BindingList<Trail> SQLList = new BindingList<Trail>();
         public int index = 0;
 
         public TrailsUC()
         {
             InitializeComponent();
             //Load json file in table view on startup
-            try
+            /*try
             {
                 TrailList = _trailJson.JsonRead();
             }
             catch (FileNotFoundException e)
             {
                 _trailJson.JsonWrite(TrailList);
-            }
+            }*/
+            UpdateTable();
+            //TrailList = _trail.UpdateTrailList(TrailList);
+            //_trailJson.JsonWrite(TrailList);
+            //TrailGridView.DataSource = TrailList;
+        }
+        private void UpdateTable()
+        {
             using (SqlConnection Con = new SqlConnection(ConnectionString))
             {
                 string SqlQuery = "SELECT COUNT(*) FROM \"Trails\"";
@@ -48,7 +54,6 @@ namespace EncounterMeWF.UserControls
                 string SqlQuery1 = "SELECT Name, Length, Timestamp, Location, Organizer FROM \"Trails\"";
                 SqlCommand sc1 = new SqlCommand(SqlQuery1, Con);
                 SqlDataAdapter da = new SqlDataAdapter(sc1);
-                //da.Fill(SQLList);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 //SQLList = (BindingList<Trail>)sc1.ExecuteScalar();
@@ -57,9 +62,6 @@ namespace EncounterMeWF.UserControls
                 CountTextbox.Text = index.ToString();
                 TrailGridView.DataSource = dt;
             }
-            TrailList = _trail.UpdateTrailList(TrailList);
-            _trailJson.JsonWrite(TrailList);
-            //TrailGridView.DataSource = TrailList;
         }
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
@@ -76,10 +78,10 @@ namespace EncounterMeWF.UserControls
                             StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
 
-                    string Try = TempTrail.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
-                    //DateTime Ok = DateTime.Parse(Try);
+
                     using (SqlConnection Con = new SqlConnection(ConnectionString))
                     {
+                        string Try = TempTrail.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
                         string SqlQuery = "INSERT INTO \"Trails\" (Id, Name, Length, Timestamp, Location, Organizer)" +
                         "VALUES(" + index + ", '" + TempTrail.Name + "', " + TempTrail.Length + ", convert(datetime,'" + Try + "'), '" + TempTrail.Location + "', '" + TempTrail.Organizer + "')";
                         Con.Open();
@@ -88,9 +90,7 @@ namespace EncounterMeWF.UserControls
                         Con.Close();
                         index++;
                     }
-                    TrailList.Add(TempTrail);
-                    _trailJson.JsonWrite(TrailList);
-                    //TrailGridView.DataSource = TrailList;
+                    UpdateTable();
                 }
             }
             else
@@ -107,16 +107,19 @@ namespace EncounterMeWF.UserControls
                     TrailGridView.Rows.RemoveAt(TrailGridView.SelectedRows[0].Index);
                     using (SqlConnection Con = new SqlConnection(ConnectionString))
                     {
-                        string SqlQuery1 = "DELETE FROM \"Trails\" WHERE id ="+TrailGridView.SelectedRows[0].Index.ToString();
+                        string SqlQuery = "DELETE FROM \"Trails\" WHERE id ="+TrailGridView.SelectedRows[0].Index.ToString();
                         Con.Open();
-                        SqlCommand sc = new SqlCommand(SqlQuery1, Con);
+                        SqlCommand sc = new SqlCommand(SqlQuery, Con);
+                        sc.ExecuteNonQuery();
+                        SqlQuery = "UPDATE Trails SET id=(id-1) WHERE id>" + TrailGridView.SelectedRows[0].Index.ToString();
+                        sc = new SqlCommand(SqlQuery, Con);
                         sc.ExecuteNonQuery();
                         Con.Close();
-
                     }
-                    _trailJson.JsonWrite(TrailList);
+                    //_trailJson.JsonWrite(TrailList);
                     TrailIndex = TrailGridView.SelectedRows[0].Index - 1;
                     TrailGridView.Rows[TrailIndex].Selected = true;
+                    UpdateTable();
 
                 }
                 else
@@ -135,12 +138,24 @@ namespace EncounterMeWF.UserControls
                 {
                     if (Check())
                     {
-                        TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
-                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, CurrentTrail: TrailList[TrailIndex]);
+                        TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
+                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
 
-                        TrailGridView.Rows.RemoveAt(TrailIndex);
+                        using (SqlConnection Con = new SqlConnection(ConnectionString))
+                        {
+                            string Try = TempTrail.Timestamp.ToString("yyyy-MM-dd HH:mm:ss");
+
+                            string SqlQuery = "UPDATE Trails SET Name='" + TempTrail.Name + "', Length='" + TempTrail.Length + "', Timestamp= convert(datetime,'" + Try + "'), Location='" + TempTrail.Location +
+                                "', Organizer='" + TempTrail.Organizer + "' WHERE id=" + TrailGridView.SelectedRows[0].Index.ToString();
+                            Con.Open();
+                            SqlCommand sc = new SqlCommand(SqlQuery, Con);
+                            sc.ExecuteNonQuery();
+                            Con.Close();
+                        }
+                        UpdateTable();
+                        /*TrailGridView.Rows.RemoveAt(TrailIndex);
                         TrailList.Insert(TrailIndex, TempTrail);
-                        _trailJson.JsonWrite(TrailList);
+                        _trailJson.JsonWrite(TrailList);*/
                     }
                 }
                 else
