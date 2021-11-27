@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace EncounterMeWF.UserControls
 {
@@ -21,6 +22,9 @@ namespace EncounterMeWF.UserControls
         BindingList<Trail> SearchList = new BindingList<Trail>();
         public int TrailIndex = 0;
 
+        public string ConnectionString = "Data Source=encountermedbserver.database.windows.net;Initial Catalog=EncounterMeDb;User ID=Adminas1;Password=Password1";
+        BindingList<Trail> SQLList = new BindingList<Trail>();
+        public int index = 0;
 
         public TrailsUC()
         {
