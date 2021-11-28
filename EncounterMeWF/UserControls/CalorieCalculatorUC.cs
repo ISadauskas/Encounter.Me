@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
@@ -39,7 +40,7 @@ namespace EncounterMeWF.UserControls
             if (Check())
             {
                 if (File.Exists("SignIn.json"))
-                    AddToRecordButton.Visible = true;
+                    AddToRecordButton.Visible = true;// = _calculations.EditUser(WeightTextBox.Text);
 
                 if (RunWalkCombobox.Text == "Walk")
                 {
@@ -55,7 +56,7 @@ namespace EncounterMeWF.UserControls
 
         public bool Check()
         {
-            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text))
+            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text, Speed))
             {
                 case 1:
                     MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);

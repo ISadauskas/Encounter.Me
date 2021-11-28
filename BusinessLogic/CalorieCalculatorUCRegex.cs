@@ -4,7 +4,7 @@ namespace BusinessLogic
 {
     public class CalorieCalculatorUCRegex
     {
-        public int Check(string RunWalkText, string WeightText, string DurationText, string DistanceText)
+        public int Check(string RunWalkText, string WeightText,  string DurationText, string DistanceText, double Speed)
         {
             Regex WeightRegex = new Regex("^[1-9][0-9]*.?[0-9]*$");
             bool WeightRegexCheck = WeightRegex.IsMatch(WeightText);
@@ -26,6 +26,10 @@ namespace BusinessLogic
                 return 6;
             if (!DistanceRegexCheck)
                 return 7;
+            if (Speed > 14 )
+                return 8;
+            if (Speed > 10 && RunWalkText == "Walk")
+                return 8;
             else
                 return 0;
         }
