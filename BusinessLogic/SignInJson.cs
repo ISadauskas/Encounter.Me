@@ -1,59 +1,31 @@
 ﻿using Newtonsoft.Json;
-using System.ComponentModel;
 using System.IO;
 
 namespace BusinessLogic
 {
     public class SignInJson
     {
-        public async void JsonWrite(User LoginAccount)
+        public void JsonWrite(string SignInUsername)
         {
-            string LoginAccountJson = JsonConvert.SerializeObject(LoginAccount);
-            File.WriteAllText(@"SignIn.json", LoginAccountJson);
+            string SignInAccountJson = JsonConvert.SerializeObject(SignInUsername);
+            File.WriteAllText(@"SignIn.json", SignInAccountJson);
         }
-        public User JsonRead()
+        public string JsonRead()
         {
             string SignInJson = File.ReadAllText(@"SignIn.json");
-            User SignIn = JsonConvert.DeserializeObject<User>(SignInJson);
+            string SignIn = JsonConvert.DeserializeObject<string>(SignInJson);
             return SignIn;
         }
-
-        public bool CheckAccount(BindingList<User> UserList, string EmailOrUsername, string Password)
-        {
-            foreach (var item in UserList)
-            {
-                if ((EmailOrUsername.ToLower() == item.Email && Password == item.Password) ||
-                    (EmailOrUsername == item.Username && Password == item.Password))
-                {
-                    JsonWrite(item);
-                    return true;
-                }
-            }
-            return false;
-        }
-        public async void JsonDelete()
+        public void JsonDelete()
         {
             File.Delete("SignIn.json");
         }
-
         public bool CheckIfSignedIn()
         {
             if (File.Exists("SignIn.json"))
                 return true;
             else
                 return false;
-        }
-
-        public int GetUserListIndex(BindingList<User> UserList, User User)
-        {
-            int i = 0;
-            foreach (var item in UserList)
-            {
-                if (item.Email == User.Email)
-                    return i;
-                i++;
-            }
-            return -1;
         }
     }
 }

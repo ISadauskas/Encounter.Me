@@ -8,24 +8,14 @@ namespace EncounterMeWF
 {
     public partial class mainForm : Form
     {
-        private Lazy<SignInJson> _loginJson = new Lazy<SignInJson>
-            (() => new SignInJson(), true);
-        public SignInJson LoginJson
-        {
-            get { return _loginJson.Value; }
-        }
-
-
-        public delegate void HideDelegate();
-        private HideDelegate HideDelegateFunction;
+        private SignInJson _signInJson = new SignInJson();
 
         public mainForm()
         {
             InitializeComponent();
             IndexUC uc = new IndexUC();
             addUserControl(uc);
-            HideDelegateFunction = HideButtons;
-            HideDelegateFunction();
+            HideButtons();
         }
 
         public void addUserControl(UserControl userControl)
@@ -34,8 +24,7 @@ namespace EncounterMeWF
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
-            HideDelegateFunction = HideButtons;
-            HideDelegateFunction();
+            HideButtons();
         }
         private void indexButton_Click(object sender, EventArgs e)
         {
@@ -62,11 +51,8 @@ namespace EncounterMeWF
         }
         private void SignOutButton_Click(object sender, EventArgs e)
         {
-            LoginJson.JsonDelete();
-            if (File.Exists("SignIn.json"))
-                PersonalRunButton.Visible = true;
-            else
-                PersonalRunButton.Visible = false;
+            _signInJson.JsonDelete();
+            HideButtons();
         }
         private void CalorieCalculatorButton_Click(object sender, EventArgs e)
         {
@@ -81,7 +67,7 @@ namespace EncounterMeWF
         }
         private void HideButtons()
         {
-            if (File.Exists("SignIn.json"))
+            if (_signInJson.CheckIfSignedIn())
             {
                 PersonalRunButton.Visible = true;
                 SignupSigninButton.Visible = false;

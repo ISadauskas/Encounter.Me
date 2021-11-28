@@ -1,32 +1,19 @@
 ﻿using BusinessLogic;
 using System;
-using System.ComponentModel;
-using System.IO;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
 {
     public partial class SIgnUpSignInUC : UserControl
     {
-        private UserJson _userJson = new UserJson();
         private User _user = new User();
-        private SignInJson _signInJson = new SignInJson();
-        private mainForm _mainForm = new mainForm();
         private SignUpSignInUCRegex _signUpSignInUCRegex = new SignUpSignInUCRegex();
+        private UsersSQL _userSQL = new UsersSQL();
 
-        BindingList<User> UserList = new BindingList<User>();
 
         public SIgnUpSignInUC()
         {
             InitializeComponent();
-            try
-            {
-                UserList = _userJson.JsonRead();
-            }
-            catch (FileNotFoundException e)
-            {
-                _userJson.JsonWrite(UserList);
-            }
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
@@ -34,15 +21,13 @@ namespace EncounterMeWF.UserControls
             if (Check())
             {
                 User TempUser = _user.CreateUser(Username: SignUpUsernameTextbox.Text, Email: SignUpEmailTextbox.Text, Password: SignUpPasswordTextbox.Text, IsAdmin: AdminCheckBox.Checked);
-                UserList.Add(TempUser);
-
-                _userJson.JsonWrite(UserList);
+                _userSQL.InsertUser(TempUser);
             }
         }
 
         public bool Check()
         {
-            switch (_signUpSignInUCRegex.Check(UserList, SignUpUsernameTextbox.Text, SignUpEmailTextbox.Text, SignUpPasswordTextbox.Text, SignUpConfirmPasswordTextbox.Text))
+            switch (_signUpSignInUCRegex.Check(SignUpUsernameTextbox.Text, SignUpEmailTextbox.Text, SignUpPasswordTextbox.Text, SignUpConfirmPasswordTextbox.Text))
             {
                 case 1:
                     MessageBox.Show("Please enter Username", "Entry Error", MessageBoxButtons.OK);
@@ -77,13 +62,10 @@ namespace EncounterMeWF.UserControls
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            if (_signInJson.CheckAccount(UserList, SignInEmailTextbox.Text, SignInPasswordTextbox.Text))
+            if (_userSQL.CheckAccount(SignInInfoTextbox.Text, SignInPasswordTextbox.Text) == false)
             {
-                IndexUC uc = new IndexUC();
-                _mainForm.ChangeToIndex();
-            }
-            else
                 MessageBox.Show("The account email or password that you have entered is incorrect.", "Entry Error", MessageBoxButtons.OK);
+            }
         }
     }
 }
