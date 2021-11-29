@@ -34,7 +34,7 @@
             this.SignUpEmailTextbox = new System.Windows.Forms.TextBox();
             this.SignUpPasswordTextbox = new System.Windows.Forms.TextBox();
             this.SignUpConfirmPasswordTextbox = new System.Windows.Forms.TextBox();
-            this.SignInEmailTextbox = new System.Windows.Forms.TextBox();
+            this.SignInInfoTextbox = new System.Windows.Forms.TextBox();
             this.SignInPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -105,12 +105,12 @@
             this.SignUpConfirmPasswordTextbox.Size = new System.Drawing.Size(100, 23);
             this.SignUpConfirmPasswordTextbox.TabIndex = 5;
             // 
-            // SignInEmailTextbox
+            // SignInInfoTextbox
             // 
-            this.SignInEmailTextbox.Location = new System.Drawing.Point(493, 182);
-            this.SignInEmailTextbox.Name = "SignInEmailTextbox";
-            this.SignInEmailTextbox.Size = new System.Drawing.Size(100, 23);
-            this.SignInEmailTextbox.TabIndex = 6;
+            this.SignInInfoTextbox.Location = new System.Drawing.Point(493, 182);
+            this.SignInInfoTextbox.Name = "SignInInfoTextbox";
+            this.SignInInfoTextbox.Size = new System.Drawing.Size(100, 23);
+            this.SignInInfoTextbox.TabIndex = 6;
             // 
             // SignInPasswordTextbox
             // 
@@ -205,7 +205,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SignInPasswordTextbox);
-            this.Controls.Add(this.SignInEmailTextbox);
+            this.Controls.Add(this.SignInInfoTextbox);
             this.Controls.Add(this.SignUpConfirmPasswordTextbox);
             this.Controls.Add(this.SignUpPasswordTextbox);
             this.Controls.Add(this.SignUpEmailTextbox);
@@ -227,7 +227,7 @@
         private System.Windows.Forms.TextBox SignUpEmailTextbox;
         private System.Windows.Forms.TextBox SignUpPasswordTextbox;
         private System.Windows.Forms.TextBox SignUpConfirmPasswordTextbox;
-        private System.Windows.Forms.TextBox SignInEmailTextbox;
+        private System.Windows.Forms.TextBox SignInInfoTextbox;
         private System.Windows.Forms.TextBox SignInPasswordTextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

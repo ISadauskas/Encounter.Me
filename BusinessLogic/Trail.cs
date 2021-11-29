@@ -1,6 +1,5 @@
 ﻿using BusinessLogic;
 using System;
-using System.ComponentModel;
 
 namespace EncounterMeWF
 {
@@ -17,42 +16,30 @@ namespace EncounterMeWF
 
         public Trail CreateTrail(string Length, DateTime StartDate, DateTime StartTime, string StartLocation, string Name = "Default Trail Name")
         {
-            User OrganizerUser = _signInJson.JsonRead();
+            string Organizer = _signInJson.JsonRead();
+            
             Trail TempTrail = new Trail
             {
                 Name = Name,
                 Length = double.Parse(Length),
-                Timestamp = StartDate.Date + StartTime.TimeOfDay,
+                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 00),
                 Location = StartLocation,
-                Organizer = OrganizerUser.Username
+                Organizer = Organizer
             };
             return TempTrail;
         }
 
-        public Trail ModifyTrail(string Length, DateTime StartDate, DateTime StartTime, string StartLocation, Trail CurrentTrail, string Name = "Default Trail Name")
+        public Trail ModifyTrail(string Name, string Length, DateTime StartDate, DateTime StartTime, string StartLocation, string Organizer)
         {
-            User OrganizerUser = _signInJson.JsonRead();
             Trail TempTrail = new Trail
             {
                 Name = Name,
                 Length = double.Parse(Length),
-                Timestamp = StartDate.Date + StartTime.TimeOfDay,
+                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 00),
                 Location = StartLocation,
-                Organizer = OrganizerUser.Username
+                Organizer = Organizer
             };
-            TempTrail.Organizer = CurrentTrail.Organizer;
             return TempTrail;
-        }
-
-        public BindingList<Trail> UpdateTrailList(BindingList<Trail> TrailList)
-        {
-            BindingList<Trail> NewTrailList = new BindingList<Trail>();
-            foreach (var Trail in TrailList)
-            {
-                if(Trail.Timestamp.Date>=DateTime.Now.Date)
-                    NewTrailList.Add(Trail);
-            }
-            return NewTrailList;
         }
     }
 }

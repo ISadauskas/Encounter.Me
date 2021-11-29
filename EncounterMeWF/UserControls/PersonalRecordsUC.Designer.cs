@@ -29,10 +29,10 @@ namespace EncounterMeWF.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.TrailGridView = new System.Windows.Forms.DataGridView();
+            this.RunGridView = new System.Windows.Forms.DataGridView();
             this.DeleteEntryButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.MostBurnedCaloriesAnswer = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@ namespace EncounterMeWF.UserControls
             this.LongestRunDistanceAnswer = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LongestWalkDistanceAnswer = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RunGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,40 +56,42 @@ namespace EncounterMeWF.UserControls
             this.label1.TabIndex = 27;
             this.label1.Text = "Your runs";
             // 
-            // TrailGridView
+            // RunGridView
             // 
-            this.TrailGridView.AllowUserToAddRows = false;
-            this.TrailGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.TrailGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.TrailGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.TrailGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TrailGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.TrailGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TrailGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TrailGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.TrailGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TrailGridView.Location = new System.Drawing.Point(47, 60);
-            this.TrailGridView.Name = "TrailGridView";
-            this.TrailGridView.RowHeadersVisible = false;
-            this.TrailGridView.RowHeadersWidth = 82;
-            this.TrailGridView.RowTemplate.Height = 25;
-            this.TrailGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TrailGridView.Size = new System.Drawing.Size(507, 324);
-            this.TrailGridView.TabIndex = 28;
+            this.RunGridView.AllowUserToAddRows = false;
+            this.RunGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.RunGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.RunGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.RunGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RunGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.RunGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RunGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RunGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.RunGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RunGridView.Location = new System.Drawing.Point(47, 60);
+            this.RunGridView.Name = "RunGridView";
+            this.RunGridView.RowHeadersVisible = false;
+            this.RunGridView.RowHeadersWidth = 82;
+            this.RunGridView.RowTemplate.Height = 25;
+            this.RunGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.RunGridView.Size = new System.Drawing.Size(507, 324);
+            this.RunGridView.TabIndex = 28;
+            this.RunGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RunGridView_ColumnHeaderMouseClick);
+            this.RunGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.RunGridView_DataBindingComplete);
             // 
             // DeleteEntryButton
             // 
@@ -208,12 +210,12 @@ namespace EncounterMeWF.UserControls
             this.Controls.Add(this.MostBurnedCaloriesAnswer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DeleteEntryButton);
-            this.Controls.Add(this.TrailGridView);
+            this.Controls.Add(this.RunGridView);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "PersonalRecordsUC";
             this.Size = new System.Drawing.Size(801, 460);
-            ((System.ComponentModel.ISupportInitialize)(this.TrailGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RunGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +224,7 @@ namespace EncounterMeWF.UserControls
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView TrailGridView;
+        private System.Windows.Forms.DataGridView RunGridView;
         private System.Windows.Forms.Button DeleteEntryButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label MostBurnedCaloriesAnswer;

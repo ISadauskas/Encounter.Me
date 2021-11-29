@@ -3,17 +3,17 @@ namespace BusinessLogic
 {
     public class Runs
     {
-        public string RunOrWalk { get; set; }
+        public string Pace { get; set; }
         public double Distance { get; set; }
-        public int CalloriesLost { get; set; }
+        public int CaloriesLost { get; set; }
 
-        public Runs CreateRun(string RunOrWalk, string Weight, int CaloriesBurned)
+        public Runs CreateRun(string Pace, string Weight, int CaloriesBurned)
         {
             Runs tempRun = new Runs
             {
-                RunOrWalk = RunOrWalk,
+                Pace = Pace,
                 Distance = double.Parse(Weight),
-                CalloriesLost = CaloriesBurned
+                CaloriesLost = CaloriesBurned
             };
             return tempRun;
         }

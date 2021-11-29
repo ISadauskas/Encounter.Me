@@ -9,13 +9,13 @@ namespace EncounterMeWF.UserControls
     public partial class CalorieCalculatorUC : UserControl
     {
         private SignInJson _signInJson = new SignInJson();
-        private Calculations _calculations = new Calculations();
         private Runs _runs = new Runs();
         private CalorieCalculatorUCRegex _calorieCalculatorUCRegex = new CalorieCalculatorUCRegex();
         private Mets _mets = new Mets();
+        private UsersSQL _userSQL = new UsersSQL();
+        private RunsSQL _runsSQL = new RunsSQL();
 
-        public BindingList<User> UserList = new BindingList<User>();
-        public User CurrentUser = new User();
+        public string CurrentUser;
         public int CaloriesBurned;
         public int Index;
         public double Speed;
@@ -26,7 +26,7 @@ namespace EncounterMeWF.UserControls
             if (File.Exists("SignIn.json"))
             {
                 CurrentUser = _signInJson.JsonRead();
-                WeightTextBox.Text = CurrentUser.Weight.ToString();
+                WeightTextBox.Text = _userSQL.GetWeight(CurrentUser).ToString();
             }
         }
         private void CalculationButton_Click(object sender, EventArgs e)
@@ -40,18 +40,17 @@ namespace EncounterMeWF.UserControls
             if (Check())
             {
                 if (File.Exists("SignIn.json"))
-                    AddToRecordButton.Visible = _calculations.EditUser(WeightTextBox.Text);
+                    AddToRecordButton.Visible = true;
 
                 if (RunWalkCombobox.Text == "Walk")
                 {
                     CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetWalkedValue(Speed) / 200);
                 }
-                
                 else 
                     CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetRanValue(Speed) / 200);
 
-
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
+                _userSQL.SetWeight(CurrentUser, Weight);
             }
         }
 
@@ -90,8 +89,8 @@ namespace EncounterMeWF.UserControls
         }
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
-            Runs tempRun = _runs.CreateRun(RunWalkCombobox.Text, DistanceTextBox.Text, CaloriesBurned);
-            _calculations.AddRunToCurrentUser(tempRun, WeightTextBox.Text);
+            Runs TempRun = _runs.CreateRun(RunWalkCombobox.Text, DistanceTextBox.Text, CaloriesBurned);
+            _runsSQL.InsertRun(TempRun, _signInJson.JsonRead());
         }
     }
 }
