@@ -17,6 +17,7 @@ namespace EncounterMeWF.UserControls
 
         public string CurrentUser;
         public int CaloriesBurned;
+        public int CaloriesNeed;
         public int Index;
         public double Speed;
         public double MetOne = 3.5;
@@ -37,7 +38,7 @@ namespace EncounterMeWF.UserControls
 
             Speed = Distance / (Duration / 60);
             
-            if (Check())
+            if (CheckForBurned())
             {
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = true;
@@ -54,9 +55,9 @@ namespace EncounterMeWF.UserControls
             }
         }
 
-        public bool Check()
+        public bool CheckForBurned()
         {
-            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text))
+            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text, HeightTextBox.Text, AgeTextBox.Text, GenderComboBox.Text))
             {
                 case 1:
                     MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);
@@ -79,18 +80,73 @@ namespace EncounterMeWF.UserControls
                 case 7:
                     MessageBox.Show("Distance can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 8:
-                    MessageBox.Show("Please check your distance and duration data", "Entry Error", MessageBoxButtons.OK);
-                    return false;
-                case 0:
+                 case 0:
                     return true;
             }
             return true;
         }
+        public bool CheckForNeed()
+        {
+            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text, HeightTextBox.Text, AgeTextBox.Text, GenderComboBox.Text))
+            {
+                case 2:
+                    MessageBox.Show("Please enter your current weight", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 3:
+                    MessageBox.Show("Weight can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 8:
+                    MessageBox.Show("Please choose your gender", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 9:
+                    MessageBox.Show("Please enter your current height", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 10:
+                    MessageBox.Show("Height can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 11:
+                    MessageBox.Show("Please enter your current age", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+                case 12:
+                    MessageBox.Show("Age can only be natural number", "Entry Error", MessageBoxButtons.OK);
+                    return false;
+            }
+            return true;
+        }
+
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
             Runs TempRun = _runs.CreateRun(RunWalkCombobox.Text, DistanceTextBox.Text, CaloriesBurned);
             _runsSQL.InsertRun(TempRun, _signInJson.JsonRead());
+        }
+
+        private void CaloriesNeedButton_Click(object sender, EventArgs e)
+        {
+            double Weight = double.Parse(WeightTextBox.Text);
+            double Height = double.Parse(HeightTextBox.Text);
+            int Age = int.Parse(AgeTextBox.Text);
+            double BMR;
+
+            if (CheckForNeed())
+            {
+                if (File.Exists("SignIn.json"))
+                    AddToRecordButton.Visible = true;
+
+                if (RunWalkCombobox.Text == "Male")
+                {
+                    BMR = 10 * Weight + 6.25 * Height - 5 * Age + 5;
+                }
+                else
+                    BMR = 10 * Weight + 6.25 * Height - 5 * Age - 161;
+
+                CaloriesNeed = (int)Math.Round(BMR * 1.2);
+
+                CaloriesNeedToConsume.Text = (CaloriesNeed).ToString() + " cal";
+
+                CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
+                _userSQL.SetWeight(CurrentUser, Weight);
+               
+            }
         }
     }
 }
