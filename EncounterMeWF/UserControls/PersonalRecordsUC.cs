@@ -41,8 +41,11 @@ namespace EncounterMeWF.UserControls
             int index = RunGridView.SelectedRows[0].Index;
             _runsSQL.DeleteRun(int.Parse(RunGridView.SelectedRows[0].Cells[0].Value.ToString()), CurrentUser);
             DataGridViewUpdate();
-            RunGridView.Rows[0].Selected = false;
-            RunGridView.Rows[index - 1].Selected = true;
+            if (index != 0)
+            {
+                RunGridView.Rows[0].Selected = false;
+                RunGridView.Rows[index - 1].Selected = true;
+            }
         }
 
         private void RunGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

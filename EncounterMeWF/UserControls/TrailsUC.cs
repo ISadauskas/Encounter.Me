@@ -65,10 +65,13 @@ namespace EncounterMeWF.UserControls
                 {
                     TrailIndex = TrailGridView.SelectedRows[0].Index;
                     _trailSQL.DeleteTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()));
-                    TrailIndex = TrailIndex - 1;
                     DataGridViewUpdate();
-                    TrailGridView.Rows[0].Selected = false;
-                    TrailGridView.Rows[TrailIndex].Selected = true;
+                    if (TrailIndex != 0)
+                    {
+                        TrailGridView.Rows[0].Selected = false;
+                        TrailGridView.Rows[TrailIndex - 1].Selected = true;
+                    }
+                        
                     FillInTextboxes();
                 }
                 else
