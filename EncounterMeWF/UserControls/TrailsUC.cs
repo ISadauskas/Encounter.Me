@@ -24,7 +24,7 @@ namespace EncounterMeWF.UserControls
             InitializeComponent();
             DataGridViewUpdate();
         }
-        
+
         private void DataGridViewUpdate()
         {
             DataTable dt = _trailSQL.UpdateTable();
@@ -61,7 +61,7 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 string CurrentUser = _signInJson.JsonRead();
-                if (_userSQL.CheckIfAdmin(CurrentUser) || CurrentUser == TrailGridView.SelectedRows[0].Cells[4].Value.ToString())
+                if (_userSQL.CheckIfAdmin(CurrentUser) || CurrentUser == TrailGridView.SelectedRows[0].Cells[5].Value.ToString())
                 {
                     TrailIndex = TrailGridView.SelectedRows[0].Index;
                     _trailSQL.DeleteTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()));
@@ -71,8 +71,6 @@ namespace EncounterMeWF.UserControls
                         TrailGridView.Rows[0].Selected = false;
                         TrailGridView.Rows[TrailIndex - 1].Selected = true;
                     }
-                        
-                    FillInTextboxes();
                 }
                 else
                     MessageBox.Show("You do not have access to delete other people trails.", "Entry Error", MessageBoxButtons.OK);
@@ -86,15 +84,20 @@ namespace EncounterMeWF.UserControls
             if (_signInJson.CheckIfSignedIn())
             {
                 string CurrentUser = _signInJson.JsonRead();
-                if (_userSQL.CheckIfAdmin(CurrentUser) || CurrentUser == TrailGridView.SelectedRows[0].Cells[4].Value.ToString())
+                if (_userSQL.CheckIfAdmin(CurrentUser) || CurrentUser == TrailGridView.SelectedRows[0].Cells[5].Value.ToString())
                 {
                     if (Check())
                     {
                         TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
-                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, Organizer: TrailGridView.SelectedRows[0].Cells[4].Value.ToString());
+                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, Organizer: TrailGridView.SelectedRows[0].Cells[5].Value.ToString());
 
                         _trailSQL.ModifyTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()), TempTrail);
                         DataGridViewUpdate();
+                        if (TrailIndex != 0)
+                        {
+                            TrailGridView.Rows[0].Selected = false;
+                            TrailGridView.Rows[TrailIndex].Selected = true;
+                        }
                     }
                 }
                 else
@@ -186,7 +189,7 @@ namespace EncounterMeWF.UserControls
             if (oldColumn != null)
             {
                 // Sort the same column again, reversing the SortOrder.
-                if (oldColumn == newColumn && 
+                if (oldColumn == newColumn &&
                     TrailGridView.SortOrder == System.Windows.Forms.SortOrder.Ascending)
                 {
                     direction = ListSortDirection.Descending;

@@ -24,7 +24,7 @@ namespace BusinessLogic
                 case <= 10:
                         return 6.5;
             }
-            return 0;
+            return 8;
          }
         public double MetRanValue(double Speed)
         {
@@ -49,7 +49,7 @@ namespace BusinessLogic
                 case <= 14:
                     return 14.5;
             }
-            return 0;
+            return 16;
         }
     }
 }
