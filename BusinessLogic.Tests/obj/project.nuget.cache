@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OHoTLCLXstqpMtfs2P8/ejcDAdN8L5Rve0E5M8ecLxL+cSybenIxs5GqsAsNosnCmkuNqNKy2UpB1dJUEJdj5g==",
+  "dgSpecHash": "lerisEqhdMNngWnN2xcqJpU3xnzGVrktVTXNDXfGAVwf+d7XjJCQfXZT7jMc5FxMdzVsoPdbiA5xWNiDFvyUBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Desktop\\for merge\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
