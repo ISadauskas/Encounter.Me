@@ -45,7 +45,7 @@ namespace BusinessLogic.Tests
             int expected = 2;
 
             //act
-            int actual = test.Check("Admin123", "Jonas@gmail.com", "Admin123?", "Admin123?");
+            int actual = test.Check("Gedas", "Jonas@gmail.com", "Admin123?", "Admin123?");
 
             //assert
             Assert.Equal(expected, actual);
@@ -84,7 +84,7 @@ namespace BusinessLogic.Tests
             int expected = 5;
 
             //act
-            int actual = test.Check("Nirino", "gepr@yahoo.net", "Admin123?", "Admin123?");
+            int actual = test.Check("Nirino", "Gedas@gmail.com", "Admin123?", "Admin123?");
 
             //assert
             Assert.Equal(expected, actual);
