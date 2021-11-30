@@ -7146,8 +7146,8 @@
     },
     "BusinessLogic/1.0.0": {
       "type": "project",
-      "path": "../BusinessLogic/BusinessLogic.csproj",
-      "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
+      "path": "../../../Documents/GitHub/Encounter.Me/BusinessLogic/BusinessLogic.csproj",
+      "msbuildProject": "../../../Documents/GitHub/Encounter.Me/BusinessLogic/BusinessLogic.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7173,11 +7173,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\for merge\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
       "projectName": "BusinessLogic.Tests",
-      "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
+      "projectPath": "C:\\Users\\PC\\Desktop\\for merge\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\Encounter.Me\\BusinessLogic.Tests\\obj\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\for merge\\BusinessLogic.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
