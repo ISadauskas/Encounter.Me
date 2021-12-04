@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YMi12UTcYhQ7qc82Fc6Q49iUo/NFKQBL04SGCoJbwW42WD/5MzVH6iEw032Elf/Jl0zJBONMSU+usxz9JjSC9w==",
+  "dgSpecHash": "gDWjYD+N0aIPpfVUJShdp6WFSAnbbScmnblwj/Yu9afRwtqnETJZTqsgZZ9vNe5sjHhNeQSdumMEqd5xAUwfLw==",
   "success": true,
   "projectFilePath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\EncounterMeWF\\EncounterMeWF.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.0\\microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",
     "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.0\\microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
     "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.0\\microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
+    "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.0\\microsoft.entityframeworkcore.sqlserver.5.0.0.nupkg.sha512",
     "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Gediminas\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
