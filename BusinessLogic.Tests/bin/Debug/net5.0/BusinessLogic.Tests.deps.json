@@ -9,6 +9,7 @@
       "BusinessLogic.Tests/1.0.0": {
         "dependencies": {
           "BusinessLogic": "1.0.0",
+          "Database": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.0.0",
           "Microsoft.TestPlatform.TestHost": "17.0.0",
           "xunit": "2.4.1",

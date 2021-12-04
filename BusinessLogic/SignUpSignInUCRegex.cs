@@ -5,7 +5,6 @@ namespace BusinessLogic
 {
     public class SignUpSignInUCRegex
     {
-        //private UsersSQL _userSQL = new UsersSQL();
         private UserCmd _userCmd = new UserCmd();
 
         public int Check(string SignUpUsernameText, string SignUpEmailText, string SignUpPasswordText, string SignUpConfirmPasswordText)
@@ -16,14 +15,12 @@ namespace BusinessLogic
             bool PasswordRegexsCheck = PasswordRegex.IsMatch(SignUpPasswordText);
             if (SignUpUsernameText == "")
                 return 1;
-            //if (_userSQL.CheckIfUsernameUsed(SignUpUsernameText))
             if (_userCmd.CheckIfUsernameUsed(SignUpUsernameText))
                 return 2;
             if (SignUpEmailText == "")
                 return 3;
             if (!EmailRegexCheck)
                 return 4;
-            //if (_userSQL.CheckIfEmailUsed(SignUpEmailText))
             if (_userCmd.CheckIfEmailUsed(SignUpEmailText))
                 return 5;
             if (SignUpPasswordText == "")

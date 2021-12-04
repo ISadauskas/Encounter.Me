@@ -1,25 +1,20 @@
 ﻿using BusinessLogic;
+using Database.Commands;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using System.Data;
-using Database.Commands;
 
 namespace EncounterMeWF.UserControls
 {
     public partial class TrailsUC : UserControl
     {
-        private Trail _trail = new Trail();
         private SignInJson _signInJson = new SignInJson();
         private TrailsUCRegex _trailsUCRegex = new TrailsUCRegex();
-        //private TrailSQL _trailSQL = new TrailSQL();
-        //private UsersSQL _userSQL = new UsersSQL();
         private TrailCmd _trailCmd = new TrailCmd();
         private UserCmd _userCmd = new UserCmd();
 
 
         BindingList<Trail> TrailList = new BindingList<Trail>();
-        public Trail TempTrail = new Trail();
         public int TrailIndex = 0;
 
         public TrailsUC()
@@ -32,8 +27,6 @@ namespace EncounterMeWF.UserControls
         {
             var list = _trailCmd.GetTrails();
             TrailGridView.DataSource = list;
-            //DataTable dt = _trailSQL.UpdateTable();
-            //TrailGridView.DataSource = dt;
         }
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
@@ -42,24 +35,14 @@ namespace EncounterMeWF.UserControls
             {
                 if (Check())
                 {
-                    if (TrailNameTextbox.Text == "")
-                        TempTrail = _trail.CreateTrail(Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
-                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
-                    else
-                        TempTrail = _trail.CreateTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
-                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text);
-
                     if (!TrailGridView.RowCount.Equals(0))
                         TrailIndex = TrailGridView.SelectedRows[0].Index;
                     string Organizer = _signInJson.JsonRead();
                     _trailCmd.AddTrail(TrailNameTextbox.Text, TrailLengthTextbox.Text, TrailStartDatePicker.Value, TrailStartTimePicker.Value, TrailStartLocationTextbox.Text, Organizer);
-                    //_trailSQL.InsertTrail(TempTrail);
-                    //DataTable dt = _trailSQL.UpdateTable();
                     DataGridViewUpdate();
                     TrailGridView.Rows[0].Selected = false;
                     if (!TrailGridView.RowCount.Equals(0))
                         TrailGridView.Rows[TrailIndex].Selected = true;
-                    //FillInTextboxes();
                 }
             }
             else
@@ -75,7 +58,6 @@ namespace EncounterMeWF.UserControls
                 {
                     TrailIndex = TrailGridView.SelectedRows[0].Index;
                     _trailCmd.DeleteTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()));
-                    //_trailSQL.DeleteTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()));
                     DataGridViewUpdate();
                     if (TrailIndex != 0)
                     {
@@ -99,10 +81,6 @@ namespace EncounterMeWF.UserControls
                 {
                     if (Check())
                     {
-                        TempTrail = _trail.ModifyTrail(Name: TrailNameTextbox.Text, Length: TrailLengthTextbox.Text, StartDate: TrailStartDatePicker.Value,
-                            StartTime: TrailStartTimePicker.Value, StartLocation: TrailStartLocationTextbox.Text, Organizer: TrailGridView.SelectedRows[0].Cells[5].Value.ToString());
-
-                        //_trailSQL.ModifyTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()), TempTrail);
                         _trailCmd.UpdateTrail(int.Parse(TrailGridView.SelectedRows[0].Cells[0].Value.ToString()), TrailNameTextbox.Text,
                             TrailLengthTextbox.Text, TrailStartDatePicker.Value, TrailStartTimePicker.Value, TrailStartLocationTextbox.Text);
                         DataGridViewUpdate();
@@ -165,7 +143,6 @@ namespace EncounterMeWF.UserControls
         {
             if (SearchCheck())
             {
-                //DataTable dt = _trailSQL.SearchTable(LengthFromTextBox.Text, LengthToTextBox.Text);
                 TrailGridView.DataSource = _trailCmd.SearchTrails(LengthFromTextBox.Text, LengthToTextBox.Text);
             }
         }

@@ -1,16 +1,14 @@
 ﻿using BusinessLogic;
+using Database.Commands;
 using System;
 using System.Windows.Forms;
-using Database.Commands;
 
 namespace EncounterMeWF.UserControls
 {
     public partial class SIgnUpSignInUC : UserControl
     {
-        private User _user = new User();
         private SignUpSignInUCRegex _signUpSignInUCRegex = new SignUpSignInUCRegex();
         private SignInJson _signInJson = new SignInJson();
-        //private UsersSQL _userSQL = new UsersSQL();
         private UserCmd _userCmd = new UserCmd();
 
 
@@ -24,11 +22,9 @@ namespace EncounterMeWF.UserControls
             if (Check())
             {
                 int Admin = 0;
-                //User TempUser = _user.CreateUser(Username: SignUpUsernameTextbox.Text, Email: SignUpEmailTextbox.Text, Password: SignUpPasswordTextbox.Text, IsAdmin: AdminCheckBox.Checked);
                 if (AdminCheckBox.Checked)
                     Admin = 1;
                 _userCmd.AddUser(SignUpUsernameTextbox.Text, SignUpEmailTextbox.Text, SignUpPasswordTextbox.Text, Admin);
-                //_userSQL.InsertUser(TempUser);
             }
         }
 
@@ -69,7 +65,6 @@ namespace EncounterMeWF.UserControls
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            //if (_userSQL.CheckAccount(SignInInfoTextbox.Text, SignInPasswordTextbox.Text) == false)
             if (_userCmd.CheckAccount(SignInInfoTextbox.Text, SignInPasswordTextbox.Text))
             {
                 _signInJson.JsonWrite(_userCmd.GetUsername(SignInInfoTextbox.Text, SignInPasswordTextbox.Text));

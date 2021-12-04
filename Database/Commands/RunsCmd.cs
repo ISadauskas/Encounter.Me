@@ -1,12 +1,9 @@
 ﻿using Database.Data;
 using Database.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Database.Commands
 {
@@ -14,7 +11,7 @@ namespace Database.Commands
     {
         public void AddRun(string pace, string distance, string caloriesLost, string organizer)
         {
-            string calories = caloriesLost.Substring(0, caloriesLost.Length-4);
+            string calories = caloriesLost.Substring(0, caloriesLost.Length - 4);
             using EncounterMeContext context = new EncounterMeContext();
             Runs TempRun = new Runs()
             {
@@ -54,7 +51,7 @@ namespace Database.Commands
         {
             int maxCal = 0;
             using EncounterMeContext context = new EncounterMeContext();
-            if(context.Runs.Where(r => r.User == CurrentUser).Count()>0)
+            if (context.Runs.Where(r => r.User == CurrentUser).Count() > 0)
                 maxCal = context.Runs.Where(r => r.User == CurrentUser).Max(r => r.CaloriesLost);
             return maxCal;
         }

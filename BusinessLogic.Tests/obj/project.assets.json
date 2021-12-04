@@ -7738,6 +7738,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BusinessLogic >= 1.0.0",
+      "Database >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.0.0",
       "Microsoft.TestPlatform.TestHost >= 17.0.0",
       "xunit >= 2.4.1",
@@ -7780,6 +7781,9 @@
           "projectReferences": {
             "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj": {
               "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj"
+            },
+            "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\Database\\Database.csproj": {
+              "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\Database\\Database.csproj"
             }
           }
         }

@@ -1,9 +1,8 @@
 ﻿using BusinessLogic;
+using Database.Commands;
 using System;
-using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
-using Database.Commands;
 
 namespace EncounterMeWF.UserControls
 {
@@ -13,8 +12,6 @@ namespace EncounterMeWF.UserControls
         private Runs _runs = new Runs();
         private CalorieCalculatorUCRegex _calorieCalculatorUCRegex = new CalorieCalculatorUCRegex();
         private Mets _mets = new Mets();
-        //private UsersSQL _userSQL = new UsersSQL();
-        //private RunsSQL _runsSQL = new RunsSQL();
         private UserCmd _userCmd = new UserCmd();
         private RunsCmd _runCmd = new RunsCmd();
 
@@ -30,7 +27,6 @@ namespace EncounterMeWF.UserControls
             if (File.Exists("SignIn.json"))
             {
                 CurrentUser = _signInJson.JsonRead();
-                //WeightTextBox.Text = _userSQL.GetWeight(CurrentUser).ToString();
                 WeightTextBox1.Text = _userCmd.GetWeight(CurrentUser).ToString();
                 WeightTextBox2.Text = _userCmd.GetWeight(CurrentUser).ToString();
             }
@@ -122,9 +118,6 @@ namespace EncounterMeWF.UserControls
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
             _runCmd.AddRun(RunWalkCombobox.Text, DistanceTextBox.Text, CalorieBurn.Text, CurrentUser);
-            //_userSQL.SetWeight(CurrentUser, Weight);
-            /*Runs TempRun = _runs.CreateRun(RunWalkCombobox.Text, DistanceTextBox.Text, CaloriesBurned);
-            _runsSQL.InsertRun(TempRun, _signInJson.JsonRead());*/
         }
 
         private void CaloriesNeedButton_Click(object sender, EventArgs e)
@@ -151,7 +144,6 @@ namespace EncounterMeWF.UserControls
                 CaloriesNeedToConsume.Text = (CaloriesNeed).ToString() + " cal";
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
-                //_userSQL.SetWeight(CurrentUser, Weight);
                 _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
 
             }

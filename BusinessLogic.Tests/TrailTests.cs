@@ -60,7 +60,7 @@ namespace BusinessLogic.Tests
 
             //act
             Trail actual = new Trail();
-            actual = actual.ModifyTrail("a", "2,0", new DateTime(2000, 1, 1, 00, 00, 00), new DateTime(2000, 1, 1, 00, 00, 00), "b", "Gedas");
+            actual = actual.ModifyTrail("a", "2.0", new DateTime(2000, 1, 1, 00, 00, 00), new DateTime(2000, 1, 1, 00, 00, 00), "b", "Gedas");
             var act = JsonConvert.SerializeObject(actual);
 
             //assert

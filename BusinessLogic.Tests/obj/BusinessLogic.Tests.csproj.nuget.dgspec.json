@@ -30,6 +30,9 @@
             "projectReferences": {
               "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj": {
                 "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\BusinessLogic\\BusinessLogic.csproj"
+              },
+              "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\Database\\Database.csproj": {
+                "projectPath": "D:\\Gedo\\OneDrive - Vilnius University\\Documents\\GitHub\\Encounter.Me\\Database\\Database.csproj"
               }
             }
           }

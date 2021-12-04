@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Database.Data;
+using Database.Models;
+using System;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Database.Data;
-using Database.Models;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 
 namespace Database.Commands
 {
@@ -58,7 +53,7 @@ namespace Database.Commands
             var TempTrail = context.Trails
                 .Where(t => t.TrailId == index)
                 .FirstOrDefault();
-            if(TempTrail is Trails)
+            if (TempTrail is Trails)
             {
                 context.Remove(TempTrail);
             }
