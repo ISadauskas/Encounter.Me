@@ -10,16 +10,17 @@ using System.Threading.Tasks;
 
 namespace Database.Commands
 {
-    public class RunsListCmd
+    public class RunsCmd
     {
         public void AddRun(string pace, string distance, string caloriesLost, string organizer)
         {
+            string calories = caloriesLost.Substring(0, caloriesLost.Length-4);
             using EncounterMeContext context = new EncounterMeContext();
             Runs TempRun = new Runs()
             {
                 Pace = pace,
                 Distance = Decimal.Parse(distance),
-                CaloriesLost = int.Parse(caloriesLost),
+                CaloriesLost = int.Parse(calories),
                 User = organizer
             };
             context.Add(TempRun);
@@ -49,17 +50,17 @@ namespace Database.Commands
             }
             context.SaveChanges();
         }
-        public decimal FindMostBurnedCalories(string CurrentUser)
+        public int FindMostBurnedCalories(string CurrentUser)
         {
-            decimal maxCal = 0;
+            int maxCal = 0;
             using EncounterMeContext context = new EncounterMeContext();
             if(context.Runs.Where(r => r.User == CurrentUser).Count()>0)
                 maxCal = context.Runs.Where(r => r.User == CurrentUser).Max(r => r.CaloriesLost);
             return maxCal;
         }
-        public decimal FindAllBurnedCalories(string CurrentUser)
+        public int FindAllBurnedCalories(string CurrentUser)
         {
-            decimal allCal = 0;
+            int allCal = 0;
             using EncounterMeContext context = new EncounterMeContext();
             if (context.Runs.Where(r => r.User == CurrentUser).Count() > 0)
                 allCal = context.Runs.Where(r => r.User == CurrentUser).Sum(r => r.CaloriesLost);
@@ -67,11 +68,11 @@ namespace Database.Commands
         }
         public decimal FindLongestPace(string CurrentUser, string pace)
         {
-            decimal allCal = 0;
+            decimal longestDist = 0;
             using EncounterMeContext context = new EncounterMeContext();
             if (context.Runs.Where(r => r.User == CurrentUser).Where(r => r.Pace == pace).Count() > 0)
-                allCal = context.Runs.Where(r => r.User == CurrentUser).Where(r => r.Pace == pace).Max(r => r.Distance);
-            return allCal;
+                longestDist = context.Runs.Where(r => r.User == CurrentUser).Where(r => r.Pace == pace).Max(r => r.Distance);
+            return longestDist;
         }
     }
 }

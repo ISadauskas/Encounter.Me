@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Database.Commands
 {
-    public class TrailListCmd
+    public class TrailCmd
     {
         public void AddTrail(string name, string length, DateTime date, DateTime time, string location, string organizer)
         {

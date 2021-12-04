@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Database.Commands
 {
-    public class UserListCmd
+    public class UserCmd
     {
         public void AddUser(string username, string email, string password, int isAdmin)
         {

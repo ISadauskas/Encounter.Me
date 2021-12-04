@@ -14,13 +14,13 @@ namespace BusinessLogic.Tests
         CalorieCalculatorUCRegex _test = new CalorieCalculatorUCRegex();
 
         [Fact]
-        public void Check_ShouldReturnOne()
+        public void RunCheck_ShouldReturnOne()
         {
             //arrange
             int expected = 1;
 
             //act
-            int actual = _test.Check("", "50", "15", "20", "25", "30", "Male");
+            int actual = _test.RunCheck("", "50", "15", "20");
             
             //assert
             Assert.Equal(expected, actual);
@@ -28,13 +28,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnTwo()
+        public void RunCheck_ShouldReturnTwo()
         {
             //arrange
             int expected = 2;
 
             //act
-            int actual = _test.Check("5", "", "15", "20", "25", "30", "Male");
+            int actual = _test.RunCheck("5", "", "15", "20");
 
             //assert
             Assert.Equal(expected, actual);
@@ -42,13 +42,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnThree()
+        public void RunCheck_ShouldReturnThree()
         {
             //arrange
             int expected = 3;
 
             //act
-            int actual = _test.Check("5", "dfsdsd", "15", "20", "25", "30", "Male");
+            int actual = _test.RunCheck("5", "dfsdsd", "15", "20");
 
             //assert
             Assert.Equal(expected, actual);
@@ -56,13 +56,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnFour()
+        public void RunCheck_ShouldReturnFour()
         {
             //arrange
             int expected = 4;
 
             //act
-            int actual = _test.Check("5", "50", "", "20", "25", "30", "Male");
+            int actual = _test.RunCheck("5", "50", "", "20");
 
             //assert
             Assert.Equal(expected, actual);
@@ -70,13 +70,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnFive()
+        public void RunCheck_ShouldReturnFive()
         {
             //arrange
             int expected = 5;
 
             //act
-            int actual = _test.Check("5", "50", "dsadsa", "20", "25", "30", "Male");
+            int actual = _test.RunCheck("5", "50", "dsadsa", "20");
 
             //assert
             Assert.Equal(expected, actual);
@@ -84,13 +84,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnSix()
+        public void RunCheck_ShouldReturnSix()
         {
             //arrange
             int expected = 6;
 
             //act
-            int actual = _test.Check("5", "50", "15", "", "25", "30", "Male");
+            int actual = _test.RunCheck("5", "50", "15", "");
 
             //assert
             Assert.Equal(expected, actual);
@@ -98,13 +98,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnSeven()
+        public void RunCheck_ShouldReturnSeven()
         {
             //arrange
             int expected = 7;
 
             //act
-            int actual = _test.Check("5", "50", "15", "dsadsa", "25", "30", "Male");
+            int actual = _test.RunCheck("5", "50", "15", "dsadsa");
 
             //assert
             Assert.Equal(expected, actual);
@@ -112,13 +112,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnEight()
+        public void HealthCheck_ShouldReturnOne()
         {
             //arrange
-            int expected = 8;
+            int expected = 1;
 
             //act
-            int actual = _test.Check("5", "50", "15", "20", "25", "30", "");
+            int actual = _test.HealthCheck("", "50", "15", "Male");
 
             //assert
             Assert.Equal(expected, actual);
@@ -126,13 +126,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnNine()
+        public void HealthCheck_ShouldReturnTwo()
         {
             //arrange
-            int expected = 9;
+            int expected = 2;
 
             //act
-            int actual = _test.Check("5", "50", "15", "20", "", "30", "Male");
+            int actual = _test.HealthCheck("asd", "50", "15","Male");
 
             //assert
             Assert.Equal(expected, actual);
@@ -140,13 +140,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnTen()
+        public void HealthCheck_ShouldReturnThree()
         {
             //arrange
-            int expected = 10;
+            int expected = 3;
 
             //act
-            int actual = _test.Check("5", "50", "15", "20", "sadsad", "30", "Male");
+            int actual = _test.HealthCheck("5", "50", "15", "");
 
             //assert
             Assert.Equal(expected, actual);
@@ -154,13 +154,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturEleven()
+        public void HealthCheck_ShouldReturnFour()
         {
             //arrange
-            int expected = 11;
+            int expected = 4;
 
             //act
-            int actual = _test.Check("5", "50", "15", "20", "25", "", "Male");
+            int actual = _test.HealthCheck("5", "", "15", "Male");
 
             //assert
             Assert.Equal(expected, actual);
@@ -168,13 +168,37 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void Check_ShouldReturnTwelve()
+        public void HealthCheck_ShouldReturnFive()
         {
             //arrange
-            int expected = 12;
+            int expected = 5;
 
             //act
-            int actual = _test.Check("5", "50", "15", "20", "25", "dssadas", "Male");
+            int actual = _test.HealthCheck("5", "asd", "15", "Male");
+
+            //assert
+            Assert.Equal(expected, actual);
+
+        }
+        public void HealthCheck_ShouldReturnSix()
+        {
+            //arrange
+            int expected = 6;
+
+            //act
+            int actual = _test.HealthCheck("5", "50", "", "Male");
+
+            //assert
+            Assert.Equal(expected, actual);
+
+        }
+        public void HealthCheck_ShouldReturnSeven()
+        {
+            //arrange
+            int expected = 7;
+
+            //act
+            int actual = _test.HealthCheck("5", "50", "asd", "Male");
 
             //assert
             Assert.Equal(expected, actual);
