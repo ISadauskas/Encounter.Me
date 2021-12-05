@@ -1,15 +1,3 @@
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.deps.json
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.dll
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\ref\BusinessLogic.dll
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.pdb
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.AssemblyReference.cache
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfoInputs.cache
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfo.cs
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CoreCompileInputs.cache
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll
-D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb
 C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.deps.json
 C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.dll
 C:\Users\dianapopkovaite\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\ref\BusinessLogic.dll
@@ -34,3 +22,21 @@ C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\Busines
 C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll
 C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll
 C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.deps.json
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\ref\BusinessLogic.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\BusinessLogic.pdb
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\Database.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\Database.pdb
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.AssemblyReference.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfoInputs.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfo.cs
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CopyComplete
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll
+D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\Database.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\Database.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CopyComplete

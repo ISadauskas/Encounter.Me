@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 using Xunit;
 using BusinessLogic;
 using System.Data;
+using Database.Commands;
 
 namespace BusinessLogic.Tests
 {
     public class RunsSQLTests
     {
-        RunsSQL test = new RunsSQL();
-        public string ConnectionString = "Data Source=encountermedbserver.database.windows.net;Initial Catalog=EncounterMeDb;User ID=Adminas1;Password=Password1";
-        public int index = 0;
+        //RunsSQL test = new RunsSQL();
+        RunsCmd test = new RunsCmd();
+        //public string ConnectionString = "Data Source=encountermedbserver.database.windows.net;Initial Catalog=EncounterMeDb;User ID=Adminas1;Password=Password1";
+        //public int index = 0;
 
         //TODO: finish figuring out testing with Datatables
         /*
@@ -39,10 +41,10 @@ namespace BusinessLogic.Tests
         */
 
         [Fact]
-        public void FindMostBurnedCalories_ShouldReturnOneTwoEightOne()
+        public void FindMostBurnedCalories_ShouldReturnEightThreeTwo()
         {
             //arrange
-            int expected = 1281;
+            int expected = 832;
 
             //act
             int actual = test.FindMostBurnedCalories("Gedas");
@@ -53,13 +55,13 @@ namespace BusinessLogic.Tests
         }
 
         [Fact]
-        public void FindAllBurnedCalories_ShouldReturnOneTwoEightOne()
+        public void FindAllBurnedCalories_ShouldReturnOneThreeEightSeven()
         {
             //arrange
-            int expected = 1281;
+            int expected = 1387;
 
             //act
-            int actual = test.FindMostBurnedCalories("Gedas");
+            int actual = test.FindAllBurnedCalories("Gedas");
 
             //assert
             Assert.Equal(expected, actual);
@@ -69,10 +71,10 @@ namespace BusinessLogic.Tests
         public void FindLongestPace_ShouldReturnTen()
         {
             //arrange
-            double expected = 10;
+            Decimal expected = Decimal.Parse("10,00");
 
             //act
-            double actual = test.FindLongestPace("Gedas", "Run");
+            Decimal actual = test.FindLongestPace("Gedas", "Run");
 
             //assert
             Assert.Equal(expected, actual);
@@ -82,10 +84,10 @@ namespace BusinessLogic.Tests
         public void FindLongestPace_ShouldReturn()
         {
             //arrange
-            double expected = 0;
+            Decimal expected = Decimal.Parse("8,00");
 
             //act
-            double actual = test.FindLongestPace("Gedas", "Walk");
+            Decimal actual = test.FindLongestPace("Gedas", "Walk");
 
             //assert
             Assert.Equal(expected, actual);

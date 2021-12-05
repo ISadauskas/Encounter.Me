@@ -1,7 +1,7 @@
 ﻿using BusinessLogic;
+using Database.Commands;
 using System;
 using System.ComponentModel;
-using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,7 +10,7 @@ namespace EncounterMeWF.UserControls
     public partial class PersonalRecordsUC : UserControl
     {
         private SignInJson _signInJson = new SignInJson();
-        private RunsSQL _runsSQL = new RunsSQL();
+        private RunsCmd _runCmd = new RunsCmd();
 
         public string CurrentUser;
         public int Index;
@@ -19,7 +19,6 @@ namespace EncounterMeWF.UserControls
         public PersonalRecordsUC()
         {
             InitializeComponent();
-            _runsSQL.UpdateTable(CurrentUser);
 
             if (File.Exists("SignIn.json"))
             {
@@ -29,17 +28,16 @@ namespace EncounterMeWF.UserControls
         }
         private void DataGridViewUpdate()
         {
-            DataTable dt = _runsSQL.UpdateTable(CurrentUser);
-            RunGridView.DataSource = dt;
-            MostBurnedCaloriesAnswer.Text = _runsSQL.FindMostBurnedCalories(CurrentUser).ToString() + " cal";
-            AllBurnedCaloriesAnswer.Text = _runsSQL.FindAllBurnedCalories(CurrentUser).ToString() + " cal";
-            LongestRunDistanceAnswer.Text = _runsSQL.FindLongestPace(CurrentUser, "Run").ToString() + " km";
-            LongestWalkDistanceAnswer.Text = _runsSQL.FindLongestPace(CurrentUser, "Walk").ToString() + " km";
+            RunGridView.DataSource = _runCmd.GetRuns(CurrentUser);
+            MostBurnedCaloriesAnswer.Text = _runCmd.FindMostBurnedCalories(CurrentUser).ToString() + " cal";
+            AllBurnedCaloriesAnswer.Text = _runCmd.FindAllBurnedCalories(CurrentUser).ToString() + " cal";
+            LongestRunDistanceAnswer.Text = _runCmd.FindLongestPace(CurrentUser, "Run").ToString() + " km";
+            LongestWalkDistanceAnswer.Text = _runCmd.FindLongestPace(CurrentUser, "Walk").ToString() + " km";
         }
         private void DeleteEntryButton_Click(object sender, EventArgs e)
         {
             int index = RunGridView.SelectedRows[0].Index;
-            _runsSQL.DeleteRun(int.Parse(RunGridView.SelectedRows[0].Cells[0].Value.ToString()), CurrentUser);
+            _runCmd.DeleteRun(int.Parse(RunGridView.SelectedRows[0].Cells[0].Value.ToString()));
             DataGridViewUpdate();
             if (index != 0)
             {

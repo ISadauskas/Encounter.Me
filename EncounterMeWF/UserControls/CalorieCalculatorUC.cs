@@ -1,6 +1,6 @@
 ﻿using BusinessLogic;
+using Database.Commands;
 using System;
-using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 
@@ -12,8 +12,8 @@ namespace EncounterMeWF.UserControls
         private Runs _runs = new Runs();
         private CalorieCalculatorUCRegex _calorieCalculatorUCRegex = new CalorieCalculatorUCRegex();
         private Mets _mets = new Mets();
-        private UsersSQL _userSQL = new UsersSQL();
-        private RunsSQL _runsSQL = new RunsSQL();
+        private UserCmd _userCmd = new UserCmd();
+        private RunsCmd _runCmd = new RunsCmd();
 
         public string CurrentUser;
         public int CaloriesBurned;
@@ -27,17 +27,18 @@ namespace EncounterMeWF.UserControls
             if (File.Exists("SignIn.json"))
             {
                 CurrentUser = _signInJson.JsonRead();
-                WeightTextBox.Text = _userSQL.GetWeight(CurrentUser).ToString();
+                WeightTextBox1.Text = _userCmd.GetWeight(CurrentUser).ToString();
+                WeightTextBox2.Text = _userCmd.GetWeight(CurrentUser).ToString();
             }
         }
         private void CalculationButton_Click(object sender, EventArgs e)
         {
-            double Weight = double.Parse(WeightTextBox.Text);
+            double Weight = double.Parse(WeightTextBox1.Text);
             double Distance = double.Parse(DistanceTextBox.Text);
             int Duration = int.Parse(DurationTextBox.Text);
 
             Speed = Distance / (Duration / 60);
-            
+
             if (CheckForBurned())
             {
                 if (File.Exists("SignIn.json"))
@@ -47,17 +48,17 @@ namespace EncounterMeWF.UserControls
                 {
                     CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetWalkedValue(Speed) / 200);
                 }
-                else 
+                else
                     CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetRanValue(Speed) / 200);
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
-                _userSQL.SetWeight(CurrentUser, Weight);
+                _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
             }
         }
 
         public bool CheckForBurned()
         {
-            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text, HeightTextBox.Text, AgeTextBox.Text, GenderComboBox.Text))
+            switch (_calorieCalculatorUCRegex.RunCheck(RunWalkCombobox.Text, WeightTextBox1.Text, DurationTextBox.Text, DistanceTextBox.Text))
             {
                 case 1:
                     MessageBox.Show("Please choose if you were running or walking", "Entry Error", MessageBoxButtons.OK);
@@ -80,34 +81,34 @@ namespace EncounterMeWF.UserControls
                 case 7:
                     MessageBox.Show("Distance can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                 case 0:
+                case 0:
                     return true;
             }
             return true;
         }
         public bool CheckForNeed()
         {
-            switch (_calorieCalculatorUCRegex.Check(RunWalkCombobox.Text, WeightTextBox.Text, DurationTextBox.Text, DistanceTextBox.Text, HeightTextBox.Text, AgeTextBox.Text, GenderComboBox.Text))
+            switch (_calorieCalculatorUCRegex.HealthCheck(WeightTextBox2.Text, HeightTextBox.Text, AgeTextBox.Text, GenderComboBox.Text))
             {
-                case 2:
+                case 1:
                     MessageBox.Show("Please enter your current weight", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 3:
+                case 2:
                     MessageBox.Show("Weight can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 8:
+                case 3:
                     MessageBox.Show("Please choose your gender", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 9:
+                case 4:
                     MessageBox.Show("Please enter your current height", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 10:
+                case 5:
                     MessageBox.Show("Height can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 11:
+                case 6:
                     MessageBox.Show("Please enter your current age", "Entry Error", MessageBoxButtons.OK);
                     return false;
-                case 12:
+                case 7:
                     MessageBox.Show("Age can only be natural number", "Entry Error", MessageBoxButtons.OK);
                     return false;
             }
@@ -116,13 +117,12 @@ namespace EncounterMeWF.UserControls
 
         private void AddToRecordButton_Click(object sender, EventArgs e)
         {
-            Runs TempRun = _runs.CreateRun(RunWalkCombobox.Text, DistanceTextBox.Text, CaloriesBurned);
-            _runsSQL.InsertRun(TempRun, _signInJson.JsonRead());
+            _runCmd.AddRun(RunWalkCombobox.Text, DistanceTextBox.Text, CalorieBurn.Text, CurrentUser);
         }
 
         private void CaloriesNeedButton_Click(object sender, EventArgs e)
         {
-            double Weight = double.Parse(WeightTextBox.Text);
+            double Weight = double.Parse(WeightTextBox2.Text);
             double Height = double.Parse(HeightTextBox.Text);
             int Age = int.Parse(AgeTextBox.Text);
             double BMR;
@@ -144,9 +144,17 @@ namespace EncounterMeWF.UserControls
                 CaloriesNeedToConsume.Text = (CaloriesNeed).ToString() + " cal";
 
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
-                _userSQL.SetWeight(CurrentUser, Weight);
-               
+                _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
+
             }
+        }
+        private void WeightTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            WeightTextBox2.Text = WeightTextBox1.Text;
+        }
+        private void WeightTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            WeightTextBox1.Text = WeightTextBox2.Text;
         }
     }
 }

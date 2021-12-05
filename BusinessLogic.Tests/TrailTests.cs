@@ -39,7 +39,6 @@ namespace BusinessLogic.Tests
         }
 
 
-        //TODO
         [Fact]
         public void ModifyTrail_ShouldReturnModifiedTrail()
         {
