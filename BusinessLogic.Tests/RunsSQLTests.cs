@@ -71,7 +71,7 @@ namespace BusinessLogic.Tests
         public void FindLongestPace_ShouldReturnTen()
         {
             //arrange
-            Decimal expected = Decimal.Parse("10.00");
+            Decimal expected = Decimal.Parse("10,00");
 
             //act
             Decimal actual = test.FindLongestPace("Gedas", "Run");
@@ -84,7 +84,7 @@ namespace BusinessLogic.Tests
         public void FindLongestPace_ShouldReturn()
         {
             //arrange
-            Decimal expected = Decimal.Parse("8.00");
+            Decimal expected = Decimal.Parse("8,00");
 
             //act
             Decimal actual = test.FindLongestPace("Gedas", "Walk");
