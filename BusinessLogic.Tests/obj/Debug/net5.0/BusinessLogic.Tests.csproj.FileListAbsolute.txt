@@ -412,3 +412,18 @@ D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogi
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Database.pdb
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\obj\Debug\net5.0\BusinessLogic.Tests.csproj.CopyComplete
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\obj\Debug\net5.0\BusinessLogic.Tests.genruntimeconfig.cache
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Logging.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Database.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic.Tests\bin\Debug\net5.0\Database.pdb

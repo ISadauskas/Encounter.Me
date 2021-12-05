@@ -37,3 +37,6 @@ D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogi
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll
 D:\Gedo\OneDrive - Vilnius University\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\Database.dll
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\bin\Debug\net5.0\Database.pdb
+C:\Users\PC\Documents\GitHub\Encounter.Me\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CopyComplete
