@@ -1,6 +1,8 @@
 ﻿using Database.Data;
 using Database.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -23,10 +25,11 @@ namespace Database.Commands
             context.Add(TempTrail);
             context.SaveChanges();
         }
-        public BindingList<Trails> GetTrails()
+        public SortableBindingList<Trails> GetTrails()
         {
             using EncounterMeContext context = new EncounterMeContext();
-            BindingList<Trails> TrailList = new BindingList<Trails>();
+            List<Trails> Trails = new List<Trails>();
+            SortableBindingList<Trails> TrailList = new SortableBindingList<Trails>(Trails);
             var trails = context.Trails;
             foreach (Trails item in trails)
             {
@@ -34,10 +37,11 @@ namespace Database.Commands
             }
             return TrailList;
         }
-        public BindingList<Trails> SearchTrails(string from, string to)
+        public SortableBindingList<Trails> SearchTrails(string from, string to)
         {
             using EncounterMeContext context = new EncounterMeContext();
-            BindingList<Trails> TrailList = new BindingList<Trails>();
+            List<Trails> Trails = new List<Trails>();
+            SortableBindingList<Trails> TrailList = new SortableBindingList<Trails>(Trails);
             var trails = context.Trails
                 .Where(t => t.Length > int.Parse(from))
                 .Where(t => t.Length < int.Parse(to));
