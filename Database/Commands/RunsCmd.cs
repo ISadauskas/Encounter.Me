@@ -1,6 +1,8 @@
 ﻿using Database.Data;
 using Database.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -23,10 +25,11 @@ namespace Database.Commands
             context.Add(TempRun);
             context.SaveChanges();
         }
-        public BindingList<Runs> GetRuns(string CurrentUser)
+        public SortableBindingList<Runs> GetRuns(string CurrentUser)
         {
             using EncounterMeContext context = new EncounterMeContext();
-            BindingList<Runs> RunList = new BindingList<Runs>();
+            List<Runs> Runs = new List<Runs>();
+            SortableBindingList<Runs> RunList = new SortableBindingList<Runs>(Runs);
             var runs = context.Runs
                 .Where(r => r.User == CurrentUser);
             foreach (Runs item in runs)
