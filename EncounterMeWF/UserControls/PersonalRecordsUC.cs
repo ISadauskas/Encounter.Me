@@ -10,7 +10,7 @@ namespace EncounterMeWF.UserControls
     public partial class PersonalRecordsUC : UserControl
     {
         private SignInJson _signInJson = new SignInJson();
-        private RunsCmd _runCmd = new RunsCmd();
+        private RunsController _runCmd = new RunsController();
 
         public string CurrentUser;
         public int Index;

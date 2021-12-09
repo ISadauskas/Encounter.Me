@@ -9,7 +9,7 @@ namespace EncounterMeWF.UserControls
     {
         private SignUpSignInUCRegex _signUpSignInUCRegex = new SignUpSignInUCRegex();
         private SignInJson _signInJson = new SignInJson();
-        private UserCmd _userCmd = new UserCmd();
+        private UserController _userCmd = new UserController();
 
 
         public SIgnUpSignInUC()

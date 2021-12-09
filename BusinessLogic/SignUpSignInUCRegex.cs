@@ -5,7 +5,7 @@ namespace BusinessLogic
 {
     public class SignUpSignInUCRegex
     {
-        private UserCmd _userCmd = new UserCmd();
+        private UserController _userCmd = new UserController();
 
         public int Check(string SignUpUsernameText, string SignUpEmailText, string SignUpPasswordText, string SignUpConfirmPasswordText)
         {

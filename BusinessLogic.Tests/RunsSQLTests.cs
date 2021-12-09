@@ -12,7 +12,7 @@ namespace BusinessLogic.Tests
 {
     public class RunsSQLTests
     {
-        RunsCmd test = new RunsCmd();
+        RunsController test = new RunsController();
 
         [Fact]
         public void FindMostBurnedCalories_ShouldReturnEightThreeTwo()

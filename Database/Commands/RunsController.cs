@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Database.Commands
 {
-    public class RunsCmd
+    public class RunsController
     {
         public void AddRun(string pace, string distance, string caloriesLost, string organizer)
         {
@@ -28,15 +28,30 @@ namespace Database.Commands
         public SortableBindingList<Runs> GetRuns(string CurrentUser)
         {
             using EncounterMeContext context = new EncounterMeContext();
+            int number = context.Runs.Where(r => r.User ==  CurrentUser).Count();
+            var RunsJoin =
+                from users in context.Users
+                join runs in context.Runs on users.Username equals runs.User
+                select new { RunId = runs.RunId, Pace=runs.Pace, Distance=runs.Distance, CaloriesLost=runs.CaloriesLost, User=users.Username };
+
             List<Runs> Runs = new List<Runs>();
             SortableBindingList<Runs> RunList = new SortableBindingList<Runs>(Runs);
-            var runs = context.Runs
-                .Where(r => r.User == CurrentUser);
-            foreach (Runs item in runs)
+
+            if (number > 0)
             {
-                RunList.Add(item);
+                var runs = context.Runs.Where(r => r.User == CurrentUser).Take(number);
+                foreach (var item in runs)
+                    RunList.Add(item);
+                return RunList;
             }
-            return RunList;
+            else
+            {
+                var runs = context.Runs.Where(r => r.User == CurrentUser).Skip(0);
+                foreach (Runs item in runs)
+                    RunList.Add(item);
+                return RunList;
+            }
+                
         }
         public void DeleteRun(int index)
         {
@@ -61,18 +76,27 @@ namespace Database.Commands
         public int FindAllBurnedCalories(string CurrentUser)
         {
             int allCal = 0;
+            List<int> burnedCallorieArray = new List<int>();
             using EncounterMeContext context = new EncounterMeContext();
             if (context.Runs.Where(r => r.User == CurrentUser).Count() > 0)
-                allCal = context.Runs.Where(r => r.User == CurrentUser).Sum(r => r.CaloriesLost);
+                allCal = context.Runs.Where(r => r.User == CurrentUser).ToArray().Select(r => r.CaloriesLost).Aggregate((a,b) =>a+b);
             return allCal;
         }
         public decimal FindLongestPace(string CurrentUser, string pace)
         {
-            decimal longestDist = 0;
             using EncounterMeContext context = new EncounterMeContext();
-            if (context.Runs.Where(r => r.User == CurrentUser).Where(r => r.Pace == pace).Count() > 0)
-                longestDist = context.Runs.Where(r => r.User == CurrentUser).Where(r => r.Pace == pace).Max(r => r.Distance);
-            return longestDist;
+            if(context.Runs.Where(r => r.User == CurrentUser).Where(r => r.Pace == pace).Count() > 0)
+            {
+                var max = context.Runs.GroupBy(x => new { x.User, x.Pace }).Select(g => new
+                {
+                    User = g.Key.User,
+                    Pace = g.Key.Pace,
+                    MaxDistance = g.Max(row => row.Distance)
+                }).Where(r => r.User == CurrentUser);
+
+                return max.Where(r => r.Pace == pace).Select(r => r.MaxDistance).Max();
+            }
+            return 0;
         }
     }
 }

@@ -10,8 +10,8 @@ namespace EncounterMeWF.UserControls
     {
         private SignInJson _signInJson = new SignInJson();
         private TrailsUCRegex _trailsUCRegex = new TrailsUCRegex();
-        private TrailCmd _trailCmd = new TrailCmd();
-        private UserCmd _userCmd = new UserCmd();
+        private TrailController _trailCmd = new TrailController();
+        private UserController _userCmd = new UserController();
 
 
         BindingList<Trail> TrailList = new BindingList<Trail>();

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Database.Commands
 {
-    public class UserCmd
+    public class UserController
     {
         public void AddUser(string username, string email, string password, int isAdmin)
         {
