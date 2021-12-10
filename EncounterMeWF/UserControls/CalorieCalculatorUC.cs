@@ -12,8 +12,8 @@ namespace EncounterMeWF.UserControls
         private Runs _runs = new Runs();
         private CalorieCalculatorUCRegex _calorieCalculatorUCRegex = new CalorieCalculatorUCRegex();
         private Mets _mets = new Mets();
-        private UserCmd _userCmd = new UserCmd();
-        private RunsCmd _runCmd = new RunsCmd();
+        private UserController _userCmd = new UserController();
+        private RunsController _runCmd = new RunsController();
 
         public string CurrentUser;
         public int CaloriesBurned;

@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace Database.Commands
 {
-    public class TrailCmd
+    public class TrailController
     {
         public void AddTrail(string name, string length, DateTime date, DateTime time, string location, string organizer)
         {
