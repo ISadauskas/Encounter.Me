@@ -32,7 +32,7 @@ namespace EncounterMeWF.UserControls
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
         {
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry creation started at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry creation started at: " + DateTime.Now + "\n");
             if (_signInJson.CheckIfSignedIn())
             {
                 if (Check())
@@ -52,12 +52,12 @@ namespace EncounterMeWF.UserControls
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
             }
 
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry creation finished at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry creation finished at: " + DateTime.Now + "\n");
         }
 
         private void DeleteEntryButton_Click(object sender, EventArgs e)
         {
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry deletion started at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry deletion started at: " + DateTime.Now + "\n");
             if (_signInJson.CheckIfSignedIn())
             {
                 string CurrentUser = _signInJson.JsonRead();
@@ -81,12 +81,12 @@ namespace EncounterMeWF.UserControls
             {
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
             }
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry deletion finished at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry deletion finished at: " + DateTime.Now + "\n");
         }
 
         private void ModifyEntryButton_Click(object sender, EventArgs e)
         {
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry modification started at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry modification started at: " + DateTime.Now + "\n");
             if (_signInJson.CheckIfSignedIn())
             {
                 string CurrentUser = _signInJson.JsonRead();
@@ -113,7 +113,7 @@ namespace EncounterMeWF.UserControls
             {
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
             }
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry modification finished at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry modification finished at: " + DateTime.Now + "\n");
         }
 
         public bool Check()
@@ -193,7 +193,7 @@ namespace EncounterMeWF.UserControls
             DataGridViewColumn oldColumn = TrailGridView.SortedColumn;
             ListSortDirection direction;
 
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry sorting started at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry sorting started at: " + DateTime.Now + "\n");
 
             // If oldColumn is null, then the DataGridView is not sorted.
             if (oldColumn != null)
@@ -222,7 +222,7 @@ namespace EncounterMeWF.UserControls
                 direction == ListSortDirection.Ascending ?
                 System.Windows.Forms.SortOrder.Ascending : System.Windows.Forms.SortOrder.Descending;
 
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Entry sorting finished at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry sorting finished at: " + DateTime.Now + "\n");
         }
         private void TrailGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

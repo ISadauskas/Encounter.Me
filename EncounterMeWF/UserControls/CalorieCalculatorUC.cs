@@ -37,7 +37,7 @@ namespace EncounterMeWF.UserControls
             double Distance = double.Parse(DistanceTextBox.Text);
             int Duration = int.Parse(DurationTextBox.Text);
 
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Calorie calculation started at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Calorie calculation started at: " + DateTime.Now + "\n");
 
             Speed = Distance / (Duration / 60);
 
@@ -56,7 +56,7 @@ namespace EncounterMeWF.UserControls
                 CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
                 _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
 
-                File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Calorie calculation finished at: " + DateTime.Now + "\n");
+                File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Calorie calculation finished at: " + DateTime.Now + "\n");
             }
         }
 

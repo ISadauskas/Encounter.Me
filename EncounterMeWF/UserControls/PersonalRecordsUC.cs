@@ -36,7 +36,7 @@ namespace EncounterMeWF.UserControls
         }
         private void DeleteEntryButton_Click(object sender, EventArgs e)
         {
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Deletion started at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Deletion started at: " + DateTime.Now + "\n");
             int index = RunGridView.SelectedRows[0].Index;
             _runCmd.DeleteRun(int.Parse(RunGridView.SelectedRows[0].Cells[0].Value.ToString()));
             DataGridViewUpdate();
@@ -45,7 +45,7 @@ namespace EncounterMeWF.UserControls
                 RunGridView.Rows[0].Selected = false;
                 RunGridView.Rows[index - 1].Selected = true;
             }
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Deletion finished at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Deletion finished at: " + DateTime.Now + "\n");
         }
 
         private void RunGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

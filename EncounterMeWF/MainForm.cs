@@ -12,9 +12,10 @@ namespace EncounterMeWF
 
         public mainForm()
         {
-            File.Create(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt").Close();
+            //string path = Path.GetFullPath("..\..\Logging");
+            File.Create(@"..\..\..\..\Logging\Log.txt").Close();
             InitializeComponent();
-            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Initialized main form at: " + DateTime.Now + "\n");
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Initialized main form at: " + DateTime.Now + "\n");
             IndexUC uc = new IndexUC();
             addUserControl(uc);
             HideButtons();
