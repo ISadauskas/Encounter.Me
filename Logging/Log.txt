@@ -1,5 +1,6 @@
-Initialized main form at: 11/12/2021 13:43:28
-Entry creation started at: 11/12/2021 13:43:33
-Entry creation finished at: 11/12/2021 13:43:35
-Entry creation started at: 11/12/2021 13:44:12
-Entry creation finished at: 11/12/2021 13:44:12
+Initialized main form at: 2021-12-11 13:18:07
+Initialized main form at: 2021-12-11 13:32:49
+Entry sorting started at: 2021-12-11 13:32:57
+Entry sorting finished at: 2021-12-11 13:32:57
+Entry sorting started at: 2021-12-11 13:32:57
+Entry sorting finished at: 2021-12-11 13:32:57
