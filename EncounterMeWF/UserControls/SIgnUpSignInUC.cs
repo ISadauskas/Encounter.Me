@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using Database.Commands;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -19,6 +20,7 @@ namespace EncounterMeWF.UserControls
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
+            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Sign up check started at: " + DateTime.Now + "\n");
             if (Check())
             {
                 int Admin = 0;
@@ -26,6 +28,7 @@ namespace EncounterMeWF.UserControls
                     Admin = 1;
                 _userCmd.AddUser(SignUpUsernameTextbox.Text, SignUpEmailTextbox.Text, SignUpPasswordTextbox.Text, Admin);
             }
+            File.AppendAllText(@"C:\Users\PC\Documents\GitHub\Encounter.Me\Logging\Log.txt", "Sign up finished at: " + DateTime.Now + "\n");
         }
 
         public bool Check()
