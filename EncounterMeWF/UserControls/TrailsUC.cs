@@ -2,6 +2,7 @@
 using Database.Commands;
 using System;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -31,6 +32,7 @@ namespace EncounterMeWF.UserControls
 
         private void CreateEntryButton_Click(object sender, EventArgs e)
         {
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry creation started at: " + DateTime.Now + "\n");
             if (_signInJson.CheckIfSignedIn())
             {
                 if (Check())
@@ -46,11 +48,16 @@ namespace EncounterMeWF.UserControls
                 }
             }
             else
+            {
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
+            }
+
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry creation finished at: " + DateTime.Now + "\n");
         }
 
         private void DeleteEntryButton_Click(object sender, EventArgs e)
         {
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry deletion started at: " + DateTime.Now + "\n");
             if (_signInJson.CheckIfSignedIn())
             {
                 string CurrentUser = _signInJson.JsonRead();
@@ -66,14 +73,20 @@ namespace EncounterMeWF.UserControls
                     }
                 }
                 else
+                {
                     MessageBox.Show("You do not have access to delete other people trails.", "Entry Error", MessageBoxButtons.OK);
+                }
             }
             else
+            {
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
+            }
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry deletion finished at: " + DateTime.Now + "\n");
         }
 
         private void ModifyEntryButton_Click(object sender, EventArgs e)
         {
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry modification started at: " + DateTime.Now + "\n");
             if (_signInJson.CheckIfSignedIn())
             {
                 string CurrentUser = _signInJson.JsonRead();
@@ -92,10 +105,15 @@ namespace EncounterMeWF.UserControls
                     }
                 }
                 else
+                {
                     MessageBox.Show("You do not have access to modify other people trails.", "Entry Error", MessageBoxButtons.OK);
+                }
             }
             else
+            {
                 MessageBox.Show("Please Sign in to access this function.", "Entry Error", MessageBoxButtons.OK);
+            }
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry modification finished at: " + DateTime.Now + "\n");
         }
 
         public bool Check()
@@ -106,7 +124,7 @@ namespace EncounterMeWF.UserControls
                     MessageBox.Show("Please enter trail length number", "Entry Error", MessageBoxButtons.OK);
                     return false;
                 case 2:
-                    MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Trail length can only consist of numbers from 0 to 9 and a .", "Entry Error", MessageBoxButtons.OK );
                     return false;
                 case 3:
                     MessageBox.Show("The date cannot be earlier than today", "Entry Error", MessageBoxButtons.OK);
@@ -175,6 +193,8 @@ namespace EncounterMeWF.UserControls
             DataGridViewColumn oldColumn = TrailGridView.SortedColumn;
             ListSortDirection direction;
 
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry sorting started at: " + DateTime.Now + "\n");
+
             // If oldColumn is null, then the DataGridView is not sorted.
             if (oldColumn != null)
             {
@@ -201,6 +221,8 @@ namespace EncounterMeWF.UserControls
             newColumn.HeaderCell.SortGlyphDirection =
                 direction == ListSortDirection.Ascending ?
                 System.Windows.Forms.SortOrder.Ascending : System.Windows.Forms.SortOrder.Descending;
+
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Entry sorting finished at: " + DateTime.Now + "\n");
         }
         private void TrailGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

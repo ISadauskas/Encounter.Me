@@ -1,0 +1,6 @@
+Initialized main form at: 2021-12-11 13:18:07
+Initialized main form at: 2021-12-11 13:32:49
+Entry sorting started at: 2021-12-11 13:32:57
+Entry sorting finished at: 2021-12-11 13:32:57
+Entry sorting started at: 2021-12-11 13:32:57
+Entry sorting finished at: 2021-12-11 13:32:57

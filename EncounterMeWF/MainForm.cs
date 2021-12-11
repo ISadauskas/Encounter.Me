@@ -12,7 +12,10 @@ namespace EncounterMeWF
 
         public mainForm()
         {
+            //string path = Path.GetFullPath("..\..\Logging");
+            File.Create(@"..\..\..\..\Logging\Log.txt").Close();
             InitializeComponent();
+            File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Initialized main form at: " + DateTime.Now + "\n");
             IndexUC uc = new IndexUC();
             addUserControl(uc);
             HideButtons();
