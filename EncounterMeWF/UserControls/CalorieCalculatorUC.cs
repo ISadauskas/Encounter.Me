@@ -2,6 +2,8 @@
 using Database.Commands;
 using System;
 using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EncounterMeWF.UserControls
@@ -21,6 +23,7 @@ namespace EncounterMeWF.UserControls
         public int Index;
         public double Speed;
         public double MetOne = 3.5;
+        private static readonly string BaseUri = "https://localhost:7274/api/";
         public CalorieCalculatorUC()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace EncounterMeWF.UserControls
                 WeightTextBox2.Text = _userCmd.GetWeight(CurrentUser).ToString();
             }
         }
-        private void CalculationButton_Click(object sender, EventArgs e)
+        private async void CalculationButton_Click(object sender, EventArgs e)
         {
             double Weight = double.Parse(WeightTextBox1.Text);
             double Distance = double.Parse(DistanceTextBox.Text);
@@ -45,20 +48,32 @@ namespace EncounterMeWF.UserControls
             {
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = true;
-
-                if (RunWalkCombobox.Text == "Walk")
-                {
-                    CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetWalkedValue(Speed) / 200);
-                }
-                else
-                    CaloriesBurned = (int)Math.Round(MetOne * Duration * Weight * _mets.MetRanValue(Speed) / 200);
-
-                CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
+                
+                var response =  await GetCalculation(Weight, Distance, Duration, RunWalkCombobox.Text);
+                CalorieBurn.Text = response + " cal";
                 _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
 
                 File.AppendAllText(@"..\..\..\..\Logging\Log.txt", "Calorie calculation finished at: " + DateTime.Now + "\n");
             }
         }
+
+        public static async Task<string> GetCalculation(double weight, double distance, int duration, string pace)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(BaseUri + "CalorieCalculator/" + weight + "/" + distance + "/" + duration + "/" + pace))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                            return data;
+                    }
+                }
+            }
+            return string.Empty;
+        }
+
 
         public bool CheckForBurned()
         {
@@ -124,7 +139,7 @@ namespace EncounterMeWF.UserControls
             _runCmd.AddRun(RunWalkCombobox.Text, DistanceTextBox.Text, CalorieBurn.Text, CurrentUser);
         }
 
-        private void CaloriesNeedButton_Click(object sender, EventArgs e)
+        private async void CaloriesNeedButton_Click(object sender, EventArgs e)
         {
             double Weight = double.Parse(WeightTextBox2.Text);
             double Height = double.Parse(HeightTextBox.Text);
@@ -136,21 +151,28 @@ namespace EncounterMeWF.UserControls
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = true;
 
-                if (RunWalkCombobox.Text == "Male")
-                {
-                    BMR = 10 * Weight + 6.25 * Height - 5 * Age + 5;
-                }
-                else
-                    BMR = 10 * Weight + 6.25 * Height - 5 * Age - 161;
+                var response = await GetNeededCalculation(Weight, Height, GenderComboBox.Text, Age);
+                CaloriesNeedToConsume.Text = response + " cal";
 
-                CaloriesNeed = (int)Math.Round(BMR * 1.2);
-
-                CaloriesNeedToConsume.Text = (CaloriesNeed).ToString() + " cal";
-
-                CalorieBurn.Text = (CaloriesBurned).ToString() + " cal";
                 _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
 
             }
+        }
+        public static async Task<string> GetNeededCalculation(double Weight, double Height, string Gender, int Age)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = await client.GetAsync(BaseUri + "CalorieNeededCalculator/" + Weight + "/" + Height + "/" + Gender + "/" + Age))
+                {
+                    using (HttpContent content = response.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                            return data;
+                    }
+                }
+            }
+            return string.Empty;
         }
         private void WeightTextBox1_TextChanged(object sender, EventArgs e)
         {
