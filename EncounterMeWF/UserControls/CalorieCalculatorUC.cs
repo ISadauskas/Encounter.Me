@@ -16,6 +16,7 @@ namespace EncounterMeWF.UserControls
         private Mets _mets = new Mets();
         private UserController _userCmd = new UserController();
         private RunsController _runCmd = new RunsController();
+        private WebServiceCalculator _webServiceCalculator = new WebServiceCalculator();
 
         public string CurrentUser;
         public int CaloriesBurned;
@@ -49,7 +50,7 @@ namespace EncounterMeWF.UserControls
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = true;
                 
-                var response =  await GetCalculation(Weight, Distance, Duration, RunWalkCombobox.Text);
+                var response =  await _webServiceCalculator.GetCalculation(Weight, Distance, Duration, RunWalkCombobox.Text);
                 CalorieBurn.Text = response + " cal";
                 _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
 
@@ -57,22 +58,7 @@ namespace EncounterMeWF.UserControls
             }
         }
 
-        public static async Task<string> GetCalculation(double weight, double distance, int duration, string pace)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage response = await client.GetAsync(BaseUri + "CalorieCalculator/" + weight + "/" + distance + "/" + duration + "/" + pace))
-                {
-                    using (HttpContent content = response.Content)
-                    {
-                        string data = await content.ReadAsStringAsync();
-                        if (data != null)
-                            return data;
-                    }
-                }
-            }
-            return string.Empty;
-        }
+        
 
 
         public bool CheckForBurned()
@@ -151,7 +137,7 @@ namespace EncounterMeWF.UserControls
                 if (File.Exists("SignIn.json"))
                     AddToRecordButton.Visible = true;
 
-                var response = await GetNeededCalculation(Weight, Height, GenderComboBox.Text, Age);
+                var response = await _webServiceCalculator.GetNeededCalculation(Weight, Height, GenderComboBox.Text, Age);
                 CaloriesNeedToConsume.Text = response + " cal";
 
                 _userCmd.UpdateWeight(CurrentUser, Weight.ToString());
