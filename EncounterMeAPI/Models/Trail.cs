@@ -5,39 +5,25 @@ using System.Threading.Tasks;
 
 namespace EncounterMeAPI.Models
 {
+    // TODO: modify this according to our use
     [Serializable]
     public class Trail
     {
         public string Name { get; set; }
         public double Length { get; set; }
-        public DateTime Timestamp { get; set; }
-        public string Location { get; set; }
-        public string Organizer { get; set; }
+        public string StartLocation { get; set; }
+        public string EndLocation { get; set; }
+        public DateTime UploadDate { get { return _uploadDate; } }
 
-        public Trail CreateTrail(string Length, DateTime StartDate, DateTime StartTime, string StartLocation, string Name = "Default Trail Name")
-        {
-            Trail TempTrail = new Trail
-            {
-                Name = Name,
-                Length = double.Parse(Length),
-                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 00),
-                Location = StartLocation,
-                Organizer = Organizer
-            };
-            return TempTrail;
-        }
+        private DateTime _uploadDate;
 
-        public Trail ModifyTrail(string Name, string Length, DateTime StartDate, DateTime StartTime, string StartLocation, string Organizer)
+        public Trail(string Name, double Length, DateTime UploadDate, string StartLocation, string EndLocation)
         {
-            Trail TempTrail = new Trail
-            {
-                Name = Name,
-                Length = double.Parse(Length),
-                Timestamp = new DateTime(StartDate.Year, StartDate.Month, StartDate.Day, StartTime.Hour, StartTime.Minute, 00),
-                Location = StartLocation,
-                Organizer = Organizer
-            };
-            return TempTrail;
+            this.Name = Name;
+            this.Length = Length;
+            this.StartLocation = StartLocation;
+            this.EndLocation = EndLocation;
+            this._uploadDate = UploadDate;
         }
     }
 }
