@@ -17,13 +17,13 @@ namespace EncounterMeAPI.Models
 
         private DateTime _uploadDate;
 
-        public Trail(string Name, double Length, DateTime UploadDate, string StartLocation, string EndLocation)
+        public Trail(string name, double length, DateTime uploadDate, string startLocation, string endLocation)
         {
-            this.Name = Name;
-            this.Length = Length;
-            this.StartLocation = StartLocation;
-            this.EndLocation = EndLocation;
-            this._uploadDate = UploadDate;
+            this.Name = name;
+            this.Length = length;
+            this.StartLocation = startLocation;
+            this.EndLocation = endLocation;
+            this._uploadDate = uploadDate;
         }
     }
 }
