@@ -1,3 +1,4 @@
+using EncounterMeAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,7 @@ namespace EncounterMeAPI
         {
 
             services.AddControllers();
+            services.AddScoped<StatisticsService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EncounterMeAPI", Version = "v1" });
