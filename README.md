@@ -1,3 +1,10 @@
+# EntityFramework help
+ - In order to add a migration `dotnet ef migrations add <Name of migration> --output-dir Persistance/Migrations`
+ - In order to update database `dotnet ef database update` 
+ - In `app settings.Development.json` add your own my sql connection string 
+  
+Connection string example: `"ConnectionStrings": { "Database": "server=localhost;port=3306;database=encounterMe;uid=root;password=yourdbpass" },`
+
 # Encounter.Me
 This is project for Software Engineering course. The point is to develop an application for likeminded people that enjoy hiking.
 
