@@ -1,6 +1,8 @@
+using EncounterMeAPI.Persistance;
 using EncounterMeAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -17,19 +19,24 @@ namespace EncounterMeAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
-            services.AddScoped<StatisticsService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EncounterMeAPI", Version = "v1" });
             });
+
+            var databaseString = Configuration.GetConnectionString("Database");
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql(databaseString, ServerVersion.AutoDetect(databaseString)));
+
+            //Please create an interface for this
+            services.AddScoped<StatisticsService>();
+            services.AddScoped<ITrailService, TrailService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
