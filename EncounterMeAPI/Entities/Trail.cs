@@ -1,11 +1,10 @@
 ﻿using System;
 
-namespace EncounterMeAPI.Models
+namespace EncounterMeAPI.Entities
 {
-    // TODO: modify this according to our use
-    [Serializable]
     public class Trail
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public double Length { get; set; }
         public string StartLocation { get; set; }

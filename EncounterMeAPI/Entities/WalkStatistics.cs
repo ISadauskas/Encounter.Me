@@ -1,4 +1,4 @@
-﻿namespace EncounterMeAPI.Models
+﻿namespace EncounterMeAPI.Entities
 {
     public class WalkStatistics
     {
