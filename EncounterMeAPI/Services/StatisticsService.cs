@@ -1,4 +1,4 @@
-﻿using EncounterMeAPI.Models;
+﻿using EncounterMeAPI.Entities;
 using System;
 
 namespace EncounterMeAPI.Services

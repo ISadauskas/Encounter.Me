@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using EncounterMeAPI.Models;
 using EncounterMeAPI.Services;
+using EncounterMeAPI.Entities;
+using System.Threading.Tasks;
 
 namespace EncounterMeAPI.Controllers
 {
@@ -9,21 +10,19 @@ namespace EncounterMeAPI.Controllers
     [ApiController]
     public class StatisticsController : ControllerBase
     {
-        // private readonly TrailService _trailService;
+        private readonly TrailService _trailService;
         private readonly StatisticsService _statisticsService;
 
-        public StatisticsController(StatisticsService statisticsService)
+        public StatisticsController(StatisticsService statisticsService, TrailService trailService)
         {
-            // _trailService = trailService;
+            _trailService = trailService;
             _statisticsService = statisticsService;
         }
         [HttpGet]
-        public ActionResult<WalkStatistics> Get(string trailName, int time, double weight)
+        public async Task<ActionResult<WalkStatistics>> GetWalkStatisticsAsync(Guid trailId, int time, double weight)
         {
-            // TODO: uncomment this when trail api is done
-
-            var trail = new Trail("Kelione i mokykla", 100, DateTime.Now, "Didlaukio 59", "Didlaukio 47");
-            // var trail = _trailService.GetByName(trailName);
+            var trail = await _trailService.GetTrailByIdAsync(trailId);
+            // Throw exceptions in service and use a filter to catch them globally ???
             // if (trail == null)
             //    return BadRequest();
 
