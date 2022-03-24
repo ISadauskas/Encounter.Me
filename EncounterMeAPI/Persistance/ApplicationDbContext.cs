@@ -8,7 +8,7 @@ namespace EncounterMeAPI.Persistance
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
 
-        DbSet<Trail> Trails { get; set; }
+        public DbSet<Trail> Trails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
