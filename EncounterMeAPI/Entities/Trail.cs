@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace EncounterMeAPI.Entities
 {
@@ -9,17 +9,15 @@ namespace EncounterMeAPI.Entities
         public double Length { get; set; }
         public string StartLocation { get; set; }
         public string EndLocation { get; set; }
-        public DateTime UploadDate { get { return _uploadDate; } }
+        public DateTime UploadDate { get; }
 
-        private DateTime _uploadDate;
-
-        public Trail(string name, double length, DateTime uploadDate, string startLocation, string endLocation)
+        public Trail(string name, double length, string startLocation, string endLocation)
         {
-            this.Name = name;
-            this.Length = length;
-            this.StartLocation = startLocation;
-            this.EndLocation = endLocation;
-            this._uploadDate = uploadDate;
+            Name = name;
+            Length = length;
+            StartLocation = startLocation;
+            EndLocation = endLocation;
+            UploadDate = DateTime.Now;
         }
     }
 }

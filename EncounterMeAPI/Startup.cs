@@ -32,8 +32,7 @@ namespace EncounterMeAPI
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySql(databaseString, ServerVersion.AutoDetect(databaseString)));
 
-            //Please create an interface for this
-            services.AddScoped<StatisticsService>();
+            services.AddScoped<IStatisticsService, StatisticsService>();
             services.AddScoped<ITrailService, TrailService>();
         }
 
