@@ -1,53 +1,52 @@
 using System;
 using System.Linq;
+using System.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using EncounterMeAPI.Entities;
 using EncounterMeAPI.Persistance;
-using EncounterMeAPI.Utilities.Exceptions;
 using FluentValidation;
 
 namespace EncounterMeAPI.Services
 {
     public class TrailService : ITrailService
     {
-
         private readonly ApplicationDbContext _dbContext;
+        private readonly TrailValidator _trailValidator;
+        Mapper mapper;
 
-        public TrailService(ApplicationDbContext dbContext)
+        public TrailService(ApplicationDbContext dbContext, TrailValidator trailValidator)
         {
             _dbContext = dbContext;
-        }
+            _trailValidator = trailValidator;
 
-        TrailValidator validator = new TrailValidator();
+            var mapperConfig = new MapperConfiguration(cfg =>
+                cfg.CreateMap<Trail, Trail>().ForAllMembers(
+                    x => x.Condition((source, destination, member) => member != null)));
+            mapper = new Mapper(mapperConfig);
+        }
 
         public async Task AddNewTrailAsync(Trail trail)
         {
-            validator.ValidateAndThrow(trail);
+            _trailValidator.ValidateAndThrow(trail);
             // If object is faulty will throw a Validation exception with faulty field errors
 
             await _dbContext.Trails.AddAsync(trail);
         }
 
-        public async Task EditTrailAsnyc(Trail trail)
+        public async Task EditTrailAsync(Trail trail)
         {
             var currentTrail = await _dbContext.Trails.FindAsync(trail.Id);
 
             if (currentTrail is null)
             {
-                throw new NotFoundException($"Trail with Id: {trail.Id} could not be found");
+                throw new ArgumentException($"Trail with Id: {trail.Id} could not be found");
             }
 
-            var mapperConfig = new MapperConfiguration(cfg =>
-                cfg.CreateMap<Trail, Trail>().ForAllMembers(
-                    x => x.Condition((source, destination, member) => member != null)));
-            // configure mapper to not ignore null values
-            //TODO validate the values that are being mapped, validator object cant be used, doesnt allow null's
-
-            var mapper = new Mapper(mapperConfig);
-
             mapper.Map(trail, currentTrail);
+
+            _trailValidator.ValidateAndThrow(trail);
 
             await _dbContext.SaveChangesAsync();
         }
@@ -66,19 +65,19 @@ namespace EncounterMeAPI.Services
 
             if (trail is null)
             {
-                throw new NotFoundException($"Trail with id: {id} could not be found");
+                throw new ArgumentException($"Trail with id: {id} could not be found");
             }
 
             return trail;
         }
 
-        public async Task RemoveTrailAsnyc(Guid id)
+        public async Task RemoveTrailAsync(Guid id)
         {
             var trail = await _dbContext.Trails.FindAsync(id);
 
             if (trail is null)
             {
-                throw new NotFoundException($"Trail with id: {id} does not exist");
+                throw new ArgumentException($"Trail with id: {id} does not exist");
             }
 
             _dbContext.Remove(trail);
