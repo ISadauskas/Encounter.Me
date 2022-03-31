@@ -35,6 +35,7 @@ namespace EncounterMeAPI
             //Please create an interface for this
             services.AddScoped<StatisticsService>();
             services.AddScoped<ITrailService, TrailService>();
+            services.AddScoped<TrailValidator>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
