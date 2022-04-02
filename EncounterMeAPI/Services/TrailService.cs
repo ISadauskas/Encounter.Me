@@ -14,7 +14,7 @@ namespace EncounterMeAPI.Services
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly TrailValidator _trailValidator;
-        Mapper mapper;
+        private readonly Mapper _mapper;
 
         public TrailService(ApplicationDbContext dbContext, TrailValidator trailValidator)
         {
@@ -24,7 +24,7 @@ namespace EncounterMeAPI.Services
             var mapperConfig = new MapperConfiguration(cfg =>
                 cfg.CreateMap<Trail, Trail>().ForAllMembers(
                     x => x.Condition((source, destination, member) => member != null)));
-            mapper = new Mapper(mapperConfig);
+            _mapper = new Mapper(mapperConfig);
         }
 
         public async Task AddNewTrailAsync(Trail trail)
@@ -44,7 +44,7 @@ namespace EncounterMeAPI.Services
                 throw new ArgumentException($"Trail with Id: {trail.Id} could not be found");
             }
 
-            mapper.Map(trail, currentTrail);
+            _mapper.Map(trail, currentTrail);
 
             _trailValidator.ValidateAndThrow(trail);
 
