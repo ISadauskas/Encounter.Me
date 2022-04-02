@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using EncounterMeAPI.Services;
 using EncounterMeAPI.Entities;
@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EncounterMeAPI.Controllers
 {
+
     [Route("[controller]")]
     [ApiController]
     public class StatisticsController : ControllerBase
@@ -23,8 +24,10 @@ namespace EncounterMeAPI.Controllers
         {
             var trail = await _trailService.GetTrailByIdAsync(trailId);
             // Throw exceptions in service and use a filter to catch them globally ???
-            // if (trail == null)
-            //    return BadRequest();
+            if (trail == null)
+            {
+                return NotFound();
+            }
 
             var stats = _statisticsService.CalculateStatistics(trail, time, weight);
 

@@ -12,14 +12,14 @@ namespace EncounterMeAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup (IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices (IServiceCollection services)
         {
             services.AddControllers();
 
@@ -34,11 +34,12 @@ namespace EncounterMeAPI
 
             //Please create an interface for this
             services.AddScoped<StatisticsService>();
+            services.AddScoped<IStatisticsService, StatisticsService>();
             services.AddScoped<TrailValidator>();
             services.AddScoped<ITrailService, TrailService>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure (IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
