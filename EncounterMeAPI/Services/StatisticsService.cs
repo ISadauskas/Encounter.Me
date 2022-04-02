@@ -1,5 +1,6 @@
 using EncounterMeAPI.Entities;
 using System;
+using Serilog;
 
 namespace EncounterMeAPI.Services
 {
@@ -7,6 +8,7 @@ namespace EncounterMeAPI.Services
     {
         public WalkStatistics CalculateStatistics(Trail trail, int time, double weight)
         {
+            Log.Information($"Calculating statistics for trail {trail.Id} beaten in {time}s");
             var speed = CalculateSpeed(trail, time);
             if (speed > 12.5)
             {
