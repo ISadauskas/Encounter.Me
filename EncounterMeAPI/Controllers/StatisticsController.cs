@@ -13,7 +13,7 @@ namespace EncounterMeAPI.Controllers
     public class StatisticsController : ControllerBase
     {
         private readonly ITrailService _trailService;
-        private IStatisticsService _statisticsService;
+        private readonly IStatisticsService _statisticsService;
 
         public StatisticsController (IStatisticsService statisticsService, ITrailService trailService)
         {
