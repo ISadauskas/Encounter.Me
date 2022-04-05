@@ -33,6 +33,7 @@ namespace EncounterMeAPI.Services
             // If object is faulty will throw a Validation exception with faulty field errors
 
             await _dbContext.Trails.AddAsync(trail);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task EditTrailAsync(Trail trail)
