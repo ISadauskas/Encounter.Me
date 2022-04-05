@@ -16,7 +16,6 @@ namespace EncounterMeAPI.Persistance
 
             trail.HasKey(x => x.Id);
             trail.Property(x => x.UploadDate)
-                .HasField("_uploadDate")
                 .UsePropertyAccessMode(PropertyAccessMode.Field);
         }
     }
