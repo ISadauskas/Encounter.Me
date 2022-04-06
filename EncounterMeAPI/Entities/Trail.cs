@@ -10,6 +10,7 @@ namespace EncounterMeAPI.Entities
         public string StartLocation { get; set; }
         public string EndLocation { get; set; }
         public DateTime UploadDate { get; }
+        public int Rating { get; set;  }
 
         public Trail(string name, double length, string startLocation, string endLocation)
         {
